@@ -1,0 +1,210 @@
+# Entity: json
+
+main: kit: entity: json: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "asn"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "asn_organization"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "capital"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "city_name"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "code"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "continent"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "continent_code"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "country_code"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "country_name"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "currency"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "ip"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "ip_address"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "ip_version"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "is_proxy"
+      req: false
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "language"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "latitude"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "longitude"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "name"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "phone_code"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "region_code"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "region_name"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "time_zone"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "tld"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "zip_code"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "json"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/api/json"
+          parts: [
+            "api"
+            "json"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          method: "GET"
+          orig: "/api/json"
+          parts: [
+            "api"
+            "json"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            params: [
+              {
+                example: "193.247.239.168"
+                kind: "param"
+                name: "id"
+                orig: "ip_address"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/api/json/{ipAddress}"
+          parts: [
+            "api"
+            "json"
+            "{id}"
+          ]
+          rename: {
+            param: {
+              ipAddress: "id"
+            }
+          }
+          select: {
+            exist: [
+              "id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,29 @@
+# Guide
+
+guide: {
+  metrics: count: entity: 2
+  metrics: count: path: 4
+  metrics: count: method: 5
+
+  entity: ip_geolocation: {
+    path: "/api/xml": {
+      op: load: method: *GET
+    }
+    path: "/api/xml/{ipAddress}": {
+      rename: param: "ipAddress": *"ip_address"
+      op: load: method: *GET
+    }
+  }
+
+  entity: json: {
+    path: "/api/json": {
+      op: create: method: *POST
+      op: list: method: *GET
+    }
+    path: "/api/json/{ipAddress}": {
+      rename: param: "ipAddress": *"id"
+      op: load: method: *GET
+    }
+  }
+
+}

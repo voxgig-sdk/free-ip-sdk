@@ -1,0 +1,23 @@
+{
+  "existing": {
+    "ip_geolocation": {
+      "IP_GEOLOCATION00": {
+        "ip_address": "IP_ADDRESS01",
+        "id": "IP_GEOLOCATION00"
+      },
+      "IP_GEOLOCATION01": {
+        "ip_address": "IP_ADDRESS01",
+        "id": "IP_GEOLOCATION01"
+      },
+      "IP_GEOLOCATION02": {
+        "ip_address": "IP_ADDRESS01",
+        "id": "IP_GEOLOCATION02"
+      }
+    }
+  },
+  "new": {
+    "ip_geolocation": {
+      "ip_geolocation_ref01": {}
+    }
+  }
+}

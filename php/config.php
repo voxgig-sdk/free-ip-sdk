@@ -1,0 +1,387 @@
+<?php
+declare(strict_types=1);
+
+// FreeIp SDK configuration
+
+class FreeIpConfig
+{
+    public static function make_config(): array
+    {
+        return [
+            "main" => [
+                "name" => "FreeIp",
+            ],
+            "feature" => [
+                "test" => [
+          'options' => [
+            'active' => false,
+          ],
+        ],
+            ],
+            "options" => [
+                "base" => "https://free.freeipapi.com",
+                "headers" => [
+          'content-type' => 'application/json',
+        ],
+                "entity" => [
+                    "ip_geolocation" => [],
+                    "json" => [],
+                ],
+            ],
+            "entity" => [
+        'ip_geolocation' => [
+          'fields' => [],
+          'name' => 'ip_geolocation',
+          'op' => [
+            'load' => [
+              'input' => 'data',
+              'name' => 'load',
+              'points' => [
+                [
+                  'active' => true,
+                  'args' => [
+                    'params' => [
+                      [
+                        'active' => true,
+                        'example' => '1.1.1.1',
+                        'kind' => 'param',
+                        'name' => 'ip_address',
+                        'orig' => 'ip_address',
+                        'reqd' => true,
+                        'type' => '`$STRING`',
+                        'index$' => 0,
+                      ],
+                    ],
+                  ],
+                  'method' => 'GET',
+                  'orig' => '/api/xml/{ipAddress}',
+                  'parts' => [
+                    'api',
+                    'xml',
+                    '{ip_address}',
+                  ],
+                  'rename' => [
+                    'param' => [
+                      'ipAddress' => 'ip_address',
+                    ],
+                  ],
+                  'select' => [
+                    'exist' => [
+                      'ip_address',
+                    ],
+                  ],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'index$' => 0,
+                ],
+                [
+                  'active' => true,
+                  'args' => [],
+                  'method' => 'GET',
+                  'orig' => '/api/xml',
+                  'parts' => [
+                    'api',
+                    'xml',
+                  ],
+                  'select' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'index$' => 1,
+                ],
+              ],
+              'key$' => 'load',
+            ],
+          ],
+          'relations' => [
+            'ancestors' => [
+              [
+                'xml',
+              ],
+            ],
+          ],
+        ],
+        'json' => [
+          'fields' => [
+            [
+              'active' => true,
+              'name' => 'asn',
+              'req' => false,
+              'type' => '`$STRING`',
+              'index$' => 0,
+            ],
+            [
+              'active' => true,
+              'name' => 'asn_organization',
+              'req' => false,
+              'type' => '`$STRING`',
+              'index$' => 1,
+            ],
+            [
+              'active' => true,
+              'name' => 'capital',
+              'req' => false,
+              'type' => '`$STRING`',
+              'index$' => 2,
+            ],
+            [
+              'active' => true,
+              'name' => 'city_name',
+              'req' => false,
+              'type' => '`$STRING`',
+              'index$' => 3,
+            ],
+            [
+              'active' => true,
+              'name' => 'code',
+              'req' => false,
+              'type' => '`$STRING`',
+              'index$' => 4,
+            ],
+            [
+              'active' => true,
+              'name' => 'continent',
+              'req' => false,
+              'type' => '`$STRING`',
+              'index$' => 5,
+            ],
+            [
+              'active' => true,
+              'name' => 'continent_code',
+              'req' => false,
+              'type' => '`$STRING`',
+              'index$' => 6,
+            ],
+            [
+              'active' => true,
+              'name' => 'country_code',
+              'req' => false,
+              'type' => '`$STRING`',
+              'index$' => 7,
+            ],
+            [
+              'active' => true,
+              'name' => 'country_name',
+              'req' => false,
+              'type' => '`$STRING`',
+              'index$' => 8,
+            ],
+            [
+              'active' => true,
+              'name' => 'currency',
+              'req' => false,
+              'type' => '`$ARRAY`',
+              'index$' => 9,
+            ],
+            [
+              'active' => true,
+              'name' => 'ip',
+              'req' => false,
+              'type' => '`$STRING`',
+              'index$' => 10,
+            ],
+            [
+              'active' => true,
+              'name' => 'ip_address',
+              'req' => false,
+              'type' => '`$STRING`',
+              'index$' => 11,
+            ],
+            [
+              'active' => true,
+              'name' => 'ip_version',
+              'req' => false,
+              'type' => '`$INTEGER`',
+              'index$' => 12,
+            ],
+            [
+              'active' => true,
+              'name' => 'is_proxy',
+              'req' => false,
+              'type' => '`$BOOLEAN`',
+              'index$' => 13,
+            ],
+            [
+              'active' => true,
+              'name' => 'language',
+              'req' => false,
+              'type' => '`$STRING`',
+              'index$' => 14,
+            ],
+            [
+              'active' => true,
+              'name' => 'latitude',
+              'req' => false,
+              'type' => '`$NUMBER`',
+              'index$' => 15,
+            ],
+            [
+              'active' => true,
+              'name' => 'longitude',
+              'req' => false,
+              'type' => '`$NUMBER`',
+              'index$' => 16,
+            ],
+            [
+              'active' => true,
+              'name' => 'name',
+              'req' => false,
+              'type' => '`$STRING`',
+              'index$' => 17,
+            ],
+            [
+              'active' => true,
+              'name' => 'phone_code',
+              'req' => false,
+              'type' => '`$ARRAY`',
+              'index$' => 18,
+            ],
+            [
+              'active' => true,
+              'name' => 'region_code',
+              'req' => false,
+              'type' => '`$STRING`',
+              'index$' => 19,
+            ],
+            [
+              'active' => true,
+              'name' => 'region_name',
+              'req' => false,
+              'type' => '`$STRING`',
+              'index$' => 20,
+            ],
+            [
+              'active' => true,
+              'name' => 'time_zone',
+              'req' => false,
+              'type' => '`$STRING`',
+              'index$' => 21,
+            ],
+            [
+              'active' => true,
+              'name' => 'tld',
+              'req' => false,
+              'type' => '`$ARRAY`',
+              'index$' => 22,
+            ],
+            [
+              'active' => true,
+              'name' => 'zip_code',
+              'req' => false,
+              'type' => '`$STRING`',
+              'index$' => 23,
+            ],
+          ],
+          'name' => 'json',
+          'op' => [
+            'create' => [
+              'input' => 'data',
+              'name' => 'create',
+              'points' => [
+                [
+                  'active' => true,
+                  'args' => [],
+                  'method' => 'POST',
+                  'orig' => '/api/json',
+                  'parts' => [
+                    'api',
+                    'json',
+                  ],
+                  'select' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'index$' => 0,
+                ],
+              ],
+              'key$' => 'create',
+            ],
+            'list' => [
+              'input' => 'data',
+              'name' => 'list',
+              'points' => [
+                [
+                  'active' => true,
+                  'args' => [],
+                  'method' => 'GET',
+                  'orig' => '/api/json',
+                  'parts' => [
+                    'api',
+                    'json',
+                  ],
+                  'select' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'index$' => 0,
+                ],
+              ],
+              'key$' => 'list',
+            ],
+            'load' => [
+              'input' => 'data',
+              'name' => 'load',
+              'points' => [
+                [
+                  'active' => true,
+                  'args' => [
+                    'params' => [
+                      [
+                        'active' => true,
+                        'example' => '193.247.239.168',
+                        'kind' => 'param',
+                        'name' => 'id',
+                        'orig' => 'ip_address',
+                        'reqd' => true,
+                        'type' => '`$STRING`',
+                        'index$' => 0,
+                      ],
+                    ],
+                  ],
+                  'method' => 'GET',
+                  'orig' => '/api/json/{ipAddress}',
+                  'parts' => [
+                    'api',
+                    'json',
+                    '{id}',
+                  ],
+                  'rename' => [
+                    'param' => [
+                      'ipAddress' => 'id',
+                    ],
+                  ],
+                  'select' => [
+                    'exist' => [
+                      'id',
+                    ],
+                  ],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'index$' => 0,
+                ],
+              ],
+              'key$' => 'load',
+            ],
+          ],
+          'relations' => [
+            'ancestors' => [],
+          ],
+        ],
+      ],
+        ];
+    }
+
+
+    public static function make_feature(string $name)
+    {
+        require_once __DIR__ . '/features.php';
+        return FreeIpFeatures::make_feature($name);
+    }
+}

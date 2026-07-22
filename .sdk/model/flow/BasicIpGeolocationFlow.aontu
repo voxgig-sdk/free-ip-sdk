@@ -1,0 +1,28 @@
+# BasicIpGeolocationFlow
+
+main: kit: flow: BasicIpGeolocationFlow:
+{
+  entity: "ip_geolocation",
+  kind: "basic",
+  name: "BasicIpGeolocationFlow",
+  step: [
+    {
+      input: {
+        ref: "ip_geolocation_ref01",
+        srcdatavar: "ip_geolocation_ref01_data",
+        suffix: "_dt0"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-ip_geolocation_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicIpGeolocationFlow"
+}

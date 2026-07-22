@@ -1,0 +1,29 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      auth: false
+      contact: {
+        url: "https://freeipapi.com/"
+      }
+      description: "The Free IP API provides fast and reliable geolocation information for IP addresses, including details like country, city, region, and more. It is available for both commercial and non-commercial usage and supports multiple formats such as JSON and XML."
+      license: {
+        name: "Free for commercial and non-commercial use"
+      }
+      servers: [
+        {
+          description: "Free IP API Server"
+          url: "https://free.freeipapi.com"
+        }
+      ]
+      summary: "The Free IP API provides fast and reliable geolocation information for IP addresses, including details like country, city, region, and more."
+      termsOfService: "https://freeipapi.com/terms"
+      title: "Free IP API"
+      version: "1.0.0"
+      website: "https://freeipapi.com/"
+    }
+  }
+}
+

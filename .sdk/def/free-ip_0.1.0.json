@@ -1,0 +1,536 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Free IP API",
+    "description": "The Free IP API provides fast and reliable geolocation information for IP addresses, including details like country, city, region, and more. It is available for both commercial and non-commercial usage and supports multiple formats such as JSON and XML.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://freeipapi.com/"
+    },
+    "termsOfService": "https://freeipapi.com/terms",
+    "license": {
+      "name": "Free for commercial and non-commercial use"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://free.freeipapi.com",
+      "description": "Free IP API Server"
+    }
+  ],
+  "paths": {
+    "/api/json": {
+      "get": {
+        "summary": "Get IP geolocation information (current request IP)",
+        "description": "Returns detailed geolocation information for the requesting IP address when no IP parameter is provided. Includes country, city, region, coordinates, timezone, currency, languages, ASN, and proxy detection.",
+        "operationId": "getIpInfoCurrent",
+        "tags": [
+          "IP Geolocation"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with IP geolocation information",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IpGeolocationResponse"
+                },
+                "example": {
+                  "ipVersion": 4,
+                  "ipAddress": "1.1.1.1",
+                  "latitude": -37.7,
+                  "longitude": 145.1833,
+                  "countryName": "Australia",
+                  "countryCode": "AU",
+                  "timeZone": "+11:00",
+                  "zipCode": "3000",
+                  "cityName": "Melbourne",
+                  "regionName": "Victoria",
+                  "regionCode": "VIC",
+                  "continent": "Oceania",
+                  "continentCode": "OC",
+                  "isProxy": false,
+                  "currency": {
+                    "code": "AUD",
+                    "name": "Australian Dollar"
+                  },
+                  "language": "en-AU",
+                  "timeZones": [
+                    "Australia/Melbourne"
+                  ],
+                  "tlds": [
+                    ".au"
+                  ]
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded (60 requests per minute)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Get IP geolocation information via POST",
+        "description": "Returns detailed geolocation information for the provided IP address or requesting IP if no IP is provided in the request body.",
+        "operationId": "postIpInfo",
+        "tags": [
+          "IP Geolocation"
+        ],
+        "requestBody": {
+          "description": "Optional IP address to lookup",
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "ip": {
+                    "type": "string",
+                    "description": "IPv4 or IPv6 address to lookup",
+                    "example": "8.8.8.8"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response with IP geolocation information",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IpGeolocationResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - invalid IP address format",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded (60 requests per minute)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/json/{ipAddress}": {
+      "get": {
+        "summary": "Get IP geolocation information for specific IP",
+        "description": "Returns detailed geolocation information for the specified IPv4 or IPv6 address. Includes country, city, region, coordinates, timezone, currency, languages, ASN, and proxy detection.",
+        "operationId": "getIpInfoByAddress",
+        "tags": [
+          "IP Geolocation"
+        ],
+        "parameters": [
+          {
+            "name": "ipAddress",
+            "in": "path",
+            "required": true,
+            "description": "IPv4 or IPv6 address to lookup",
+            "schema": {
+              "type": "string",
+              "example": "193.247.239.168"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with IP geolocation information",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IpGeolocationResponse"
+                },
+                "example": {
+                  "ipVersion": 4,
+                  "ipAddress": "193.247.239.168",
+                  "latitude": 48.8566,
+                  "longitude": 2.3522,
+                  "countryName": "France",
+                  "countryCode": "FR",
+                  "capital": "Paris",
+                  "phoneCodes": [
+                    "+33"
+                  ],
+                  "timeZone": "+01:00",
+                  "zipCode": "75001",
+                  "cityName": "Paris",
+                  "regionName": "Île-de-France",
+                  "regionCode": "IDF",
+                  "continent": "Europe",
+                  "continentCode": "EU",
+                  "isProxy": false,
+                  "currency": {
+                    "code": "EUR",
+                    "name": "Euro"
+                  },
+                  "languages": [
+                    "fr"
+                  ],
+                  "timeZones": [
+                    "Europe/Paris"
+                  ],
+                  "asn": "AS12345",
+                  "asnOrganization": "Example ISP"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - invalid IP address format",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "IP address not found in database",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded (60 requests per minute)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/xml": {
+      "get": {
+        "summary": "Get IP geolocation information in XML format (current request IP)",
+        "description": "Returns detailed geolocation information for the requesting IP address in XML format when no IP parameter is provided.",
+        "operationId": "getIpInfoCurrentXml",
+        "tags": [
+          "IP Geolocation"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with IP geolocation information in XML format",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/IpGeolocationResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded (60 requests per minute)",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/xml/{ipAddress}": {
+      "get": {
+        "summary": "Get IP geolocation information for specific IP in XML format",
+        "description": "Returns detailed geolocation information for the specified IPv4 or IPv6 address in XML format.",
+        "operationId": "getIpInfoByAddressXml",
+        "tags": [
+          "IP Geolocation"
+        ],
+        "parameters": [
+          {
+            "name": "ipAddress",
+            "in": "path",
+            "required": true,
+            "description": "IPv4 or IPv6 address to lookup",
+            "schema": {
+              "type": "string",
+              "example": "1.1.1.1"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with IP geolocation information in XML format",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/IpGeolocationResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - invalid IP address format",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded (60 requests per minute)",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IpGeolocationResponse": {
+        "type": "object",
+        "description": "Complete IP geolocation information response",
+        "properties": {
+          "ipVersion": {
+            "type": "integer",
+            "description": "IP version (4 for IPv4, 6 for IPv6)",
+            "example": 4
+          },
+          "ipAddress": {
+            "type": "string",
+            "description": "The IP address that was looked up",
+            "example": "8.8.8.8"
+          },
+          "latitude": {
+            "type": "number",
+            "format": "double",
+            "description": "Latitude coordinate",
+            "example": 37.386
+          },
+          "longitude": {
+            "type": "number",
+            "format": "double",
+            "description": "Longitude coordinate",
+            "example": -122.0838
+          },
+          "countryName": {
+            "type": "string",
+            "description": "Full country name",
+            "example": "United States"
+          },
+          "countryCode": {
+            "type": "string",
+            "description": "ISO 3166-1 alpha-2 country code",
+            "example": "US"
+          },
+          "capital": {
+            "type": "string",
+            "description": "Capital city of the country",
+            "example": "Washington"
+          },
+          "phoneCodes": {
+            "type": "array",
+            "description": "International dialing codes for the country",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "+1"
+            ]
+          },
+          "timeZone": {
+            "type": "string",
+            "description": "Timezone offset from UTC",
+            "example": "-08:00"
+          },
+          "timeZones": {
+            "type": "array",
+            "description": "List of timezone identifiers for the location",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "America/Los_Angeles"
+            ]
+          },
+          "zipCode": {
+            "type": "string",
+            "description": "Postal/ZIP code",
+            "example": "94043"
+          },
+          "cityName": {
+            "type": "string",
+            "description": "City name",
+            "example": "Mountain View"
+          },
+          "regionName": {
+            "type": "string",
+            "description": "Region or state name",
+            "example": "California"
+          },
+          "regionCode": {
+            "type": "string",
+            "description": "Region or state code",
+            "example": "CA"
+          },
+          "continent": {
+            "type": "string",
+            "description": "Continent name",
+            "example": "North America"
+          },
+          "continentCode": {
+            "type": "string",
+            "description": "Two-letter continent code",
+            "example": "NA"
+          },
+          "isProxy": {
+            "type": "boolean",
+            "description": "Whether the IP is detected as a proxy, VPN, or hosting service",
+            "example": false
+          },
+          "currency": {
+            "type": "object",
+            "description": "Currency information for the country",
+            "properties": {
+              "code": {
+                "type": "string",
+                "description": "ISO 4217 currency code",
+                "example": "USD"
+              },
+              "name": {
+                "type": "string",
+                "description": "Currency name",
+                "example": "US Dollar"
+              }
+            }
+          },
+          "currencies": {
+            "type": "array",
+            "description": "List of currencies used in the country",
+            "items": {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "language": {
+            "type": "string",
+            "description": "Primary language code",
+            "example": "en-US"
+          },
+          "languages": {
+            "type": "array",
+            "description": "List of languages spoken in the country",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "en"
+            ]
+          },
+          "asn": {
+            "type": "string",
+            "description": "Autonomous System Number",
+            "example": "AS15169"
+          },
+          "asnOrganization": {
+            "type": "string",
+            "description": "Organization associated with the ASN",
+            "example": "Google LLC"
+          },
+          "tlds": {
+            "type": "array",
+            "description": "Top-level domains for the country",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              ".us"
+            ]
+          }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "description": "Error response object",
+        "properties": {
+          "error": {
+            "type": "boolean",
+            "description": "Indicates an error occurred",
+            "example": true
+          },
+          "message": {
+            "type": "string",
+            "description": "Error message describing what went wrong",
+            "example": "Rate limit exceeded"
+          },
+          "code": {
+            "type": "integer",
+            "description": "HTTP status code",
+            "example": 429
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "IP Geolocation",
+      "description": "Get detailed geolocation information for IPv4 and IPv6 addresses"
+    }
+  ],
+  "externalDocs": {
+    "description": "Full API Documentation",
+    "url": "https://freeipapi.com/"
+  }
+}
