@@ -35,7 +35,7 @@ $client = new FreeIpSDK();
 
 ```php
 try {
-    // load() returns the bare IpGeolocation record (throws on error).
+    // load() returns the ENTITY — call data_get() for the IpGeolocation record (throws on error).
     $ipgeolocation = $client->IpGeolocation()->load();
     print_r($ipgeolocation);
 } catch (\Throwable $err) {
@@ -123,7 +123,8 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = FreeIpSDK::test();
 
-// Entity ops return the bare mock record (throws on error).
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
 $ipgeolocation = $client->IpGeolocation()->load();
 print_r($ipgeolocation);
 ```
@@ -225,7 +226,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -257,29 +258,32 @@ API path: `/api/xml/{ipAddress}`
 | Field | Description |
 | --- | --- |
 | `asn` |  |
-| `asn_organization` |  |
+| `asnOrganization` |  |
 | `capital` |  |
-| `city_name` |  |
+| `cityName` |  |
 | `code` |  |
 | `continent` |  |
-| `continent_code` |  |
-| `country_code` |  |
-| `country_name` |  |
+| `continentCode` |  |
+| `countryCode` |  |
+| `countryName` |  |
+| `currencies` |  |
 | `currency` |  |
 | `ip` |  |
-| `ip_address` |  |
-| `ip_version` |  |
-| `is_proxy` |  |
+| `ipAddress` |  |
+| `ipVersion` |  |
+| `isProxy` |  |
 | `language` |  |
+| `languages` |  |
 | `latitude` |  |
 | `longitude` |  |
 | `name` |  |
-| `phone_code` |  |
-| `region_code` |  |
-| `region_name` |  |
-| `time_zone` |  |
-| `tld` |  |
-| `zip_code` |  |
+| `phoneCodes` |  |
+| `regionCode` |  |
+| `regionName` |  |
+| `timeZone` |  |
+| `timeZones` |  |
+| `tlds` |  |
+| `zipCode` |  |
 
 Operations: Create, List, Load.
 
@@ -303,7 +307,7 @@ Create an instance: `$ip_geolocation = $client->IpGeolocation();`
 #### Example: Load
 
 ```php
-// load() returns the bare IpGeolocation record (throws on error).
+// load() returns the ENTITY — call data_get() for the IpGeolocation record (throws on error).
 $ip_geolocation = $client->IpGeolocation()->load();
 ```
 
@@ -325,34 +329,37 @@ Create an instance: `$json = $client->Json();`
 | Field | Type | Description |
 | --- | --- | --- |
 | `asn` | `string` |  |
-| `asn_organization` | `string` |  |
+| `asnOrganization` | `string` |  |
 | `capital` | `string` |  |
-| `city_name` | `string` |  |
+| `cityName` | `string` |  |
 | `code` | `string` |  |
 | `continent` | `string` |  |
-| `continent_code` | `string` |  |
-| `country_code` | `string` |  |
-| `country_name` | `string` |  |
+| `continentCode` | `string` |  |
+| `countryCode` | `string` |  |
+| `countryName` | `string` |  |
+| `currencies` | `array` |  |
 | `currency` | `array` |  |
 | `ip` | `string` |  |
-| `ip_address` | `string` |  |
-| `ip_version` | `int` |  |
-| `is_proxy` | `bool` |  |
+| `ipAddress` | `string` |  |
+| `ipVersion` | `int` |  |
+| `isProxy` | `bool` |  |
 | `language` | `string` |  |
+| `languages` | `array` |  |
 | `latitude` | `float` |  |
 | `longitude` | `float` |  |
 | `name` | `string` |  |
-| `phone_code` | `array` |  |
-| `region_code` | `string` |  |
-| `region_name` | `string` |  |
-| `time_zone` | `string` |  |
-| `tld` | `array` |  |
-| `zip_code` | `string` |  |
+| `phoneCodes` | `array` |  |
+| `regionCode` | `string` |  |
+| `regionName` | `string` |  |
+| `timeZone` | `string` |  |
+| `timeZones` | `array` |  |
+| `tlds` | `array` |  |
+| `zipCode` | `string` |  |
 
 #### Example: Load
 
 ```php
-// load() returns the bare Json record (throws on error).
+// load() returns the ENTITY — call data_get() for the Json record (throws on error).
 $json = $client->Json()->load(["id" => "json_id"]);
 ```
 

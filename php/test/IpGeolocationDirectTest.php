@@ -73,11 +73,11 @@ function ip_geolocation_direct_setup($mockres)
     $calls = new \ArrayObject();
 
     $env = Runner::env_override([
-        "FREEIP_TEST_IP_GEOLOCATION_ENTID" => [],
-        "FREEIP_TEST_LIVE" => "FALSE",
+        "FREE_IP_TEST_IP_GEOLOCATION_ENTID" => [],
+        "FREE_IP_TEST_LIVE" => "FALSE",
     ]);
 
-    $live = $env["FREEIP_TEST_LIVE"] === "TRUE";
+    $live = $env["FREE_IP_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [

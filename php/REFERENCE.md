@@ -143,29 +143,32 @@ $json = $client->Json();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `asn` | `string` | No |  |
-| `asn_organization` | `string` | No |  |
+| `asnOrganization` | `string` | No |  |
 | `capital` | `string` | No |  |
-| `city_name` | `string` | No |  |
+| `cityName` | `string` | No |  |
 | `code` | `string` | No |  |
 | `continent` | `string` | No |  |
-| `continent_code` | `string` | No |  |
-| `country_code` | `string` | No |  |
-| `country_name` | `string` | No |  |
+| `continentCode` | `string` | No |  |
+| `countryCode` | `string` | No |  |
+| `countryName` | `string` | No |  |
+| `currencies` | `array` | No |  |
 | `currency` | `array` | No |  |
 | `ip` | `string` | No |  |
-| `ip_address` | `string` | No |  |
-| `ip_version` | `int` | No |  |
-| `is_proxy` | `bool` | No |  |
+| `ipAddress` | `string` | No |  |
+| `ipVersion` | `int` | No |  |
+| `isProxy` | `bool` | No |  |
 | `language` | `string` | No |  |
+| `languages` | `array` | No |  |
 | `latitude` | `float` | No |  |
 | `longitude` | `float` | No |  |
 | `name` | `string` | No |  |
-| `phone_code` | `array` | No |  |
-| `region_code` | `string` | No |  |
-| `region_name` | `string` | No |  |
-| `time_zone` | `string` | No |  |
-| `tld` | `array` | No |  |
-| `zip_code` | `string` | No |  |
+| `phoneCodes` | `array` | No |  |
+| `regionCode` | `string` | No |  |
+| `regionName` | `string` | No |  |
+| `timeZone` | `string` | No |  |
+| `timeZones` | `array` | No |  |
+| `tlds` | `array` | No |  |
+| `zipCode` | `string` | No |  |
 
 ### Operations
 

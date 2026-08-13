@@ -26,8 +26,8 @@ import {
 describe('IpGeolocationEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when FREEIP_TEST_LIVE=TRUE.
-  afterEach(liveDelay('FREEIP_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when FREE_IP_TEST_LIVE=TRUE.
+  afterEach(liveDelay('FREE_IP_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = FreeIpSDK.test()

@@ -173,29 +173,32 @@ const json = client.Json()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `asn` | `string` | No |  |
-| `asn_organization` | `string` | No |  |
+| `asnOrganization` | `string` | No |  |
 | `capital` | `string` | No |  |
-| `city_name` | `string` | No |  |
+| `cityName` | `string` | No |  |
 | `code` | `string` | No |  |
 | `continent` | `string` | No |  |
-| `continent_code` | `string` | No |  |
-| `country_code` | `string` | No |  |
-| `country_name` | `string` | No |  |
-| `currency` | `any[]` | No |  |
+| `continentCode` | `string` | No |  |
+| `countryCode` | `string` | No |  |
+| `countryName` | `string` | No |  |
+| `currencies` | `any[]` | No |  |
+| `currency` | `Record<string, any>` | No |  |
 | `ip` | `string` | No |  |
-| `ip_address` | `string` | No |  |
-| `ip_version` | `number` | No |  |
-| `is_proxy` | `boolean` | No |  |
+| `ipAddress` | `string` | No |  |
+| `ipVersion` | `number` | No |  |
+| `isProxy` | `boolean` | No |  |
 | `language` | `string` | No |  |
+| `languages` | `any[]` | No |  |
 | `latitude` | `number` | No |  |
 | `longitude` | `number` | No |  |
 | `name` | `string` | No |  |
-| `phone_code` | `any[]` | No |  |
-| `region_code` | `string` | No |  |
-| `region_name` | `string` | No |  |
-| `time_zone` | `string` | No |  |
-| `tld` | `any[]` | No |  |
-| `zip_code` | `string` | No |  |
+| `phoneCodes` | `any[]` | No |  |
+| `regionCode` | `string` | No |  |
+| `regionName` | `string` | No |  |
+| `timeZone` | `string` | No |  |
+| `timeZones` | `any[]` | No |  |
+| `tlds` | `any[]` | No |  |
+| `zipCode` | `string` | No |  |
 
 ### Operations
 

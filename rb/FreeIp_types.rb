@@ -26,13 +26,13 @@ IpGeolocationLoadMatch = Struct.new(
 # @!attribute [rw] asn
 #   @return [String, nil]
 #
-# @!attribute [rw] asn_organization
+# @!attribute [rw] asnOrganization
 #   @return [String, nil]
 #
 # @!attribute [rw] capital
 #   @return [String, nil]
 #
-# @!attribute [rw] city_name
+# @!attribute [rw] cityName
 #   @return [String, nil]
 #
 # @!attribute [rw] code
@@ -41,32 +41,38 @@ IpGeolocationLoadMatch = Struct.new(
 # @!attribute [rw] continent
 #   @return [String, nil]
 #
-# @!attribute [rw] continent_code
+# @!attribute [rw] continentCode
 #   @return [String, nil]
 #
-# @!attribute [rw] country_code
+# @!attribute [rw] countryCode
 #   @return [String, nil]
 #
-# @!attribute [rw] country_name
+# @!attribute [rw] countryName
 #   @return [String, nil]
+#
+# @!attribute [rw] currencies
+#   @return [Array, nil]
 #
 # @!attribute [rw] currency
-#   @return [Array, nil]
+#   @return [Hash, nil]
 #
 # @!attribute [rw] ip
 #   @return [String, nil]
 #
-# @!attribute [rw] ip_address
+# @!attribute [rw] ipAddress
 #   @return [String, nil]
 #
-# @!attribute [rw] ip_version
+# @!attribute [rw] ipVersion
 #   @return [Integer, nil]
 #
-# @!attribute [rw] is_proxy
+# @!attribute [rw] isProxy
 #   @return [Boolean, nil]
 #
 # @!attribute [rw] language
 #   @return [String, nil]
+#
+# @!attribute [rw] languages
+#   @return [Array, nil]
 #
 # @!attribute [rw] latitude
 #   @return [Float, nil]
@@ -77,48 +83,54 @@ IpGeolocationLoadMatch = Struct.new(
 # @!attribute [rw] name
 #   @return [String, nil]
 #
-# @!attribute [rw] phone_code
+# @!attribute [rw] phoneCodes
 #   @return [Array, nil]
 #
-# @!attribute [rw] region_code
+# @!attribute [rw] regionCode
 #   @return [String, nil]
 #
-# @!attribute [rw] region_name
+# @!attribute [rw] regionName
 #   @return [String, nil]
 #
-# @!attribute [rw] time_zone
+# @!attribute [rw] timeZone
 #   @return [String, nil]
 #
-# @!attribute [rw] tld
+# @!attribute [rw] timeZones
 #   @return [Array, nil]
 #
-# @!attribute [rw] zip_code
+# @!attribute [rw] tlds
+#   @return [Array, nil]
+#
+# @!attribute [rw] zipCode
 #   @return [String, nil]
 Json = Struct.new(
   :asn,
-  :asn_organization,
+  :asnOrganization,
   :capital,
-  :city_name,
+  :cityName,
   :code,
   :continent,
-  :continent_code,
-  :country_code,
-  :country_name,
+  :continentCode,
+  :countryCode,
+  :countryName,
+  :currencies,
   :currency,
   :ip,
-  :ip_address,
-  :ip_version,
-  :is_proxy,
+  :ipAddress,
+  :ipVersion,
+  :isProxy,
   :language,
+  :languages,
   :latitude,
   :longitude,
   :name,
-  :phone_code,
-  :region_code,
-  :region_name,
-  :time_zone,
-  :tld,
-  :zip_code,
+  :phoneCodes,
+  :regionCode,
+  :regionName,
+  :timeZone,
+  :timeZones,
+  :tlds,
+  :zipCode,
   keyword_init: true
 )
 
@@ -136,13 +148,13 @@ JsonLoadMatch = Struct.new(
 # @!attribute [rw] asn
 #   @return [String, nil]
 #
-# @!attribute [rw] asn_organization
+# @!attribute [rw] asnOrganization
 #   @return [String, nil]
 #
 # @!attribute [rw] capital
 #   @return [String, nil]
 #
-# @!attribute [rw] city_name
+# @!attribute [rw] cityName
 #   @return [String, nil]
 #
 # @!attribute [rw] code
@@ -151,32 +163,38 @@ JsonLoadMatch = Struct.new(
 # @!attribute [rw] continent
 #   @return [String, nil]
 #
-# @!attribute [rw] continent_code
+# @!attribute [rw] continentCode
 #   @return [String, nil]
 #
-# @!attribute [rw] country_code
+# @!attribute [rw] countryCode
 #   @return [String, nil]
 #
-# @!attribute [rw] country_name
+# @!attribute [rw] countryName
 #   @return [String, nil]
+#
+# @!attribute [rw] currencies
+#   @return [Array, nil]
 #
 # @!attribute [rw] currency
-#   @return [Array, nil]
+#   @return [Hash, nil]
 #
 # @!attribute [rw] ip
 #   @return [String, nil]
 #
-# @!attribute [rw] ip_address
+# @!attribute [rw] ipAddress
 #   @return [String, nil]
 #
-# @!attribute [rw] ip_version
+# @!attribute [rw] ipVersion
 #   @return [Integer, nil]
 #
-# @!attribute [rw] is_proxy
+# @!attribute [rw] isProxy
 #   @return [Boolean, nil]
 #
 # @!attribute [rw] language
 #   @return [String, nil]
+#
+# @!attribute [rw] languages
+#   @return [Array, nil]
 #
 # @!attribute [rw] latitude
 #   @return [Float, nil]
@@ -187,48 +205,54 @@ JsonLoadMatch = Struct.new(
 # @!attribute [rw] name
 #   @return [String, nil]
 #
-# @!attribute [rw] phone_code
+# @!attribute [rw] phoneCodes
 #   @return [Array, nil]
 #
-# @!attribute [rw] region_code
+# @!attribute [rw] regionCode
 #   @return [String, nil]
 #
-# @!attribute [rw] region_name
+# @!attribute [rw] regionName
 #   @return [String, nil]
 #
-# @!attribute [rw] time_zone
+# @!attribute [rw] timeZone
 #   @return [String, nil]
 #
-# @!attribute [rw] tld
+# @!attribute [rw] timeZones
 #   @return [Array, nil]
 #
-# @!attribute [rw] zip_code
+# @!attribute [rw] tlds
+#   @return [Array, nil]
+#
+# @!attribute [rw] zipCode
 #   @return [String, nil]
 JsonListMatch = Struct.new(
   :asn,
-  :asn_organization,
+  :asnOrganization,
   :capital,
-  :city_name,
+  :cityName,
   :code,
   :continent,
-  :continent_code,
-  :country_code,
-  :country_name,
+  :continentCode,
+  :countryCode,
+  :countryName,
+  :currencies,
   :currency,
   :ip,
-  :ip_address,
-  :ip_version,
-  :is_proxy,
+  :ipAddress,
+  :ipVersion,
+  :isProxy,
   :language,
+  :languages,
   :latitude,
   :longitude,
   :name,
-  :phone_code,
-  :region_code,
-  :region_name,
-  :time_zone,
-  :tld,
-  :zip_code,
+  :phoneCodes,
+  :regionCode,
+  :regionName,
+  :timeZone,
+  :timeZones,
+  :tlds,
+  :zipCode,
   keyword_init: true
 )
 
@@ -237,13 +261,13 @@ JsonListMatch = Struct.new(
 # @!attribute [rw] asn
 #   @return [String, nil]
 #
-# @!attribute [rw] asn_organization
+# @!attribute [rw] asnOrganization
 #   @return [String, nil]
 #
 # @!attribute [rw] capital
 #   @return [String, nil]
 #
-# @!attribute [rw] city_name
+# @!attribute [rw] cityName
 #   @return [String, nil]
 #
 # @!attribute [rw] code
@@ -252,32 +276,38 @@ JsonListMatch = Struct.new(
 # @!attribute [rw] continent
 #   @return [String, nil]
 #
-# @!attribute [rw] continent_code
+# @!attribute [rw] continentCode
 #   @return [String, nil]
 #
-# @!attribute [rw] country_code
+# @!attribute [rw] countryCode
 #   @return [String, nil]
 #
-# @!attribute [rw] country_name
+# @!attribute [rw] countryName
 #   @return [String, nil]
+#
+# @!attribute [rw] currencies
+#   @return [Array, nil]
 #
 # @!attribute [rw] currency
-#   @return [Array, nil]
+#   @return [Hash, nil]
 #
 # @!attribute [rw] ip
 #   @return [String, nil]
 #
-# @!attribute [rw] ip_address
+# @!attribute [rw] ipAddress
 #   @return [String, nil]
 #
-# @!attribute [rw] ip_version
+# @!attribute [rw] ipVersion
 #   @return [Integer, nil]
 #
-# @!attribute [rw] is_proxy
+# @!attribute [rw] isProxy
 #   @return [Boolean, nil]
 #
 # @!attribute [rw] language
 #   @return [String, nil]
+#
+# @!attribute [rw] languages
+#   @return [Array, nil]
 #
 # @!attribute [rw] latitude
 #   @return [Float, nil]
@@ -288,48 +318,54 @@ JsonListMatch = Struct.new(
 # @!attribute [rw] name
 #   @return [String, nil]
 #
-# @!attribute [rw] phone_code
+# @!attribute [rw] phoneCodes
 #   @return [Array, nil]
 #
-# @!attribute [rw] region_code
+# @!attribute [rw] regionCode
 #   @return [String, nil]
 #
-# @!attribute [rw] region_name
+# @!attribute [rw] regionName
 #   @return [String, nil]
 #
-# @!attribute [rw] time_zone
+# @!attribute [rw] timeZone
 #   @return [String, nil]
 #
-# @!attribute [rw] tld
+# @!attribute [rw] timeZones
 #   @return [Array, nil]
 #
-# @!attribute [rw] zip_code
+# @!attribute [rw] tlds
+#   @return [Array, nil]
+#
+# @!attribute [rw] zipCode
 #   @return [String, nil]
 JsonCreateData = Struct.new(
   :asn,
-  :asn_organization,
+  :asnOrganization,
   :capital,
-  :city_name,
+  :cityName,
   :code,
   :continent,
-  :continent_code,
-  :country_code,
-  :country_name,
+  :continentCode,
+  :countryCode,
+  :countryName,
+  :currencies,
   :currency,
   :ip,
-  :ip_address,
-  :ip_version,
-  :is_proxy,
+  :ipAddress,
+  :ipVersion,
+  :isProxy,
   :language,
+  :languages,
   :latitude,
   :longitude,
   :name,
-  :phone_code,
-  :region_code,
-  :region_name,
-  :time_zone,
-  :tld,
-  :zip_code,
+  :phoneCodes,
+  :regionCode,
+  :regionName,
+  :timeZone,
+  :timeZones,
+  :tlds,
+  :zipCode,
   keyword_init: true
 )
 

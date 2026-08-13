@@ -23,6 +23,7 @@ require_once __DIR__ . '/MakeUrl.php';
 require_once __DIR__ . '/Param.php';
 require_once __DIR__ . '/PrepareAuth.php';
 require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
 require_once __DIR__ . '/PrepareHeaders.php';
 require_once __DIR__ . '/PrepareMethod.php';
 require_once __DIR__ . '/PrepareParams.php';
@@ -59,6 +60,8 @@ FreeIpUtility::setRegistrar(function (FreeIpUtility $u): void {
     $u->prepare_params = [FreeIpPrepareParams::class, 'call'];
     $u->prepare_path = [FreeIpPreparePath::class, 'call'];
     $u->prepare_query = [FreeIpPrepareQuery::class, 'call'];
+    $u->graphql_body = [FreeIpGraphql::class, 'body'];
+    $u->graphql_errors = [FreeIpGraphql::class, 'errors'];
     $u->result_basic = [FreeIpResultBasic::class, 'call'];
     $u->result_body = [FreeIpResultBody::class, 'call'];
     $u->result_headers = [FreeIpResultHeaders::class, 'call'];

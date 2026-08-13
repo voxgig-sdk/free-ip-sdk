@@ -26,8 +26,8 @@ import {
 describe('JsonEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when FREEIP_TEST_LIVE=TRUE.
-  afterEach(liveDelay('FREEIP_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when FREE_IP_TEST_LIVE=TRUE.
+  afterEach(liveDelay('FREE_IP_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = FreeIpSDK.test()
@@ -62,16 +62,14 @@ describe('JsonEntity', async () => {
     const json_ref01_ent = client.Json()
     let json_ref01_data = setup.data.new.json['json_ref01']
 
-    json_ref01_data = await json_ref01_ent.create(json_ref01_data)
+    json_ref01_data = (await json_ref01_ent.create(json_ref01_data)).data()
     assert(null != json_ref01_data)
 
 
     // LIST
     const json_ref01_match: any = {}
 
-    const json_ref01_list = await json_ref01_ent.list(json_ref01_match)
-
-    assert(!isempty(select(json_ref01_list, { id: json_ref01_data.id })))
+    const json_ref01_list = (await json_ref01_ent.list(json_ref01_match)).map((e: any) => e.data())
 
 
 

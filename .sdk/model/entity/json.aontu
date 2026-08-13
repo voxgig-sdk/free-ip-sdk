@@ -11,7 +11,7 @@ main: kit: entity: json: {
       type: "`$STRING`"
     }
     {
-      name: "asn_organization"
+      name: "asnOrganization"
       req: false
       type: "`$STRING`"
     }
@@ -21,7 +21,7 @@ main: kit: entity: json: {
       type: "`$STRING`"
     }
     {
-      name: "city_name"
+      name: "cityName"
       req: false
       type: "`$STRING`"
     }
@@ -36,24 +36,29 @@ main: kit: entity: json: {
       type: "`$STRING`"
     }
     {
-      name: "continent_code"
+      name: "continentCode"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "country_code"
+      name: "countryCode"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "country_name"
+      name: "countryName"
       req: false
       type: "`$STRING`"
+    }
+    {
+      name: "currencies"
+      req: false
+      type: "`$ARRAY`"
     }
     {
       name: "currency"
       req: false
-      type: "`$ARRAY`"
+      type: "`$OBJECT`"
     }
     {
       name: "ip"
@@ -61,17 +66,17 @@ main: kit: entity: json: {
       type: "`$STRING`"
     }
     {
-      name: "ip_address"
+      name: "ipAddress"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "ip_version"
+      name: "ipVersion"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "is_proxy"
+      name: "isProxy"
       req: false
       type: "`$BOOLEAN`"
     }
@@ -79,6 +84,11 @@ main: kit: entity: json: {
       name: "language"
       req: false
       type: "`$STRING`"
+    }
+    {
+      name: "languages"
+      req: false
+      type: "`$ARRAY`"
     }
     {
       name: "latitude"
@@ -96,32 +106,37 @@ main: kit: entity: json: {
       type: "`$STRING`"
     }
     {
-      name: "phone_code"
+      name: "phoneCodes"
       req: false
       type: "`$ARRAY`"
     }
     {
-      name: "region_code"
+      name: "regionCode"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "region_name"
+      name: "regionName"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "time_zone"
+      name: "timeZone"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "tld"
+      name: "timeZones"
       req: false
       type: "`$ARRAY`"
     }
     {
-      name: "zip_code"
+      name: "tlds"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "zipCode"
       req: false
       type: "`$STRING`"
     }

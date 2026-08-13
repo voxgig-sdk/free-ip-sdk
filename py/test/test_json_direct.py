@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from freeip_sdk.utility.voxgig_struct import voxgig_struct as vs
 from freeip_sdk import FreeIpSDK
-from core import helpers
+from freeip_sdk.core import helpers
 from test import runner
 
 
@@ -102,11 +102,11 @@ def _json_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "FREEIP_TEST_JSON_ENTID": {},
-        "FREEIP_TEST_LIVE": "FALSE",
+        "FREE_IP_TEST_JSON_ENTID": {},
+        "FREE_IP_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("FREEIP_TEST_LIVE") == "TRUE"
+    live = env.get("FREE_IP_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

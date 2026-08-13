@@ -1,4 +1,4 @@
 module github.com/voxgig-sdk/free-ip-sdk/go
 
-go 1.20
+go 1.21
 

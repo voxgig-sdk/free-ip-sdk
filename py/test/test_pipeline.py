@@ -16,11 +16,11 @@
 import pytest
 
 from freeip_sdk import FreeIpSDK
-from core.error import FreeIpError
-from core.result import FreeIpResult
-from core.response import FreeIpResponse
-from core.spec import FreeIpSpec
-from feature.base_feature import FreeIpBaseFeature
+from freeip_sdk.core.error import FreeIpError
+from freeip_sdk.core.result import FreeIpResult
+from freeip_sdk.core.response import FreeIpResponse
+from freeip_sdk.core.spec import FreeIpSpec
+from freeip_sdk.feature.base_feature import FreeIpBaseFeature
 
 
 def _client():

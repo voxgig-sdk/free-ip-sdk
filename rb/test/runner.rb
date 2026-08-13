@@ -23,8 +23,8 @@ module FreeIpTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("FREEIP_TEST_LIVE")
-    override = getenv("FREEIP_TEST_OVERRIDE")
+    live = getenv("FREE_IP_TEST_LIVE")
+    override = getenv("FREE_IP_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module FreeIpTestRunner
       end
     end
 
-    explain = getenv("FREEIP_TEST_EXPLAIN")
-    m["FREEIP_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("FREE_IP_TEST_EXPLAIN")
+    m["FREE_IP_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

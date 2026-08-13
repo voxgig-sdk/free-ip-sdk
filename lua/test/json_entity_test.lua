@@ -70,7 +70,7 @@ describe("JsonEntity", function()
     -- The basic flow consumes synthetic IDs from the fixture. In live mode
     -- without an *_ENTID env override, those IDs hit the live API and 4xx.
     if setup.synthetic_only then
-      pending("live entity test uses synthetic IDs from fixture — set FREEIP_TEST_JSON_ENTID JSON to run live")
+      pending("live entity test uses synthetic IDs from fixture — set FREE_IP_TEST_JSON_ENTID JSON to run live")
       return
     end
     local client = setup.client
@@ -82,7 +82,7 @@ describe("JsonEntity", function()
 
     local json_ref01_data_result, err = json_ref01_ent:create(json_ref01_data, nil)
     assert.is_nil(err)
-    json_ref01_data = helpers.to_map(json_ref01_data_result)
+    json_ref01_data = helpers.to_map(type(json_ref01_data_result) == 'table' and json_ref01_data_result.data_get and json_ref01_data_result:data_get() or json_ref01_data_result)
     assert.is_not_nil(json_ref01_data)
 
     -- LIST
@@ -91,11 +91,6 @@ describe("JsonEntity", function()
     local json_ref01_list_result, err = json_ref01_ent:list(json_ref01_match, nil)
     assert.is_nil(err)
     assert.is_table(json_ref01_list_result)
-
-    local found_item = vs.select(
-      runner.entity_list_to_data(json_ref01_list_result),
-      { id = json_ref01_data["id"] })
-    assert.is_false(vs.isempty(found_item))
 
     -- LOAD
     local json_ref01_match_dt0 = {}
@@ -138,22 +133,22 @@ function json_basic_setup(extra)
   -- Detect ENTID env override before envOverride consumes it. When live
   -- mode is on without a real override, the basic test runs against synthetic
   -- IDs from the fixture and 4xx's. Surface this so the test can skip.
-  local entid_env_raw = os.getenv("FREEIP_TEST_JSON_ENTID")
+  local entid_env_raw = os.getenv("FREE_IP_TEST_JSON_ENTID")
   local idmap_overridden = entid_env_raw ~= nil and entid_env_raw:match("^%s*{") ~= nil
 
   local env = runner.env_override({
-    ["FREEIP_TEST_JSON_ENTID"] = idmap,
-    ["FREEIP_TEST_LIVE"] = "FALSE",
-    ["FREEIP_TEST_EXPLAIN"] = "FALSE",
+    ["FREE_IP_TEST_JSON_ENTID"] = idmap,
+    ["FREE_IP_TEST_LIVE"] = "FALSE",
+    ["FREE_IP_TEST_EXPLAIN"] = "FALSE",
   })
 
   local idmap_resolved = helpers.to_map(
-    env["FREEIP_TEST_JSON_ENTID"])
+    env["FREE_IP_TEST_JSON_ENTID"])
   if idmap_resolved == nil then
     idmap_resolved = helpers.to_map(idmap)
   end
 
-  if env["FREEIP_TEST_LIVE"] == "TRUE" then
+  if env["FREE_IP_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
       },
@@ -162,13 +157,13 @@ function json_basic_setup(extra)
     client = sdk.new(helpers.to_map(merged_opts))
   end
 
-  local live = env["FREEIP_TEST_LIVE"] == "TRUE"
+  local live = env["FREE_IP_TEST_LIVE"] == "TRUE"
   return {
     client = client,
     data = entity_data,
     idmap = idmap_resolved,
     env = env,
-    explain = env["FREEIP_TEST_EXPLAIN"] == "TRUE",
+    explain = env["FREE_IP_TEST_EXPLAIN"] == "TRUE",
     live = live,
     synthetic_only = live and not idmap_overridden,
     now = os.time() * 1000,

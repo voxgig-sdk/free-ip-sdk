@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# FreeIp SDK exists test
 
 import pytest
 from freeip_sdk import FreeIpSDK

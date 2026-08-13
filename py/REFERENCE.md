@@ -137,29 +137,32 @@ json = client.Json()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `asn` | `str` | No |  |
-| `asn_organization` | `str` | No |  |
+| `asnOrganization` | `str` | No |  |
 | `capital` | `str` | No |  |
-| `city_name` | `str` | No |  |
+| `cityName` | `str` | No |  |
 | `code` | `str` | No |  |
 | `continent` | `str` | No |  |
-| `continent_code` | `str` | No |  |
-| `country_code` | `str` | No |  |
-| `country_name` | `str` | No |  |
-| `currency` | `list` | No |  |
+| `continentCode` | `str` | No |  |
+| `countryCode` | `str` | No |  |
+| `countryName` | `str` | No |  |
+| `currencies` | `list` | No |  |
+| `currency` | `dict` | No |  |
 | `ip` | `str` | No |  |
-| `ip_address` | `str` | No |  |
-| `ip_version` | `int` | No |  |
-| `is_proxy` | `bool` | No |  |
+| `ipAddress` | `str` | No |  |
+| `ipVersion` | `int` | No |  |
+| `isProxy` | `bool` | No |  |
 | `language` | `str` | No |  |
+| `languages` | `list` | No |  |
 | `latitude` | `float` | No |  |
 | `longitude` | `float` | No |  |
 | `name` | `str` | No |  |
-| `phone_code` | `list` | No |  |
-| `region_code` | `str` | No |  |
-| `region_name` | `str` | No |  |
-| `time_zone` | `str` | No |  |
-| `tld` | `list` | No |  |
-| `zip_code` | `str` | No |  |
+| `phoneCodes` | `list` | No |  |
+| `regionCode` | `str` | No |  |
+| `regionName` | `str` | No |  |
+| `timeZone` | `str` | No |  |
+| `timeZones` | `list` | No |  |
+| `tlds` | `list` | No |  |
+| `zipCode` | `str` | No |  |
 
 ### Operations
 

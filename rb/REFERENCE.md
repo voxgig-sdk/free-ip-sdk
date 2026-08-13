@@ -144,29 +144,32 @@ json = client.Json
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `asn` | `String` | No |  |
-| `asn_organization` | `String` | No |  |
+| `asnOrganization` | `String` | No |  |
 | `capital` | `String` | No |  |
-| `city_name` | `String` | No |  |
+| `cityName` | `String` | No |  |
 | `code` | `String` | No |  |
 | `continent` | `String` | No |  |
-| `continent_code` | `String` | No |  |
-| `country_code` | `String` | No |  |
-| `country_name` | `String` | No |  |
-| `currency` | `Array` | No |  |
+| `continentCode` | `String` | No |  |
+| `countryCode` | `String` | No |  |
+| `countryName` | `String` | No |  |
+| `currencies` | `Array` | No |  |
+| `currency` | `Hash` | No |  |
 | `ip` | `String` | No |  |
-| `ip_address` | `String` | No |  |
-| `ip_version` | `Integer` | No |  |
-| `is_proxy` | `Boolean` | No |  |
+| `ipAddress` | `String` | No |  |
+| `ipVersion` | `Integer` | No |  |
+| `isProxy` | `Boolean` | No |  |
 | `language` | `String` | No |  |
+| `languages` | `Array` | No |  |
 | `latitude` | `Float` | No |  |
 | `longitude` | `Float` | No |  |
 | `name` | `String` | No |  |
-| `phone_code` | `Array` | No |  |
-| `region_code` | `String` | No |  |
-| `region_name` | `String` | No |  |
-| `time_zone` | `String` | No |  |
-| `tld` | `Array` | No |  |
-| `zip_code` | `String` | No |  |
+| `phoneCodes` | `Array` | No |  |
+| `regionCode` | `String` | No |  |
+| `regionName` | `String` | No |  |
+| `timeZone` | `String` | No |  |
+| `timeZones` | `Array` | No |  |
+| `tlds` | `Array` | No |  |
+| `zipCode` | `String` | No |  |
 
 ### Operations
 

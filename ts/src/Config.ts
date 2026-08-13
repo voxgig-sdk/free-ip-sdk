@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'FreeIp',
   }
 
 
@@ -79,6 +79,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/api/xml/{ipAddress}",
               "parts": [
@@ -105,6 +106,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/api/xml",
               "parts": [
@@ -141,7 +143,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "asn_organization",
+          "name": "asnOrganization",
           "req": false,
           "type": "`$STRING`",
           "index$": 1
@@ -155,7 +157,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "city_name",
+          "name": "cityName",
           "req": false,
           "type": "`$STRING`",
           "index$": 3
@@ -176,129 +178,150 @@ class Config {
         },
         {
           "active": true,
-          "name": "continent_code",
+          "name": "continentCode",
           "req": false,
           "type": "`$STRING`",
           "index$": 6
         },
         {
           "active": true,
-          "name": "country_code",
+          "name": "countryCode",
           "req": false,
           "type": "`$STRING`",
           "index$": 7
         },
         {
           "active": true,
-          "name": "country_name",
+          "name": "countryName",
           "req": false,
           "type": "`$STRING`",
           "index$": 8
         },
         {
           "active": true,
-          "name": "currency",
+          "name": "currencies",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 9
         },
         {
           "active": true,
-          "name": "ip",
+          "name": "currency",
           "req": false,
-          "type": "`$STRING`",
+          "type": "`$OBJECT`",
           "index$": 10
         },
         {
           "active": true,
-          "name": "ip_address",
+          "name": "ip",
           "req": false,
           "type": "`$STRING`",
           "index$": 11
         },
         {
           "active": true,
-          "name": "ip_version",
+          "name": "ipAddress",
           "req": false,
-          "type": "`$INTEGER`",
+          "type": "`$STRING`",
           "index$": 12
         },
         {
           "active": true,
-          "name": "is_proxy",
+          "name": "ipVersion",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 13
+        },
+        {
+          "active": true,
+          "name": "isProxy",
           "req": false,
           "type": "`$BOOLEAN`",
-          "index$": 13
+          "index$": 14
         },
         {
           "active": true,
           "name": "language",
           "req": false,
           "type": "`$STRING`",
-          "index$": 14
+          "index$": 15
+        },
+        {
+          "active": true,
+          "name": "languages",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 16
         },
         {
           "active": true,
           "name": "latitude",
           "req": false,
           "type": "`$NUMBER`",
-          "index$": 15
+          "index$": 17
         },
         {
           "active": true,
           "name": "longitude",
           "req": false,
           "type": "`$NUMBER`",
-          "index$": 16
+          "index$": 18
         },
         {
           "active": true,
           "name": "name",
           "req": false,
           "type": "`$STRING`",
-          "index$": 17
-        },
-        {
-          "active": true,
-          "name": "phone_code",
-          "req": false,
-          "type": "`$ARRAY`",
-          "index$": 18
-        },
-        {
-          "active": true,
-          "name": "region_code",
-          "req": false,
-          "type": "`$STRING`",
           "index$": 19
         },
         {
           "active": true,
-          "name": "region_name",
+          "name": "phoneCodes",
           "req": false,
-          "type": "`$STRING`",
+          "type": "`$ARRAY`",
           "index$": 20
         },
         {
           "active": true,
-          "name": "time_zone",
+          "name": "regionCode",
           "req": false,
           "type": "`$STRING`",
           "index$": 21
         },
         {
           "active": true,
-          "name": "tld",
+          "name": "regionName",
           "req": false,
-          "type": "`$ARRAY`",
+          "type": "`$STRING`",
           "index$": 22
         },
         {
           "active": true,
-          "name": "zip_code",
+          "name": "timeZone",
           "req": false,
           "type": "`$STRING`",
           "index$": 23
+        },
+        {
+          "active": true,
+          "name": "timeZones",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 24
+        },
+        {
+          "active": true,
+          "name": "tlds",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 25
+        },
+        {
+          "active": true,
+          "name": "zipCode",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 26
         }
       ],
       "name": "json",
@@ -310,6 +333,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/api/json",
               "parts": [
@@ -333,6 +357,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/api/json",
               "parts": [
@@ -369,6 +394,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/api/json/{ipAddress}",
               "parts": [

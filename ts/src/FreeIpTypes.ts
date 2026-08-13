@@ -14,29 +14,32 @@ export interface IpGeolocationLoadMatch {
 
 export interface Json {
   asn?: string
-  asn_organization?: string
+  asnOrganization?: string
   capital?: string
-  city_name?: string
+  cityName?: string
   code?: string
   continent?: string
-  continent_code?: string
-  country_code?: string
-  country_name?: string
-  currency?: any[]
+  continentCode?: string
+  countryCode?: string
+  countryName?: string
+  currencies?: any[]
+  currency?: Record<string, any>
   ip?: string
-  ip_address?: string
-  ip_version?: number
-  is_proxy?: boolean
+  ipAddress?: string
+  ipVersion?: number
+  isProxy?: boolean
   language?: string
+  languages?: any[]
   latitude?: number
   longitude?: number
   name?: string
-  phone_code?: any[]
-  region_code?: string
-  region_name?: string
-  time_zone?: string
-  tld?: any[]
-  zip_code?: string
+  phoneCodes?: any[]
+  regionCode?: string
+  regionName?: string
+  timeZone?: string
+  timeZones?: any[]
+  tlds?: any[]
+  zipCode?: string
 }
 
 export interface JsonLoadMatch {
@@ -45,55 +48,61 @@ export interface JsonLoadMatch {
 
 export interface JsonListMatch {
   asn?: string
-  asn_organization?: string
+  asnOrganization?: string
   capital?: string
-  city_name?: string
+  cityName?: string
   code?: string
   continent?: string
-  continent_code?: string
-  country_code?: string
-  country_name?: string
-  currency?: any[]
+  continentCode?: string
+  countryCode?: string
+  countryName?: string
+  currencies?: any[]
+  currency?: Record<string, any>
   ip?: string
-  ip_address?: string
-  ip_version?: number
-  is_proxy?: boolean
+  ipAddress?: string
+  ipVersion?: number
+  isProxy?: boolean
   language?: string
+  languages?: any[]
   latitude?: number
   longitude?: number
   name?: string
-  phone_code?: any[]
-  region_code?: string
-  region_name?: string
-  time_zone?: string
-  tld?: any[]
-  zip_code?: string
+  phoneCodes?: any[]
+  regionCode?: string
+  regionName?: string
+  timeZone?: string
+  timeZones?: any[]
+  tlds?: any[]
+  zipCode?: string
 }
 
 export interface JsonCreateData {
   asn?: string
-  asn_organization?: string
+  asnOrganization?: string
   capital?: string
-  city_name?: string
+  cityName?: string
   code?: string
   continent?: string
-  continent_code?: string
-  country_code?: string
-  country_name?: string
-  currency?: any[]
+  continentCode?: string
+  countryCode?: string
+  countryName?: string
+  currencies?: any[]
+  currency?: Record<string, any>
   ip?: string
-  ip_address?: string
-  ip_version?: number
-  is_proxy?: boolean
+  ipAddress?: string
+  ipVersion?: number
+  isProxy?: boolean
   language?: string
+  languages?: any[]
   latitude?: number
   longitude?: number
   name?: string
-  phone_code?: any[]
-  region_code?: string
-  region_name?: string
-  time_zone?: string
-  tld?: any[]
-  zip_code?: string
+  phoneCodes?: any[]
+  regionCode?: string
+  regionName?: string
+  timeZone?: string
+  timeZones?: any[]
+  tlds?: any[]
+  zipCode?: string
 }
 

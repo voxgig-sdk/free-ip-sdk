@@ -121,7 +121,8 @@ Create a mock client for unit testing — no server required:
 const client = FreeIpSDK.test()
 
 const ipgeolocation = await client.IpGeolocation().load()
-// ipgeolocation is a bare entity populated with mock response data
+// ipgeolocation is the entity, populated with mock response data
+// — call ipgeolocation.data() for the record itself
 console.log(ipgeolocation)
 ```
 
@@ -299,29 +300,32 @@ API path: `/api/xml/{ipAddress}`
 | Field | Description |
 | --- | --- |
 | `asn` |  |
-| `asn_organization` |  |
+| `asnOrganization` |  |
 | `capital` |  |
-| `city_name` |  |
+| `cityName` |  |
 | `code` |  |
 | `continent` |  |
-| `continent_code` |  |
-| `country_code` |  |
-| `country_name` |  |
+| `continentCode` |  |
+| `countryCode` |  |
+| `countryName` |  |
+| `currencies` |  |
 | `currency` |  |
 | `ip` |  |
-| `ip_address` |  |
-| `ip_version` |  |
-| `is_proxy` |  |
+| `ipAddress` |  |
+| `ipVersion` |  |
+| `isProxy` |  |
 | `language` |  |
+| `languages` |  |
 | `latitude` |  |
 | `longitude` |  |
 | `name` |  |
-| `phone_code` |  |
-| `region_code` |  |
-| `region_name` |  |
-| `time_zone` |  |
-| `tld` |  |
-| `zip_code` |  |
+| `phoneCodes` |  |
+| `regionCode` |  |
+| `regionName` |  |
+| `timeZone` |  |
+| `timeZones` |  |
+| `tlds` |  |
+| `zipCode` |  |
 
 Operations: create, list, load.
 
@@ -366,29 +370,32 @@ Create an instance: `const json = client.Json()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `asn` | `string` |  |
-| `asn_organization` | `string` |  |
+| `asnOrganization` | `string` |  |
 | `capital` | `string` |  |
-| `city_name` | `string` |  |
+| `cityName` | `string` |  |
 | `code` | `string` |  |
 | `continent` | `string` |  |
-| `continent_code` | `string` |  |
-| `country_code` | `string` |  |
-| `country_name` | `string` |  |
-| `currency` | `any[]` |  |
+| `continentCode` | `string` |  |
+| `countryCode` | `string` |  |
+| `countryName` | `string` |  |
+| `currencies` | `any[]` |  |
+| `currency` | `Record<string, any>` |  |
 | `ip` | `string` |  |
-| `ip_address` | `string` |  |
-| `ip_version` | `number` |  |
-| `is_proxy` | `boolean` |  |
+| `ipAddress` | `string` |  |
+| `ipVersion` | `number` |  |
+| `isProxy` | `boolean` |  |
 | `language` | `string` |  |
+| `languages` | `any[]` |  |
 | `latitude` | `number` |  |
 | `longitude` | `number` |  |
 | `name` | `string` |  |
-| `phone_code` | `any[]` |  |
-| `region_code` | `string` |  |
-| `region_name` | `string` |  |
-| `time_zone` | `string` |  |
-| `tld` | `any[]` |  |
-| `zip_code` | `string` |  |
+| `phoneCodes` | `any[]` |  |
+| `regionCode` | `string` |  |
+| `regionName` | `string` |  |
+| `timeZone` | `string` |  |
+| `timeZones` | `any[]` |  |
+| `tlds` | `any[]` |  |
+| `zipCode` | `string` |  |
 
 #### Example: Load
 

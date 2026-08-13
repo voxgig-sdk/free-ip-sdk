@@ -113,11 +113,11 @@ function json_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["FREEIP_TEST_JSON_ENTID"] = {},
-    ["FREEIP_TEST_LIVE"] = "FALSE",
+    ["FREE_IP_TEST_JSON_ENTID"] = {},
+    ["FREE_IP_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["FREEIP_TEST_LIVE"] == "TRUE"
+  local live = env["FREE_IP_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {

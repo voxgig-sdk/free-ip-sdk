@@ -27,29 +27,32 @@ class IpGeolocationLoadMatch
 class Json
 {
     public ?string $asn = null;
-    public ?string $asn_organization = null;
+    public ?string $asnOrganization = null;
     public ?string $capital = null;
-    public ?string $city_name = null;
+    public ?string $cityName = null;
     public ?string $code = null;
     public ?string $continent = null;
-    public ?string $continent_code = null;
-    public ?string $country_code = null;
-    public ?string $country_name = null;
+    public ?string $continentCode = null;
+    public ?string $countryCode = null;
+    public ?string $countryName = null;
+    public ?array $currencies = null;
     public ?array $currency = null;
     public ?string $ip = null;
-    public ?string $ip_address = null;
-    public ?int $ip_version = null;
-    public ?bool $is_proxy = null;
+    public ?string $ipAddress = null;
+    public ?int $ipVersion = null;
+    public ?bool $isProxy = null;
     public ?string $language = null;
+    public ?array $languages = null;
     public ?float $latitude = null;
     public ?float $longitude = null;
     public ?string $name = null;
-    public ?array $phone_code = null;
-    public ?string $region_code = null;
-    public ?string $region_name = null;
-    public ?string $time_zone = null;
-    public ?array $tld = null;
-    public ?string $zip_code = null;
+    public ?array $phoneCodes = null;
+    public ?string $regionCode = null;
+    public ?string $regionName = null;
+    public ?string $timeZone = null;
+    public ?array $timeZones = null;
+    public ?array $tlds = null;
+    public ?string $zipCode = null;
 }
 
 /** Request payload for Json#load. */
@@ -62,57 +65,63 @@ class JsonLoadMatch
 class JsonListMatch
 {
     public ?string $asn = null;
-    public ?string $asn_organization = null;
+    public ?string $asnOrganization = null;
     public ?string $capital = null;
-    public ?string $city_name = null;
+    public ?string $cityName = null;
     public ?string $code = null;
     public ?string $continent = null;
-    public ?string $continent_code = null;
-    public ?string $country_code = null;
-    public ?string $country_name = null;
+    public ?string $continentCode = null;
+    public ?string $countryCode = null;
+    public ?string $countryName = null;
+    public ?array $currencies = null;
     public ?array $currency = null;
     public ?string $ip = null;
-    public ?string $ip_address = null;
-    public ?int $ip_version = null;
-    public ?bool $is_proxy = null;
+    public ?string $ipAddress = null;
+    public ?int $ipVersion = null;
+    public ?bool $isProxy = null;
     public ?string $language = null;
+    public ?array $languages = null;
     public ?float $latitude = null;
     public ?float $longitude = null;
     public ?string $name = null;
-    public ?array $phone_code = null;
-    public ?string $region_code = null;
-    public ?string $region_name = null;
-    public ?string $time_zone = null;
-    public ?array $tld = null;
-    public ?string $zip_code = null;
+    public ?array $phoneCodes = null;
+    public ?string $regionCode = null;
+    public ?string $regionName = null;
+    public ?string $timeZone = null;
+    public ?array $timeZones = null;
+    public ?array $tlds = null;
+    public ?string $zipCode = null;
 }
 
 /** Request payload for Json#create. */
 class JsonCreateData
 {
     public ?string $asn = null;
-    public ?string $asn_organization = null;
+    public ?string $asnOrganization = null;
     public ?string $capital = null;
-    public ?string $city_name = null;
+    public ?string $cityName = null;
     public ?string $code = null;
     public ?string $continent = null;
-    public ?string $continent_code = null;
-    public ?string $country_code = null;
-    public ?string $country_name = null;
+    public ?string $continentCode = null;
+    public ?string $countryCode = null;
+    public ?string $countryName = null;
+    public ?array $currencies = null;
     public ?array $currency = null;
     public ?string $ip = null;
-    public ?string $ip_address = null;
-    public ?int $ip_version = null;
-    public ?bool $is_proxy = null;
+    public ?string $ipAddress = null;
+    public ?int $ipVersion = null;
+    public ?bool $isProxy = null;
     public ?string $language = null;
+    public ?array $languages = null;
     public ?float $latitude = null;
     public ?float $longitude = null;
     public ?string $name = null;
-    public ?array $phone_code = null;
-    public ?string $region_code = null;
-    public ?string $region_name = null;
-    public ?string $time_zone = null;
-    public ?array $tld = null;
-    public ?string $zip_code = null;
+    public ?array $phoneCodes = null;
+    public ?string $regionCode = null;
+    public ?string $regionName = null;
+    public ?string $timeZone = null;
+    public ?array $timeZones = null;
+    public ?array $tlds = null;
+    public ?string $zipCode = null;
 }
 

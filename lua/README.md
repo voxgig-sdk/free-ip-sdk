@@ -239,29 +239,32 @@ API path: `/api/xml/{ipAddress}`
 | Field | Description |
 | --- | --- |
 | `asn` |  |
-| `asn_organization` |  |
+| `asnOrganization` |  |
 | `capital` |  |
-| `city_name` |  |
+| `cityName` |  |
 | `code` |  |
 | `continent` |  |
-| `continent_code` |  |
-| `country_code` |  |
-| `country_name` |  |
+| `continentCode` |  |
+| `countryCode` |  |
+| `countryName` |  |
+| `currencies` |  |
 | `currency` |  |
 | `ip` |  |
-| `ip_address` |  |
-| `ip_version` |  |
-| `is_proxy` |  |
+| `ipAddress` |  |
+| `ipVersion` |  |
+| `isProxy` |  |
 | `language` |  |
+| `languages` |  |
 | `latitude` |  |
 | `longitude` |  |
 | `name` |  |
-| `phone_code` |  |
-| `region_code` |  |
-| `region_name` |  |
-| `time_zone` |  |
-| `tld` |  |
-| `zip_code` |  |
+| `phoneCodes` |  |
+| `regionCode` |  |
+| `regionName` |  |
+| `timeZone` |  |
+| `timeZones` |  |
+| `tlds` |  |
+| `zipCode` |  |
 
 Operations: Create, List, Load.
 
@@ -306,29 +309,32 @@ Create an instance: `local json = client:Json(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `asn` | `string` |  |
-| `asn_organization` | `string` |  |
+| `asnOrganization` | `string` |  |
 | `capital` | `string` |  |
-| `city_name` | `string` |  |
+| `cityName` | `string` |  |
 | `code` | `string` |  |
 | `continent` | `string` |  |
-| `continent_code` | `string` |  |
-| `country_code` | `string` |  |
-| `country_name` | `string` |  |
+| `continentCode` | `string` |  |
+| `countryCode` | `string` |  |
+| `countryName` | `string` |  |
+| `currencies` | `table` |  |
 | `currency` | `table` |  |
 | `ip` | `string` |  |
-| `ip_address` | `string` |  |
-| `ip_version` | `number` |  |
-| `is_proxy` | `boolean` |  |
+| `ipAddress` | `string` |  |
+| `ipVersion` | `number` |  |
+| `isProxy` | `boolean` |  |
 | `language` | `string` |  |
+| `languages` | `table` |  |
 | `latitude` | `number` |  |
 | `longitude` | `number` |  |
 | `name` | `string` |  |
-| `phone_code` | `table` |  |
-| `region_code` | `string` |  |
-| `region_name` | `string` |  |
-| `time_zone` | `string` |  |
-| `tld` | `table` |  |
-| `zip_code` | `string` |  |
+| `phoneCodes` | `table` |  |
+| `regionCode` | `string` |  |
+| `regionName` | `string` |  |
+| `timeZone` | `string` |  |
+| `timeZones` | `table` |  |
+| `tlds` | `table` |  |
+| `zipCode` | `string` |  |
 
 #### Example: Load
 

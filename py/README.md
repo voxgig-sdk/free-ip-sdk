@@ -38,7 +38,7 @@ client = FreeIpSDK()
 
 ### 3. Load an ipgeolocation
 
-`load()` returns the bare record (a `dict`) and raises on error.
+`load()` returns the ENTITY — call data_get() for the record — and raises on error.
 
 ```python
 try:
@@ -122,7 +122,8 @@ Create a mock client for unit testing — no server required:
 ```python
 client = FreeIpSDK.test()
 
-# Entity ops return the bare record and raise on error.
+# Entity ops return the ENTITY and raises on error;
+# call data_get() for the record.
 ipgeolocation = client.IpGeolocation().load()
 # ipgeolocation contains the mock response record
 ```
@@ -221,7 +222,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `dict` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (a `dict` for single-entity
 ops, a `list` for `list`) and raise on error. Wrap calls in
 `try`/`except` to handle failures.
 
@@ -253,29 +254,32 @@ API path: `/api/xml/{ipAddress}`
 | Field | Description |
 | --- | --- |
 | `asn` |  |
-| `asn_organization` |  |
+| `asnOrganization` |  |
 | `capital` |  |
-| `city_name` |  |
+| `cityName` |  |
 | `code` |  |
 | `continent` |  |
-| `continent_code` |  |
-| `country_code` |  |
-| `country_name` |  |
+| `continentCode` |  |
+| `countryCode` |  |
+| `countryName` |  |
+| `currencies` |  |
 | `currency` |  |
 | `ip` |  |
-| `ip_address` |  |
-| `ip_version` |  |
-| `is_proxy` |  |
+| `ipAddress` |  |
+| `ipVersion` |  |
+| `isProxy` |  |
 | `language` |  |
+| `languages` |  |
 | `latitude` |  |
 | `longitude` |  |
 | `name` |  |
-| `phone_code` |  |
-| `region_code` |  |
-| `region_name` |  |
-| `time_zone` |  |
-| `tld` |  |
-| `zip_code` |  |
+| `phoneCodes` |  |
+| `regionCode` |  |
+| `regionName` |  |
+| `timeZone` |  |
+| `timeZones` |  |
+| `tlds` |  |
+| `zipCode` |  |
 
 Operations: Create, List, Load.
 
@@ -320,29 +324,32 @@ Create an instance: `json = client.Json()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `asn` | `str` |  |
-| `asn_organization` | `str` |  |
+| `asnOrganization` | `str` |  |
 | `capital` | `str` |  |
-| `city_name` | `str` |  |
+| `cityName` | `str` |  |
 | `code` | `str` |  |
 | `continent` | `str` |  |
-| `continent_code` | `str` |  |
-| `country_code` | `str` |  |
-| `country_name` | `str` |  |
-| `currency` | `list` |  |
+| `continentCode` | `str` |  |
+| `countryCode` | `str` |  |
+| `countryName` | `str` |  |
+| `currencies` | `list` |  |
+| `currency` | `dict` |  |
 | `ip` | `str` |  |
-| `ip_address` | `str` |  |
-| `ip_version` | `int` |  |
-| `is_proxy` | `bool` |  |
+| `ipAddress` | `str` |  |
+| `ipVersion` | `int` |  |
+| `isProxy` | `bool` |  |
 | `language` | `str` |  |
+| `languages` | `list` |  |
 | `latitude` | `float` |  |
 | `longitude` | `float` |  |
 | `name` | `str` |  |
-| `phone_code` | `list` |  |
-| `region_code` | `str` |  |
-| `region_name` | `str` |  |
-| `time_zone` | `str` |  |
-| `tld` | `list` |  |
-| `zip_code` | `str` |  |
+| `phoneCodes` | `list` |  |
+| `regionCode` | `str` |  |
+| `regionName` | `str` |  |
+| `timeZone` | `str` |  |
+| `timeZones` | `list` |  |
+| `tlds` | `list` |  |
+| `zipCode` | `str` |  |
 
 #### Example: Load
 

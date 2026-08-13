@@ -34,7 +34,7 @@ client = FreeIpSDK.new
 
 ```ruby
 begin
-  # load returns the bare IpGeolocation record (raises on error).
+  # load returns the ENTITY — call data_get for the IpGeolocation record (raises on error).
   ipgeolocation = client.IpGeolocation.load()
   puts ipgeolocation
 rescue => err
@@ -117,7 +117,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = FreeIpSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 ipgeolocation = client.IpGeolocation.load()
 puts ipgeolocation
 ```
@@ -247,29 +248,32 @@ API path: `/api/xml/{ipAddress}`
 | Field | Description |
 | --- | --- |
 | `asn` |  |
-| `asn_organization` |  |
+| `asnOrganization` |  |
 | `capital` |  |
-| `city_name` |  |
+| `cityName` |  |
 | `code` |  |
 | `continent` |  |
-| `continent_code` |  |
-| `country_code` |  |
-| `country_name` |  |
+| `continentCode` |  |
+| `countryCode` |  |
+| `countryName` |  |
+| `currencies` |  |
 | `currency` |  |
 | `ip` |  |
-| `ip_address` |  |
-| `ip_version` |  |
-| `is_proxy` |  |
+| `ipAddress` |  |
+| `ipVersion` |  |
+| `isProxy` |  |
 | `language` |  |
+| `languages` |  |
 | `latitude` |  |
 | `longitude` |  |
 | `name` |  |
-| `phone_code` |  |
-| `region_code` |  |
-| `region_name` |  |
-| `time_zone` |  |
-| `tld` |  |
-| `zip_code` |  |
+| `phoneCodes` |  |
+| `regionCode` |  |
+| `regionName` |  |
+| `timeZone` |  |
+| `timeZones` |  |
+| `tlds` |  |
+| `zipCode` |  |
 
 Operations: Create, List, Load.
 
@@ -293,7 +297,7 @@ Create an instance: `ip_geolocation = client.IpGeolocation`
 #### Example: Load
 
 ```ruby
-# load returns the bare IpGeolocation record (raises on error).
+# load returns the ENTITY — call data_get for the IpGeolocation record (raises on error).
 ip_geolocation = client.IpGeolocation.load()
 ```
 
@@ -315,34 +319,37 @@ Create an instance: `json = client.Json`
 | Field | Type | Description |
 | --- | --- | --- |
 | `asn` | `String` |  |
-| `asn_organization` | `String` |  |
+| `asnOrganization` | `String` |  |
 | `capital` | `String` |  |
-| `city_name` | `String` |  |
+| `cityName` | `String` |  |
 | `code` | `String` |  |
 | `continent` | `String` |  |
-| `continent_code` | `String` |  |
-| `country_code` | `String` |  |
-| `country_name` | `String` |  |
-| `currency` | `Array` |  |
+| `continentCode` | `String` |  |
+| `countryCode` | `String` |  |
+| `countryName` | `String` |  |
+| `currencies` | `Array` |  |
+| `currency` | `Hash` |  |
 | `ip` | `String` |  |
-| `ip_address` | `String` |  |
-| `ip_version` | `Integer` |  |
-| `is_proxy` | `Boolean` |  |
+| `ipAddress` | `String` |  |
+| `ipVersion` | `Integer` |  |
+| `isProxy` | `Boolean` |  |
 | `language` | `String` |  |
+| `languages` | `Array` |  |
 | `latitude` | `Float` |  |
 | `longitude` | `Float` |  |
 | `name` | `String` |  |
-| `phone_code` | `Array` |  |
-| `region_code` | `String` |  |
-| `region_name` | `String` |  |
-| `time_zone` | `String` |  |
-| `tld` | `Array` |  |
-| `zip_code` | `String` |  |
+| `phoneCodes` | `Array` |  |
+| `regionCode` | `String` |  |
+| `regionName` | `String` |  |
+| `timeZone` | `String` |  |
+| `timeZones` | `Array` |  |
+| `tlds` | `Array` |  |
+| `zipCode` | `String` |  |
 
 #### Example: Load
 
 ```ruby
-# load returns the bare Json record (raises on error).
+# load returns the ENTITY — call data_get for the Json record (raises on error).
 json = client.Json.load({ "id" => "json_id" })
 ```
 
