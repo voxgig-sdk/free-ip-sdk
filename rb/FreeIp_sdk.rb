@@ -28,7 +28,7 @@ class FreeIpSDK
     utility = FreeIpUtility.new
     @_utility = utility
 
-    config = FreeIpConfig.make_config
+    config = FreeIpConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

@@ -51,7 +51,7 @@ func main() {
     client := sdk.New()
 
     // Load a single ipGeolocation — the value is the loaded record.
-    ipGeolocation, err := client.IpGeolocation(nil).Load(nil, nil)
+    ipGeolocation, err := client.IpGeolocation(nil).Load(map[string]any{"ip_address": "example_ip_address"}, nil)
     if err != nil {
         panic(err)
     }
@@ -66,7 +66,7 @@ Every entity operation returns `(value, error)`. Check `err` before
 using the value — there is no exception to catch:
 
 ```go
-ipgeolocation, err := client.IpGeolocation(nil).Load(nil, nil)
+ipgeolocation, err := client.IpGeolocation(nil).Load(map[string]any{"ip_address": "example"}, nil)
 if err != nil {
     // handle err
     return
@@ -136,7 +136,7 @@ Create a mock client for unit testing — no server required:
 client := sdk.Test()
 
 ipGeolocation, err := client.IpGeolocation(nil).Load(
-    nil, nil,
+    map[string]any{"ip_address": "example"}, nil,
 )
 if err != nil {
     panic(err)
@@ -321,7 +321,7 @@ Create an instance: `ipGeolocation := client.IpGeolocation(nil)`
 #### Example: Load
 
 ```go
-ipGeolocation, err := client.IpGeolocation(nil).Load(nil, nil)
+ipGeolocation, err := client.IpGeolocation(nil).Load(map[string]any{"ip_address": "ip_address"}, nil)
 if err != nil {
     panic(err)
 }
@@ -479,7 +479,7 @@ stores the returned data and match criteria internally.
 
 ```go
 ipgeolocation := client.IpGeolocation(nil)
-ipgeolocation.Load(nil, nil)
+ipgeolocation.Load(map[string]any{"ip_address": "example"}, nil)
 
 // ipgeolocation.Data() now returns the ipgeolocation data from the last load
 // ipgeolocation.Match() returns the last match criteria

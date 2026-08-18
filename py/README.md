@@ -38,11 +38,12 @@ client = FreeIpSDK()
 
 ### 3. Load an ipgeolocation
 
+IpGeolocation is nested under ip_address, so provide the `ip_address`.
 `load()` returns the ENTITY — call data_get() for the record — and raises on error.
 
 ```python
 try:
-    ipgeolocation = client.IpGeolocation().load()
+    ipgeolocation = client.IpGeolocation().load({"ip_address": "example_ip_address"})
     print(ipgeolocation)
 except Exception as err:
     print(f"load failed: {err}")
@@ -55,7 +56,7 @@ Entity operations raise on failure, so wrap them in `try` / `except`:
 
 ```python
 try:
-    ipgeolocation = client.IpGeolocation().load()
+    ipgeolocation = client.IpGeolocation().load({"ip_address": "example"})
     print(ipgeolocation)
 except Exception as err:
     print(f"load failed: {err}")
@@ -124,7 +125,7 @@ client = FreeIpSDK.test()
 
 # Entity ops return the ENTITY and raises on error;
 # call data_get() for the record.
-ipgeolocation = client.IpGeolocation().load()
+ipgeolocation = client.IpGeolocation().load({"ip_address": "example"})
 # ipgeolocation contains the mock response record
 ```
 
@@ -303,7 +304,7 @@ Create an instance: `ip_geolocation = client.IpGeolocation()`
 #### Example: Load
 
 ```python
-ip_geolocation = client.IpGeolocation().load()
+ip_geolocation = client.IpGeolocation().load({"ip_address": "ip_address"})
 ```
 
 
@@ -447,7 +448,7 @@ stores the returned data and match criteria internally.
 
 ```python
 ipgeolocation = client.IpGeolocation()
-ipgeolocation.load()
+ipgeolocation.load({"ip_address": "example"})
 
 # ipgeolocation.data_get() now returns the ipgeolocation data from the last load
 # ipgeolocation.match_get() returns the last match criteria

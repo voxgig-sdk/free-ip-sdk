@@ -20,7 +20,7 @@ class IpGeolocation(TypedDict):
     pass
 
 
-class IpGeolocationLoadMatch(TypedDict, total=False):
+class IpGeolocationLoadMatch(TypedDict):
     ip_address: str
 
 

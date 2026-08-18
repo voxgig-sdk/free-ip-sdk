@@ -1,6 +1,20 @@
 # FreeIp SDK configuration
 
 module FreeIpConfig
+  # Return the process-wide config, built once on first use. The SDK reads
+  # the config on every request and never writes to it, so one instance is
+  # shared by every client rather than rebuilt per client.
+  #
+  # The returned hash is shared: treat it as read-only. Callers that need to
+  # mutate should use make_config, which always returns a fresh copy.
+  def self.shared_config
+    @shared_config ||= make_config
+  end
+
+
+  # Build a fresh, fully materialised config hash. Every call rebuilds the
+  # whole structure, so prefer shared_config unless you need a private copy
+  # you intend to mutate.
   def self.make_config
     {
       "main" => {
@@ -33,18 +47,15 @@ module FreeIpConfig
               "name" => "load",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {
                     "params" => [
                       {
-                        "active" => true,
                         "example" => "1.1.1.1",
                         "kind" => "param",
                         "name" => "ip_address",
                         "orig" => "ip_address",
                         "reqd" => true,
                         "type" => "`$STRING`",
-                        "index$" => 0,
                       },
                     ],
                   },
@@ -70,10 +81,8 @@ module FreeIpConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
                 {
-                  "active" => true,
                   "args" => {},
                   "kind" => "http",
                   "method" => "GET",
@@ -87,10 +96,8 @@ module FreeIpConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 1,
                 },
               ],
-              "key$" => "load",
             },
           },
           "relations" => {
@@ -104,193 +111,112 @@ module FreeIpConfig
         "json" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "asn",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "asnOrganization",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "capital",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 2,
             },
             {
-              "active" => true,
               "name" => "cityName",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 3,
             },
             {
-              "active" => true,
               "name" => "code",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 4,
             },
             {
-              "active" => true,
               "name" => "continent",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 5,
             },
             {
-              "active" => true,
               "name" => "continentCode",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 6,
             },
             {
-              "active" => true,
               "name" => "countryCode",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 7,
             },
             {
-              "active" => true,
               "name" => "countryName",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 8,
             },
             {
-              "active" => true,
               "name" => "currencies",
-              "req" => false,
               "type" => "`$ARRAY`",
-              "index$" => 9,
             },
             {
-              "active" => true,
               "name" => "currency",
-              "req" => false,
               "type" => "`$OBJECT`",
-              "index$" => 10,
             },
             {
-              "active" => true,
               "name" => "ip",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 11,
             },
             {
-              "active" => true,
               "name" => "ipAddress",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 12,
             },
             {
-              "active" => true,
               "name" => "ipVersion",
-              "req" => false,
               "type" => "`$INTEGER`",
-              "index$" => 13,
             },
             {
-              "active" => true,
               "name" => "isProxy",
-              "req" => false,
               "type" => "`$BOOLEAN`",
-              "index$" => 14,
             },
             {
-              "active" => true,
               "name" => "language",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 15,
             },
             {
-              "active" => true,
               "name" => "languages",
-              "req" => false,
               "type" => "`$ARRAY`",
-              "index$" => 16,
             },
             {
-              "active" => true,
               "name" => "latitude",
-              "req" => false,
               "type" => "`$NUMBER`",
-              "index$" => 17,
             },
             {
-              "active" => true,
               "name" => "longitude",
-              "req" => false,
               "type" => "`$NUMBER`",
-              "index$" => 18,
             },
             {
-              "active" => true,
               "name" => "name",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 19,
             },
             {
-              "active" => true,
               "name" => "phoneCodes",
-              "req" => false,
               "type" => "`$ARRAY`",
-              "index$" => 20,
             },
             {
-              "active" => true,
               "name" => "regionCode",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 21,
             },
             {
-              "active" => true,
               "name" => "regionName",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 22,
             },
             {
-              "active" => true,
               "name" => "timeZone",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 23,
             },
             {
-              "active" => true,
               "name" => "timeZones",
-              "req" => false,
               "type" => "`$ARRAY`",
-              "index$" => 24,
             },
             {
-              "active" => true,
               "name" => "tlds",
-              "req" => false,
               "type" => "`$ARRAY`",
-              "index$" => 25,
             },
             {
-              "active" => true,
               "name" => "zipCode",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 26,
             },
           ],
           "name" => "json",
@@ -300,7 +226,6 @@ module FreeIpConfig
               "name" => "create",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {},
                   "kind" => "http",
                   "method" => "POST",
@@ -314,17 +239,14 @@ module FreeIpConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "create",
             },
             "list" => {
               "input" => "data",
               "name" => "list",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {},
                   "kind" => "http",
                   "method" => "GET",
@@ -338,28 +260,23 @@ module FreeIpConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "list",
             },
             "load" => {
               "input" => "data",
               "name" => "load",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {
                     "params" => [
                       {
-                        "active" => true,
                         "example" => "193.247.239.168",
                         "kind" => "param",
                         "name" => "id",
                         "orig" => "ip_address",
                         "reqd" => true,
                         "type" => "`$STRING`",
-                        "index$" => 0,
                       },
                     ],
                   },
@@ -385,10 +302,8 @@ module FreeIpConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "load",
             },
           },
           "relations" => {

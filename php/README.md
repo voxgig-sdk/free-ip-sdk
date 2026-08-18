@@ -33,10 +33,12 @@ $client = new FreeIpSDK();
 
 ### 3. Load an ipgeolocation
 
+IpGeolocation is nested under ip_address, so provide the `ip_address`.
+
 ```php
 try {
     // load() returns the ENTITY — call data_get() for the IpGeolocation record (throws on error).
-    $ipgeolocation = $client->IpGeolocation()->load();
+    $ipgeolocation = $client->IpGeolocation()->load(["ip_address" => "example_ip_address"]);
     print_r($ipgeolocation);
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
@@ -51,7 +53,7 @@ Entity operations throw a `\Throwable` on failure, so wrap them in
 
 ```php
 try {
-    $ipgeolocation = $client->IpGeolocation()->load();
+    $ipgeolocation = $client->IpGeolocation()->load(["ip_address" => "example"]);
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
@@ -125,7 +127,7 @@ $client = FreeIpSDK::test();
 
 // Entity ops return the ENTITY (throws on error);
 // call data_get() for the mock record.
-$ipgeolocation = $client->IpGeolocation()->load();
+$ipgeolocation = $client->IpGeolocation()->load(["ip_address" => "example"]);
 print_r($ipgeolocation);
 ```
 
@@ -308,7 +310,7 @@ Create an instance: `$ip_geolocation = $client->IpGeolocation();`
 
 ```php
 // load() returns the ENTITY — call data_get() for the IpGeolocation record (throws on error).
-$ip_geolocation = $client->IpGeolocation()->load();
+$ip_geolocation = $client->IpGeolocation()->load(["ip_address" => "ip_address"]);
 ```
 
 
@@ -455,7 +457,7 @@ stores the returned data and match criteria internally.
 
 ```php
 $ipgeolocation = $client->IpGeolocation();
-$ipgeolocation->load();
+$ipgeolocation->load(["ip_address" => "example"]);
 
 // $ipgeolocation->data_get() now returns the ipgeolocation data from the last load
 // $ipgeolocation->match_get() returns the last match criteria

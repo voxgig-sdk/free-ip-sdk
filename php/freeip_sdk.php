@@ -40,7 +40,7 @@ class FreeIpSDK
         $utility = new FreeIpUtility();
         $this->_utility = $utility;
 
-        $config = FreeIpConfig::make_config();
+        $config = FreeIpConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

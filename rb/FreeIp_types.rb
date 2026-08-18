@@ -15,7 +15,7 @@ end
 # Request payload for IpGeolocation#load.
 #
 # @!attribute [rw] ip_address
-#   @return [String, nil]
+#   @return [String]
 IpGeolocationLoadMatch = Struct.new(
   :ip_address,
   keyword_init: true

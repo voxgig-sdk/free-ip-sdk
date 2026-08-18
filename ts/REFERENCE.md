@@ -131,7 +131,7 @@ const ip_geolocation = client.IpGeolocation()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.IpGeolocation().load()
+const result = await client.IpGeolocation().load({ ip_address: 'ip_address' })
 ```
 
 ### Common Methods

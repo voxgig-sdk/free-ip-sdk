@@ -32,10 +32,12 @@ client = FreeIpSDK.new
 
 ### 3. Load an ipgeolocation
 
+IpGeolocation is nested under ip_address, so provide the `ip_address`.
+
 ```ruby
 begin
   # load returns the ENTITY — call data_get for the IpGeolocation record (raises on error).
-  ipgeolocation = client.IpGeolocation.load()
+  ipgeolocation = client.IpGeolocation.load({ "ip_address" => "example_ip_address" })
   puts ipgeolocation
 rescue => err
   warn "load failed: #{err}"
@@ -49,7 +51,7 @@ Entity operations raise on failure, so rescue them:
 
 ```ruby
 begin
-  ipgeolocation = client.IpGeolocation.load()
+  ipgeolocation = client.IpGeolocation.load({ "ip_address" => "example" })
 rescue => err
   warn "load failed: #{err}"
 end
@@ -119,7 +121,7 @@ client = FreeIpSDK.test
 
 # Entity ops return the ENTITY (raises on error);
 # call data_get for the mock record.
-ipgeolocation = client.IpGeolocation.load()
+ipgeolocation = client.IpGeolocation.load({ "ip_address" => "example" })
 puts ipgeolocation
 ```
 
@@ -298,7 +300,7 @@ Create an instance: `ip_geolocation = client.IpGeolocation`
 
 ```ruby
 # load returns the ENTITY — call data_get for the IpGeolocation record (raises on error).
-ip_geolocation = client.IpGeolocation.load()
+ip_geolocation = client.IpGeolocation.load({ "ip_address" => "ip_address" })
 ```
 
 
@@ -445,7 +447,7 @@ stores the returned data and match criteria internally.
 
 ```ruby
 ipgeolocation = client.IpGeolocation
-ipgeolocation.load()
+ipgeolocation.load({ "ip_address" => "example" })
 
 # ipgeolocation.data_get now returns the ipgeolocation data from the last load
 # ipgeolocation.match_get returns the last match criteria

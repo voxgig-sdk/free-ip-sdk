@@ -18,7 +18,7 @@ type IpGeolocation struct {
 
 // IpGeolocationLoadMatch is the typed request payload for IpGeolocation.LoadTyped.
 type IpGeolocationLoadMatch struct {
-	IpAddress *string `json:"ip_address,omitempty"`
+	IpAddress string `json:"ip_address"`
 }
 
 // Json is the typed data model for the json entity.

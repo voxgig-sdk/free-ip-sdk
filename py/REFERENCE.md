@@ -94,7 +94,7 @@ ip_geolocation = client.IpGeolocation()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.IpGeolocation().load()
+result = client.IpGeolocation().load({"ip_address": "ip_address"})
 ```
 
 ### Common Methods

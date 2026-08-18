@@ -105,7 +105,7 @@ fmt.Println(ipGeolocation.GetName()) // "ip_geolocation"
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.IpGeolocation(nil).Load(nil, nil)
+result, err := client.IpGeolocation(nil).Load(map[string]any{"ip_address": "ip_address"}, nil)
 if err != nil {
     panic(err)
 }

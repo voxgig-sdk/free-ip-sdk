@@ -99,7 +99,7 @@ $ip_geolocation = $client->IpGeolocation();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->IpGeolocation()->load();
+$result = $client->IpGeolocation()->load(["ip_address" => "ip_address"]);
 ```
 
 ### Common Methods

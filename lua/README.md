@@ -35,8 +35,10 @@ local client = sdk.new()
 
 ### 3. Load an ipgeolocation
 
+IpGeolocation is nested under ip_address, so provide the `ip_address`.
+
 ```lua
-local ipgeolocation, err = client:IpGeolocation():load()
+local ipgeolocation, err = client:IpGeolocation():load({ ip_address = "example_ip_address" })
 if err then error(err) end
 print(ipgeolocation)
 ```
@@ -48,7 +50,7 @@ Entity operations return `(value, err)`. Check `err` before using
 the value:
 
 ```lua
-local ipgeolocation, err = client:IpGeolocation():load()
+local ipgeolocation, err = client:IpGeolocation():load({ ip_address = "example" })
 if err then error(err) end
 ```
 
@@ -106,7 +108,7 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:IpGeolocation():load()
+local result, err = client:IpGeolocation():load({ ip_address = "example" })
 -- result is the returned data; err is set on failure
 ```
 
@@ -288,7 +290,7 @@ Create an instance: `local ip_geolocation = client:IpGeolocation(nil)`
 #### Example: Load
 
 ```lua
-local ip_geolocation, err = client:IpGeolocation():load()
+local ip_geolocation, err = client:IpGeolocation():load({ ip_address = "ip_address" })
 ```
 
 
@@ -433,7 +435,7 @@ stores the returned data and match criteria internally.
 
 ```lua
 local ipgeolocation = client:IpGeolocation()
-ipgeolocation:load()
+ipgeolocation:load({ ip_address = "example" })
 
 -- ipgeolocation:data_get() now returns the ipgeolocation data from the last load
 -- ipgeolocation:match_get() returns the last match criteria

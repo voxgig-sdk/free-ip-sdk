@@ -20,7 +20,7 @@ class IpGeolocation
 /** Request payload for IpGeolocation#load. */
 class IpGeolocationLoadMatch
 {
-    public ?string $ip_address = null;
+    public string $ip_address;
 }
 
 /** Json entity data model. */

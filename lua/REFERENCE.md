@@ -97,7 +97,7 @@ local ip_geolocation = client:IpGeolocation(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:IpGeolocation():load()
+local result, err = client:IpGeolocation():load({ ip_address = "ip_address" })
 ```
 
 ### Common Methods

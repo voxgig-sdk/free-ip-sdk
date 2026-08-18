@@ -9,7 +9,7 @@
 ---@class IpGeolocation
 
 ---@class IpGeolocationLoadMatch
----@field ip_address? string
+---@field ip_address string
 
 ---@class Json
 ---@field asn? string

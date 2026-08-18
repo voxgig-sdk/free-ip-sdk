@@ -23,7 +23,7 @@ support (`list`, `load`, `create`):
 
 ```ts
 const client = new FreeIpSDK()
-const ipgeolocation = await client.IpGeolocation().load()
+const ipgeolocation = await client.IpGeolocation().load({ ip_address: "example" })
 ```
 
 Thinking in entities keeps the mental model small — for people and AI agents alike —
@@ -47,7 +47,7 @@ const client = FreeIpSDK.test({
     },
   },
 })
-const ipgeolocation = await client.IpGeolocation().load()
+const ipgeolocation = await client.IpGeolocation().load({ ip_address: 'example_ip_address' })
 // ipgeolocation is the IpGeolocation entity, populated with mock data
 // — call ipgeolocation.data() for the record itself
 console.log(ipgeolocation)
@@ -57,7 +57,7 @@ console.log(ipgeolocation)
 
 ```python
 client = FreeIpSDK.test()
-ipgeolocation = client.IpGeolocation().load()
+ipgeolocation = client.IpGeolocation().load({"ip_address": "example"})
 print(ipgeolocation)
 ```
 
@@ -68,7 +68,7 @@ print(ipgeolocation)
 $client = FreeIpSDK::test([
     "entity" => ["ipgeolocation" => ["test01" => []]],
 ]);
-$ipgeolocation = $client->IpGeolocation()->load();
+$ipgeolocation = $client->IpGeolocation()->load(["ip_address" => "example"]);
 ```
 
 ### Golang
@@ -87,14 +87,14 @@ result, err := client.IpGeolocation(nil).Load(
 client = FreeIpSDK.test({
   "entity" => { "ipgeolocation" => { "test01" => {} } },
 })
-ipgeolocation = client.IpGeolocation.load()
+ipgeolocation = client.IpGeolocation.load({ "ip_address" => "example" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:IpGeolocation():load()
+local result, err = client:IpGeolocation():load({ ip_address = "example" })
 ```
 
 ## Packages
@@ -119,8 +119,11 @@ import { FreeIpSDK } from '@voxgig-sdk/free-ip'
 
 const client = new FreeIpSDK()
 
-// Load ipgeolocation data (returns a IpGeolocation)
-const ipgeolocation = await client.IpGeolocation().load()
+
+// Load a specific ipgeolocation (returns a IpGeolocation)
+const ipgeolocation = await client.IpGeolocation().load({
+  ip_address: 'example_ip_address',
+})
 console.log(ipgeolocation)
 ```
 
@@ -179,7 +182,7 @@ client = FreeIpSDK()
 
 
 # Load a specific ipgeolocation (returns the record, raises on error)
-ipgeolocation = client.IpGeolocation().load()
+ipgeolocation = client.IpGeolocation().load({"ip_address": "example_ip_address"})
 print(ipgeolocation)
 ```
 
@@ -193,7 +196,7 @@ $client = new FreeIpSDK();
 
 
 // Load a specific ipgeolocation (returns the ENTITY; call data_get() for the record; throws on error)
-$ipgeolocation = $client->IpGeolocation()->load();
+$ipgeolocation = $client->IpGeolocation()->load(["ip_address" => "example_ip_address"]);
 print_r($ipgeolocation);
 ```
 
@@ -204,8 +207,11 @@ import sdk "github.com/voxgig-sdk/free-ip-sdk/go"
 
 client := sdk.New()
 
-// Load ipgeolocation data
-ipGeolocation, err := client.IpGeolocation(nil).Load(nil, nil)
+
+// Load a specific ipgeolocation
+ipGeolocation, err := client.IpGeolocation(nil).Load(
+    map[string]any{"ip_address": "example_ip_address"}, nil,
+)
 if err != nil {
     panic(err)
 }
@@ -221,7 +227,7 @@ client = FreeIpSDK.new
 
 
 # Load a specific ipgeolocation (returns the ENTITY; call data_get for the record)
-ipgeolocation = client.IpGeolocation.load()
+ipgeolocation = client.IpGeolocation.load({ "ip_address" => "example_ip_address" })
 puts ipgeolocation
 ```
 
@@ -234,7 +240,7 @@ local client = sdk.new()
 
 
 -- Load a specific ipgeolocation
-local ipgeolocation, err = client:IpGeolocation():load()
+local ipgeolocation, err = client:IpGeolocation():load({ ip_address = "example_ip_address" })
 print(ipgeolocation)
 ```
 

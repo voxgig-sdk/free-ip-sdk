@@ -35,11 +35,14 @@ const client = new FreeIpSDK()
 
 ### 3. Load an ipgeolocation
 
+IpGeolocation is nested under ip_address, so provide the `ip_address`.
 `load()` returns the entity directly and throws on failure:
 
 ```ts
 try {
-  const ipgeolocation = await client.IpGeolocation().load()
+  const ipgeolocation = await client.IpGeolocation().load({
+    ip_address: 'example_ip_address',
+  })
   console.log(ipgeolocation)
 } catch (err) {
   console.error('load failed:', err)
@@ -53,7 +56,7 @@ Entity operations reject on failure, so wrap them in `try` / `catch`:
 
 ```ts
 try {
-  const ipgeolocation = await client.IpGeolocation().load()
+  const ipgeolocation = await client.IpGeolocation().load({ ip_address: "example" })
   console.log(ipgeolocation)
 } catch (err) {
   console.error('load failed:', err)
@@ -120,7 +123,7 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = FreeIpSDK.test()
 
-const ipgeolocation = await client.IpGeolocation().load()
+const ipgeolocation = await client.IpGeolocation().load({ ip_address: 'example_ip_address' })
 // ipgeolocation is the entity, populated with mock response data
 // — call ipgeolocation.data() for the record itself
 console.log(ipgeolocation)
@@ -141,7 +144,7 @@ Entity instances remember their last match and data:
 const entity = client.IpGeolocation()
 
 // First call runs the operation and stores its result
-await entity.load()
+await entity.load({ ip_address: 'example_ip_address' })
 
 // Subsequent calls reuse the stored state
 const data = entity.data()
@@ -349,7 +352,7 @@ Create an instance: `const ip_geolocation = client.IpGeolocation()`
 #### Example: Load
 
 ```ts
-const ip_geolocation = await client.IpGeolocation().load()
+const ip_geolocation = await client.IpGeolocation().load({ ip_address: 'ip_address' })
 ```
 
 
@@ -487,7 +490,7 @@ calls on the same instance can rely on this state.
 
 ```ts
 const ipgeolocation = client.IpGeolocation()
-await ipgeolocation.load()
+await ipgeolocation.load({ ip_address: "example" })
 
 // ipgeolocation.data() now returns the ipgeolocation data from the last `load`
 // ipgeolocation.match() returns the last match criteria

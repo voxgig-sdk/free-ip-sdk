@@ -100,7 +100,7 @@ ip_geolocation = client.IpGeolocation
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.IpGeolocation.load()
+result = client.IpGeolocation.load({ "ip_address" => "ip_address" })
 ```
 
 ### Common Methods

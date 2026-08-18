@@ -9,7 +9,7 @@ export interface IpGeolocation {
 }
 
 export interface IpGeolocationLoadMatch {
-  ip_address?: string
+  ip_address: string
 }
 
 export interface Json {
