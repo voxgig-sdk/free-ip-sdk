@@ -172,33 +172,33 @@ const json = client.Json()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `asn` | `string` | No |  |
-| `asnOrganization` | `string` | No |  |
-| `capital` | `string` | No |  |
-| `cityName` | `string` | No |  |
+| `asn` | `string` | No | Autonomous System Number |
+| `asnOrganization` | `string` | No | Organization associated with the ASN |
+| `capital` | `string` | No | Capital city of the country |
+| `cityName` | `string` | No | City name |
 | `code` | `string` | No |  |
-| `continent` | `string` | No |  |
-| `continentCode` | `string` | No |  |
-| `countryCode` | `string` | No |  |
-| `countryName` | `string` | No |  |
-| `currencies` | `any[]` | No |  |
-| `currency` | `Record<string, any>` | No |  |
-| `ip` | `string` | No |  |
-| `ipAddress` | `string` | No |  |
-| `ipVersion` | `number` | No |  |
-| `isProxy` | `boolean` | No |  |
-| `language` | `string` | No |  |
-| `languages` | `any[]` | No |  |
-| `latitude` | `number` | No |  |
-| `longitude` | `number` | No |  |
+| `continent` | `string` | No | Continent name |
+| `continentCode` | `string` | No | Two-letter continent code |
+| `countryCode` | `string` | No | ISO 3166-1 alpha-2 country code |
+| `countryName` | `string` | No | Full country name |
+| `currencies` | `any[]` | No | List of currencies used in the country |
+| `currency` | `Record<string, any>` | No | Currency information for the country |
+| `ip` | `string` | No | IPv4 or IPv6 address to lookup |
+| `ipAddress` | `string` | No | The IP address that was looked up |
+| `ipVersion` | `number` | No | IP version (4 for IPv4, 6 for IPv6) |
+| `isProxy` | `boolean` | No | Whether the IP is detected as a proxy, VPN, or hosting service |
+| `language` | `string` | No | Primary language code |
+| `languages` | `any[]` | No | List of languages spoken in the country |
+| `latitude` | `number` | No | Latitude coordinate |
+| `longitude` | `number` | No | Longitude coordinate |
 | `name` | `string` | No |  |
-| `phoneCodes` | `any[]` | No |  |
-| `regionCode` | `string` | No |  |
-| `regionName` | `string` | No |  |
-| `timeZone` | `string` | No |  |
-| `timeZones` | `any[]` | No |  |
-| `tlds` | `any[]` | No |  |
-| `zipCode` | `string` | No |  |
+| `phoneCodes` | `any[]` | No | International dialing codes for the country |
+| `regionCode` | `string` | No | Region or state code |
+| `regionName` | `string` | No | Region or state name |
+| `timeZone` | `string` | No | Timezone offset from UTC |
+| `timeZones` | `any[]` | No | List of timezone identifiers for the location |
+| `tlds` | `any[]` | No | Top-level domains for the country |
+| `zipCode` | `string` | No | Postal/ZIP code |
 
 ### Operations
 

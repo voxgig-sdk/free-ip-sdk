@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "FreeIp",
+			"slug": "free-ip",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -104,18 +107,22 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "asn",
+						"short": "Autonomous System Number",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "asnOrganization",
+						"short": "Organization associated with the ASN",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "capital",
+						"short": "Capital city of the country",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "cityName",
+						"short": "City name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -124,58 +131,72 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "continent",
+						"short": "Continent name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "continentCode",
+						"short": "Two-letter continent code",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "countryCode",
+						"short": "ISO 3166-1 alpha-2 country code",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "countryName",
+						"short": "Full country name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "currencies",
+						"short": "List of currencies used in the country",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "currency",
+						"short": "Currency information for the country",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "ip",
+						"short": "IPv4 or IPv6 address to lookup",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "ipAddress",
+						"short": "The IP address that was looked up",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "ipVersion",
+						"short": "IP version (4 for IPv4, 6 for IPv6)",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "isProxy",
+						"short": "Whether the IP is detected as a proxy, VPN, or hosting service",
 						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
 						"name": "language",
+						"short": "Primary language code",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "languages",
+						"short": "List of languages spoken in the country",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "latitude",
+						"short": "Latitude coordinate",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "longitude",
+						"short": "Longitude coordinate",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
@@ -184,30 +205,37 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "phoneCodes",
+						"short": "International dialing codes for the country",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "regionCode",
+						"short": "Region or state code",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "regionName",
+						"short": "Region or state name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "timeZone",
+						"short": "Timezone offset from UTC",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "timeZones",
+						"short": "List of timezone identifiers for the location",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "tlds",
+						"short": "Top-level domains for the country",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "zipCode",
+						"short": "Postal/ZIP code",
 						"type": "`$STRING`",
 					},
 				},

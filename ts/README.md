@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -302,33 +302,33 @@ API path: `/api/xml/{ipAddress}`
 
 | Field | Description |
 | --- | --- |
-| `asn` |  |
-| `asnOrganization` |  |
-| `capital` |  |
-| `cityName` |  |
+| `asn` | Autonomous System Number |
+| `asnOrganization` | Organization associated with the ASN |
+| `capital` | Capital city of the country |
+| `cityName` | City name |
 | `code` |  |
-| `continent` |  |
-| `continentCode` |  |
-| `countryCode` |  |
-| `countryName` |  |
-| `currencies` |  |
-| `currency` |  |
-| `ip` |  |
-| `ipAddress` |  |
-| `ipVersion` |  |
-| `isProxy` |  |
-| `language` |  |
-| `languages` |  |
-| `latitude` |  |
-| `longitude` |  |
+| `continent` | Continent name |
+| `continentCode` | Two-letter continent code |
+| `countryCode` | ISO 3166-1 alpha-2 country code |
+| `countryName` | Full country name |
+| `currencies` | List of currencies used in the country |
+| `currency` | Currency information for the country |
+| `ip` | IPv4 or IPv6 address to lookup |
+| `ipAddress` | The IP address that was looked up |
+| `ipVersion` | IP version (4 for IPv4, 6 for IPv6) |
+| `isProxy` | Whether the IP is detected as a proxy, VPN, or hosting service |
+| `language` | Primary language code |
+| `languages` | List of languages spoken in the country |
+| `latitude` | Latitude coordinate |
+| `longitude` | Longitude coordinate |
 | `name` |  |
-| `phoneCodes` |  |
-| `regionCode` |  |
-| `regionName` |  |
-| `timeZone` |  |
-| `timeZones` |  |
-| `tlds` |  |
-| `zipCode` |  |
+| `phoneCodes` | International dialing codes for the country |
+| `regionCode` | Region or state code |
+| `regionName` | Region or state name |
+| `timeZone` | Timezone offset from UTC |
+| `timeZones` | List of timezone identifiers for the location |
+| `tlds` | Top-level domains for the country |
+| `zipCode` | Postal/ZIP code |
 
 Operations: create, list, load.
 
@@ -372,33 +372,33 @@ Create an instance: `const json = client.Json()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `asn` | `string` |  |
-| `asnOrganization` | `string` |  |
-| `capital` | `string` |  |
-| `cityName` | `string` |  |
+| `asn` | `string` | Autonomous System Number |
+| `asnOrganization` | `string` | Organization associated with the ASN |
+| `capital` | `string` | Capital city of the country |
+| `cityName` | `string` | City name |
 | `code` | `string` |  |
-| `continent` | `string` |  |
-| `continentCode` | `string` |  |
-| `countryCode` | `string` |  |
-| `countryName` | `string` |  |
-| `currencies` | `any[]` |  |
-| `currency` | `Record<string, any>` |  |
-| `ip` | `string` |  |
-| `ipAddress` | `string` |  |
-| `ipVersion` | `number` |  |
-| `isProxy` | `boolean` |  |
-| `language` | `string` |  |
-| `languages` | `any[]` |  |
-| `latitude` | `number` |  |
-| `longitude` | `number` |  |
+| `continent` | `string` | Continent name |
+| `continentCode` | `string` | Two-letter continent code |
+| `countryCode` | `string` | ISO 3166-1 alpha-2 country code |
+| `countryName` | `string` | Full country name |
+| `currencies` | `any[]` | List of currencies used in the country |
+| `currency` | `Record<string, any>` | Currency information for the country |
+| `ip` | `string` | IPv4 or IPv6 address to lookup |
+| `ipAddress` | `string` | The IP address that was looked up |
+| `ipVersion` | `number` | IP version (4 for IPv4, 6 for IPv6) |
+| `isProxy` | `boolean` | Whether the IP is detected as a proxy, VPN, or hosting service |
+| `language` | `string` | Primary language code |
+| `languages` | `any[]` | List of languages spoken in the country |
+| `latitude` | `number` | Latitude coordinate |
+| `longitude` | `number` | Longitude coordinate |
 | `name` | `string` |  |
-| `phoneCodes` | `any[]` |  |
-| `regionCode` | `string` |  |
-| `regionName` | `string` |  |
-| `timeZone` | `string` |  |
-| `timeZones` | `any[]` |  |
-| `tlds` | `any[]` |  |
-| `zipCode` | `string` |  |
+| `phoneCodes` | `any[]` | International dialing codes for the country |
+| `regionCode` | `string` | Region or state code |
+| `regionName` | `string` | Region or state name |
+| `timeZone` | `string` | Timezone offset from UTC |
+| `timeZones` | `any[]` | List of timezone identifiers for the location |
+| `tlds` | `any[]` | Top-level domains for the country |
+| `zipCode` | `string` | Postal/ZIP code |
 
 #### Example: Load
 

@@ -8,21 +8,25 @@ main: kit: entity: json: {
     {
       name: "asn"
       req: false
+      short: "Autonomous System Number"
       type: "`$STRING`"
     }
     {
       name: "asnOrganization"
       req: false
+      short: "Organization associated with the ASN"
       type: "`$STRING`"
     }
     {
       name: "capital"
       req: false
+      short: "Capital city of the country"
       type: "`$STRING`"
     }
     {
       name: "cityName"
       req: false
+      short: "City name"
       type: "`$STRING`"
     }
     {
@@ -33,71 +37,85 @@ main: kit: entity: json: {
     {
       name: "continent"
       req: false
+      short: "Continent name"
       type: "`$STRING`"
     }
     {
       name: "continentCode"
       req: false
+      short: "Two-letter continent code"
       type: "`$STRING`"
     }
     {
       name: "countryCode"
       req: false
+      short: "ISO 3166-1 alpha-2 country code"
       type: "`$STRING`"
     }
     {
       name: "countryName"
       req: false
+      short: "Full country name"
       type: "`$STRING`"
     }
     {
       name: "currencies"
       req: false
+      short: "List of currencies used in the country"
       type: "`$ARRAY`"
     }
     {
       name: "currency"
       req: false
+      short: "Currency information for the country"
       type: "`$OBJECT`"
     }
     {
       name: "ip"
       req: false
+      short: "IPv4 or IPv6 address to lookup"
       type: "`$STRING`"
     }
     {
       name: "ipAddress"
       req: false
+      short: "The IP address that was looked up"
       type: "`$STRING`"
     }
     {
       name: "ipVersion"
       req: false
+      short: "IP version (4 for IPv4, 6 for IPv6)"
       type: "`$INTEGER`"
     }
     {
       name: "isProxy"
       req: false
+      short: "Whether the IP is detected as a proxy, VPN, or hosting service"
       type: "`$BOOLEAN`"
     }
     {
       name: "language"
       req: false
+      short: "Primary language code"
       type: "`$STRING`"
     }
     {
       name: "languages"
       req: false
+      short: "List of languages spoken in the country"
       type: "`$ARRAY`"
     }
     {
       name: "latitude"
       req: false
+      short: "Latitude coordinate"
       type: "`$NUMBER`"
     }
     {
       name: "longitude"
       req: false
+      short: "Longitude coordinate"
       type: "`$NUMBER`"
     }
     {
@@ -108,36 +126,43 @@ main: kit: entity: json: {
     {
       name: "phoneCodes"
       req: false
+      short: "International dialing codes for the country"
       type: "`$ARRAY`"
     }
     {
       name: "regionCode"
       req: false
+      short: "Region or state code"
       type: "`$STRING`"
     }
     {
       name: "regionName"
       req: false
+      short: "Region or state name"
       type: "`$STRING`"
     }
     {
       name: "timeZone"
       req: false
+      short: "Timezone offset from UTC"
       type: "`$STRING`"
     }
     {
       name: "timeZones"
       req: false
+      short: "List of timezone identifiers for the location"
       type: "`$ARRAY`"
     }
     {
       name: "tlds"
       req: false
+      short: "Top-level domains for the country"
       type: "`$ARRAY`"
     }
     {
       name: "zipCode"
       req: false
+      short: "Postal/ZIP code"
       type: "`$STRING`"
     }
   ]

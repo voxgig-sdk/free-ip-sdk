@@ -113,24 +113,28 @@
               "active": true,
               "name": "asn",
               "req": false,
+              "short": "Autonomous System Number",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "asnOrganization",
               "req": false,
+              "short": "Organization associated with the ASN",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "capital",
               "req": false,
+              "short": "Capital city of the country",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "cityName",
               "req": false,
+              "short": "City name",
               "type": "`$STRING`"
             },
             {
@@ -143,84 +147,98 @@
               "active": true,
               "name": "continent",
               "req": false,
+              "short": "Continent name",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "continentCode",
               "req": false,
+              "short": "Two-letter continent code",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "countryCode",
               "req": false,
+              "short": "ISO 3166-1 alpha-2 country code",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "countryName",
               "req": false,
+              "short": "Full country name",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "currencies",
               "req": false,
+              "short": "List of currencies used in the country",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "currency",
               "req": false,
+              "short": "Currency information for the country",
               "type": "`$OBJECT`"
             },
             {
               "active": true,
               "name": "ip",
               "req": false,
+              "short": "IPv4 or IPv6 address to lookup",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "ipAddress",
               "req": false,
+              "short": "The IP address that was looked up",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "ipVersion",
               "req": false,
+              "short": "IP version (4 for IPv4, 6 for IPv6)",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "isProxy",
               "req": false,
+              "short": "Whether the IP is detected as a proxy, VPN, or hosting service",
               "type": "`$BOOLEAN`"
             },
             {
               "active": true,
               "name": "language",
               "req": false,
+              "short": "Primary language code",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "languages",
               "req": false,
+              "short": "List of languages spoken in the country",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "latitude",
               "req": false,
+              "short": "Latitude coordinate",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "longitude",
               "req": false,
+              "short": "Longitude coordinate",
               "type": "`$NUMBER`"
             },
             {
@@ -233,42 +251,49 @@
               "active": true,
               "name": "phoneCodes",
               "req": false,
+              "short": "International dialing codes for the country",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "regionCode",
               "req": false,
+              "short": "Region or state code",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "regionName",
               "req": false,
+              "short": "Region or state name",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "timeZone",
               "req": false,
+              "short": "Timezone offset from UTC",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "timeZones",
               "req": false,
+              "short": "List of timezone identifiers for the location",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "tlds",
               "req": false,
+              "short": "Top-level domains for the country",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "zipCode",
               "req": false,
+              "short": "Postal/ZIP code",
               "type": "`$STRING`"
             }
           ],

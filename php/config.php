@@ -33,6 +33,9 @@ class FreeIpConfig
         return [
             "main" => [
                 "name" => "FreeIp",
+                "slug" => "free-ip",
+                "version" => "0.0.1",
+                "target" => "php",
             ],
             "feature" => [
                 "test" => [
@@ -126,18 +129,22 @@ class FreeIpConfig
           'fields' => [
             [
               'name' => 'asn',
+              'short' => 'Autonomous System Number',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'asnOrganization',
+              'short' => 'Organization associated with the ASN',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'capital',
+              'short' => 'Capital city of the country',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'cityName',
+              'short' => 'City name',
               'type' => '`$STRING`',
             ],
             [
@@ -146,58 +153,72 @@ class FreeIpConfig
             ],
             [
               'name' => 'continent',
+              'short' => 'Continent name',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'continentCode',
+              'short' => 'Two-letter continent code',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'countryCode',
+              'short' => 'ISO 3166-1 alpha-2 country code',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'countryName',
+              'short' => 'Full country name',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'currencies',
+              'short' => 'List of currencies used in the country',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'currency',
+              'short' => 'Currency information for the country',
               'type' => '`$OBJECT`',
             ],
             [
               'name' => 'ip',
+              'short' => 'IPv4 or IPv6 address to lookup',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'ipAddress',
+              'short' => 'The IP address that was looked up',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'ipVersion',
+              'short' => 'IP version (4 for IPv4, 6 for IPv6)',
               'type' => '`$INTEGER`',
             ],
             [
               'name' => 'isProxy',
+              'short' => 'Whether the IP is detected as a proxy, VPN, or hosting service',
               'type' => '`$BOOLEAN`',
             ],
             [
               'name' => 'language',
+              'short' => 'Primary language code',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'languages',
+              'short' => 'List of languages spoken in the country',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'latitude',
+              'short' => 'Latitude coordinate',
               'type' => '`$NUMBER`',
             ],
             [
               'name' => 'longitude',
+              'short' => 'Longitude coordinate',
               'type' => '`$NUMBER`',
             ],
             [
@@ -206,30 +227,37 @@ class FreeIpConfig
             ],
             [
               'name' => 'phoneCodes',
+              'short' => 'International dialing codes for the country',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'regionCode',
+              'short' => 'Region or state code',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'regionName',
+              'short' => 'Region or state name',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'timeZone',
+              'short' => 'Timezone offset from UTC',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'timeZones',
+              'short' => 'List of timezone identifiers for the location',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'tlds',
+              'short' => 'Top-level domains for the country',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'zipCode',
+              'short' => 'Postal/ZIP code',
               'type' => '`$STRING`',
             ],
           ],

@@ -136,33 +136,33 @@ json = client.Json()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `asn` | `str` | No |  |
-| `asnOrganization` | `str` | No |  |
-| `capital` | `str` | No |  |
-| `cityName` | `str` | No |  |
+| `asn` | `str` | No | Autonomous System Number |
+| `asnOrganization` | `str` | No | Organization associated with the ASN |
+| `capital` | `str` | No | Capital city of the country |
+| `cityName` | `str` | No | City name |
 | `code` | `str` | No |  |
-| `continent` | `str` | No |  |
-| `continentCode` | `str` | No |  |
-| `countryCode` | `str` | No |  |
-| `countryName` | `str` | No |  |
-| `currencies` | `list` | No |  |
-| `currency` | `dict` | No |  |
-| `ip` | `str` | No |  |
-| `ipAddress` | `str` | No |  |
-| `ipVersion` | `int` | No |  |
-| `isProxy` | `bool` | No |  |
-| `language` | `str` | No |  |
-| `languages` | `list` | No |  |
-| `latitude` | `float` | No |  |
-| `longitude` | `float` | No |  |
+| `continent` | `str` | No | Continent name |
+| `continentCode` | `str` | No | Two-letter continent code |
+| `countryCode` | `str` | No | ISO 3166-1 alpha-2 country code |
+| `countryName` | `str` | No | Full country name |
+| `currencies` | `list` | No | List of currencies used in the country |
+| `currency` | `dict` | No | Currency information for the country |
+| `ip` | `str` | No | IPv4 or IPv6 address to lookup |
+| `ipAddress` | `str` | No | The IP address that was looked up |
+| `ipVersion` | `int` | No | IP version (4 for IPv4, 6 for IPv6) |
+| `isProxy` | `bool` | No | Whether the IP is detected as a proxy, VPN, or hosting service |
+| `language` | `str` | No | Primary language code |
+| `languages` | `list` | No | List of languages spoken in the country |
+| `latitude` | `float` | No | Latitude coordinate |
+| `longitude` | `float` | No | Longitude coordinate |
 | `name` | `str` | No |  |
-| `phoneCodes` | `list` | No |  |
-| `regionCode` | `str` | No |  |
-| `regionName` | `str` | No |  |
-| `timeZone` | `str` | No |  |
-| `timeZones` | `list` | No |  |
-| `tlds` | `list` | No |  |
-| `zipCode` | `str` | No |  |
+| `phoneCodes` | `list` | No | International dialing codes for the country |
+| `regionCode` | `str` | No | Region or state code |
+| `regionName` | `str` | No | Region or state name |
+| `timeZone` | `str` | No | Timezone offset from UTC |
+| `timeZones` | `list` | No | List of timezone identifiers for the location |
+| `tlds` | `list` | No | Top-level domains for the country |
+| `zipCode` | `str` | No | Postal/ZIP code |
 
 ### Operations
 

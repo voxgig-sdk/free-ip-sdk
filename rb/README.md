@@ -249,33 +249,33 @@ API path: `/api/xml/{ipAddress}`
 
 | Field | Description |
 | --- | --- |
-| `asn` |  |
-| `asnOrganization` |  |
-| `capital` |  |
-| `cityName` |  |
+| `asn` | Autonomous System Number |
+| `asnOrganization` | Organization associated with the ASN |
+| `capital` | Capital city of the country |
+| `cityName` | City name |
 | `code` |  |
-| `continent` |  |
-| `continentCode` |  |
-| `countryCode` |  |
-| `countryName` |  |
-| `currencies` |  |
-| `currency` |  |
-| `ip` |  |
-| `ipAddress` |  |
-| `ipVersion` |  |
-| `isProxy` |  |
-| `language` |  |
-| `languages` |  |
-| `latitude` |  |
-| `longitude` |  |
+| `continent` | Continent name |
+| `continentCode` | Two-letter continent code |
+| `countryCode` | ISO 3166-1 alpha-2 country code |
+| `countryName` | Full country name |
+| `currencies` | List of currencies used in the country |
+| `currency` | Currency information for the country |
+| `ip` | IPv4 or IPv6 address to lookup |
+| `ipAddress` | The IP address that was looked up |
+| `ipVersion` | IP version (4 for IPv4, 6 for IPv6) |
+| `isProxy` | Whether the IP is detected as a proxy, VPN, or hosting service |
+| `language` | Primary language code |
+| `languages` | List of languages spoken in the country |
+| `latitude` | Latitude coordinate |
+| `longitude` | Longitude coordinate |
 | `name` |  |
-| `phoneCodes` |  |
-| `regionCode` |  |
-| `regionName` |  |
-| `timeZone` |  |
-| `timeZones` |  |
-| `tlds` |  |
-| `zipCode` |  |
+| `phoneCodes` | International dialing codes for the country |
+| `regionCode` | Region or state code |
+| `regionName` | Region or state name |
+| `timeZone` | Timezone offset from UTC |
+| `timeZones` | List of timezone identifiers for the location |
+| `tlds` | Top-level domains for the country |
+| `zipCode` | Postal/ZIP code |
 
 Operations: Create, List, Load.
 
@@ -320,33 +320,33 @@ Create an instance: `json = client.Json`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `asn` | `String` |  |
-| `asnOrganization` | `String` |  |
-| `capital` | `String` |  |
-| `cityName` | `String` |  |
+| `asn` | `String` | Autonomous System Number |
+| `asnOrganization` | `String` | Organization associated with the ASN |
+| `capital` | `String` | Capital city of the country |
+| `cityName` | `String` | City name |
 | `code` | `String` |  |
-| `continent` | `String` |  |
-| `continentCode` | `String` |  |
-| `countryCode` | `String` |  |
-| `countryName` | `String` |  |
-| `currencies` | `Array` |  |
-| `currency` | `Hash` |  |
-| `ip` | `String` |  |
-| `ipAddress` | `String` |  |
-| `ipVersion` | `Integer` |  |
-| `isProxy` | `Boolean` |  |
-| `language` | `String` |  |
-| `languages` | `Array` |  |
-| `latitude` | `Float` |  |
-| `longitude` | `Float` |  |
+| `continent` | `String` | Continent name |
+| `continentCode` | `String` | Two-letter continent code |
+| `countryCode` | `String` | ISO 3166-1 alpha-2 country code |
+| `countryName` | `String` | Full country name |
+| `currencies` | `Array` | List of currencies used in the country |
+| `currency` | `Hash` | Currency information for the country |
+| `ip` | `String` | IPv4 or IPv6 address to lookup |
+| `ipAddress` | `String` | The IP address that was looked up |
+| `ipVersion` | `Integer` | IP version (4 for IPv4, 6 for IPv6) |
+| `isProxy` | `Boolean` | Whether the IP is detected as a proxy, VPN, or hosting service |
+| `language` | `String` | Primary language code |
+| `languages` | `Array` | List of languages spoken in the country |
+| `latitude` | `Float` | Latitude coordinate |
+| `longitude` | `Float` | Longitude coordinate |
 | `name` | `String` |  |
-| `phoneCodes` | `Array` |  |
-| `regionCode` | `String` |  |
-| `regionName` | `String` |  |
-| `timeZone` | `String` |  |
-| `timeZones` | `Array` |  |
-| `tlds` | `Array` |  |
-| `zipCode` | `String` |  |
+| `phoneCodes` | `Array` | International dialing codes for the country |
+| `regionCode` | `String` | Region or state code |
+| `regionName` | `String` | Region or state name |
+| `timeZone` | `String` | Timezone offset from UTC |
+| `timeZones` | `Array` | List of timezone identifiers for the location |
+| `tlds` | `Array` | Top-level domains for the country |
+| `zipCode` | `String` | Postal/ZIP code |
 
 #### Example: Load
 
