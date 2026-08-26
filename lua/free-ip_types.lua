@@ -23,6 +23,7 @@
 ---@field countryName? string
 ---@field currencies? table
 ---@field currency? table
+---@field id? string
 ---@field ip? string
 ---@field ipAddress? string
 ---@field ipVersion? number
@@ -55,6 +56,7 @@
 ---@field countryName? string
 ---@field currencies? table
 ---@field currency? table
+---@field id? string
 ---@field ip? string
 ---@field ipAddress? string
 ---@field ipVersion? number
@@ -84,6 +86,7 @@
 ---@field countryName? string
 ---@field currencies? table
 ---@field currency? table
+---@field id? string
 ---@field ip? string
 ---@field ipAddress? string
 ---@field ipVersion? number

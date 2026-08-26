@@ -28,6 +28,7 @@ module FreeIpConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {
@@ -166,6 +167,10 @@ module FreeIpConfig
               "name" => "currency",
               "short" => "Currency information for the country",
               "type" => "`$OBJECT`",
+            },
+            {
+              "name" => "id",
+              "type" => "`$STRING`",
             },
             {
               "name" => "ip",

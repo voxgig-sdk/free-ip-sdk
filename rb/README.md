@@ -260,6 +260,7 @@ API path: `/api/xml/{ipAddress}`
 | `countryName` | Full country name |
 | `currencies` | List of currencies used in the country |
 | `currency` | Currency information for the country |
+| `id` |  |
 | `ip` | IPv4 or IPv6 address to lookup |
 | `ipAddress` | The IP address that was looked up |
 | `ipVersion` | IP version (4 for IPv4, 6 for IPv6) |
@@ -331,6 +332,7 @@ Create an instance: `json = client.Json`
 | `countryName` | `String` | Full country name |
 | `currencies` | `Array` | List of currencies used in the country |
 | `currency` | `Hash` | Currency information for the country |
+| `id` | `String` |  |
 | `ip` | `String` | IPv4 or IPv6 address to lookup |
 | `ipAddress` | `String` | The IP address that was looked up |
 | `ipVersion` | `Integer` | IP version (4 for IPv4, 6 for IPv6) |

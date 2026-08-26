@@ -151,6 +151,7 @@ local json = client:Json(nil)
 | `countryName` | `string` | No | Full country name |
 | `currencies` | `table` | No | List of currencies used in the country |
 | `currency` | `table` | No | Currency information for the country |
+| `id` | `string` | No |  |
 | `ip` | `string` | No | IPv4 or IPv6 address to lookup |
 | `ipAddress` | `string` | No | The IP address that was looked up |
 | `ipVersion` | `number` | No | IP version (4 for IPv4, 6 for IPv6) |

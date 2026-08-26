@@ -56,6 +56,9 @@ IpGeolocationLoadMatch = Struct.new(
 # @!attribute [rw] currency
 #   @return [Hash, nil]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] ip
 #   @return [String, nil]
 #
@@ -115,6 +118,7 @@ Json = Struct.new(
   :countryName,
   :currencies,
   :currency,
+  :id,
   :ip,
   :ipAddress,
   :ipVersion,
@@ -178,6 +182,9 @@ JsonLoadMatch = Struct.new(
 # @!attribute [rw] currency
 #   @return [Hash, nil]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] ip
 #   @return [String, nil]
 #
@@ -237,6 +244,7 @@ JsonListMatch = Struct.new(
   :countryName,
   :currencies,
   :currency,
+  :id,
   :ip,
   :ipAddress,
   :ipVersion,
@@ -290,6 +298,9 @@ JsonListMatch = Struct.new(
 #
 # @!attribute [rw] currency
 #   @return [Hash, nil]
+#
+# @!attribute [rw] id
+#   @return [String, nil]
 #
 # @!attribute [rw] ip
 #   @return [String, nil]
@@ -350,6 +361,7 @@ JsonCreateData = Struct.new(
   :countryName,
   :currencies,
   :currency,
+  :id,
   :ip,
   :ipAddress,
   :ipVersion,

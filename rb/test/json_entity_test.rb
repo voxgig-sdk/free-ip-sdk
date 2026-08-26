@@ -75,6 +75,7 @@ class JsonEntityTest < Minitest::Test
     json_ref01_data_result = json_ref01_ent.create(json_ref01_data, nil)
     json_ref01_data = Helpers.to_map(json_ref01_data_result.respond_to?(:data_get) ? json_ref01_data_result.data_get : json_ref01_data_result)
     assert !json_ref01_data.nil?
+    assert !json_ref01_data["id"].nil?
 
     # LIST
     json_ref01_match = {}
@@ -82,10 +83,19 @@ class JsonEntityTest < Minitest::Test
     json_ref01_list_result = json_ref01_ent.list(json_ref01_match, nil)
     assert json_ref01_list_result.is_a?(Array)
 
+    found_item = Vs.select(
+      Runner.entity_list_to_data(json_ref01_list_result),
+      { "id" => json_ref01_data["id"] })
+    assert !Vs.isempty(found_item)
+
     # LOAD
-    json_ref01_match_dt0 = {}
+    json_ref01_match_dt0 = {
+      "id" => json_ref01_data["id"],
+    }
     json_ref01_data_dt0_loaded = json_ref01_ent.load(json_ref01_match_dt0, nil)
-    assert !json_ref01_data_dt0_loaded.nil?
+    json_ref01_data_dt0_load_result = Helpers.to_map(json_ref01_data_dt0_loaded.respond_to?(:data_get) ? json_ref01_data_dt0_loaded.data_get : json_ref01_data_dt0_loaded)
+    assert !json_ref01_data_dt0_load_result.nil?
+    assert_equal json_ref01_data_dt0_load_result["id"], json_ref01_data["id"]
 
   end
 end

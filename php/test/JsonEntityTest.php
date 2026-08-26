@@ -85,6 +85,7 @@ class JsonEntityTest extends TestCase
         $json_ref01_data_result = $json_ref01_ent->create($json_ref01_data, null);
         $json_ref01_data = Helpers::to_map(is_object($json_ref01_data_result) && method_exists($json_ref01_data_result, 'data_get') ? $json_ref01_data_result->data_get() : $json_ref01_data_result);
         $this->assertNotNull($json_ref01_data);
+        $this->assertNotNull($json_ref01_data["id"]);
 
         // LIST
         $json_ref01_match = [];
@@ -92,10 +93,19 @@ class JsonEntityTest extends TestCase
         $json_ref01_list_result = $json_ref01_ent->list($json_ref01_match, null);
         $this->assertIsArray($json_ref01_list_result);
 
+        $found_item = sdk_select(
+            Runner::entity_list_to_data($json_ref01_list_result),
+            ["id" => $json_ref01_data["id"]]);
+        $this->assertNotEmpty($found_item);
+
         // LOAD
-        $json_ref01_match_dt0 = [];
+        $json_ref01_match_dt0 = [
+            "id" => $json_ref01_data["id"],
+        ];
         $json_ref01_data_dt0_loaded = $json_ref01_ent->load($json_ref01_match_dt0, null);
-        $this->assertNotNull($json_ref01_data_dt0_loaded);
+        $json_ref01_data_dt0_load_result = Helpers::to_map(is_object($json_ref01_data_dt0_loaded) && method_exists($json_ref01_data_dt0_loaded, 'data_get') ? $json_ref01_data_dt0_loaded->data_get() : $json_ref01_data_dt0_loaded);
+        $this->assertNotNull($json_ref01_data_dt0_load_result);
+        $this->assertEquals($json_ref01_data_dt0_load_result["id"], $json_ref01_data["id"]);
 
     }
 }

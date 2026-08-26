@@ -34,6 +34,7 @@ type Json struct {
 	CountryName *string `json:"countryName,omitempty"`
 	Currencies *[]any `json:"currencies,omitempty"`
 	Currency *map[string]any `json:"currency,omitempty"`
+	Id *string `json:"id,omitempty"`
 	Ip *string `json:"ip,omitempty"`
 	IpAddress *string `json:"ipAddress,omitempty"`
 	IpVersion *int `json:"ipVersion,omitempty"`
@@ -70,6 +71,7 @@ type JsonListMatch struct {
 	CountryName *string `json:"countryName,omitempty"`
 	Currencies *[]any `json:"currencies,omitempty"`
 	Currency *map[string]any `json:"currency,omitempty"`
+	Id *string `json:"id,omitempty"`
 	Ip *string `json:"ip,omitempty"`
 	IpAddress *string `json:"ipAddress,omitempty"`
 	IpVersion *int `json:"ipVersion,omitempty"`
@@ -101,6 +103,7 @@ type JsonCreateData struct {
 	CountryName *string `json:"countryName,omitempty"`
 	Currencies *[]any `json:"currencies,omitempty"`
 	Currency *map[string]any `json:"currency,omitempty"`
+	Id *string `json:"id,omitempty"`
 	Ip *string `json:"ip,omitempty"`
 	IpAddress *string `json:"ipAddress,omitempty"`
 	IpVersion *int `json:"ipVersion,omitempty"`

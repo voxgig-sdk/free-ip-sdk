@@ -63,7 +63,7 @@ describe('JsonEntity', async () => {
     let json_ref01_data = setup.data.new.json['json_ref01']
 
     json_ref01_data = (await json_ref01_ent.create(json_ref01_data)).data()
-    assert(null != json_ref01_data)
+    assert(null != json_ref01_data.id)
 
 
     // LIST
@@ -71,6 +71,14 @@ describe('JsonEntity', async () => {
 
     const json_ref01_list = (await json_ref01_ent.list(json_ref01_match)).map((e: any) => e.data())
 
+    assert(!isempty(select(json_ref01_list, { id: json_ref01_data.id })))
+
+
+    // LOAD
+    const json_ref01_match_dt0: any = {}
+    json_ref01_match_dt0.id = json_ref01_data.id
+    const json_ref01_data_dt0 = (await json_ref01_ent.load(json_ref01_match_dt0)).data()
+    assert(json_ref01_data_dt0.id === json_ref01_data.id)
 
 
   })

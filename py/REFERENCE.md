@@ -147,6 +147,7 @@ json = client.Json()
 | `countryName` | `str` | No | Full country name |
 | `currencies` | `list` | No | List of currencies used in the country |
 | `currency` | `dict` | No | Currency information for the country |
+| `id` | `str` | No |  |
 | `ip` | `str` | No | IPv4 or IPv6 address to lookup |
 | `ipAddress` | `str` | No | The IP address that was looked up |
 | `ipVersion` | `int` | No | IP version (4 for IPv4, 6 for IPv6) |

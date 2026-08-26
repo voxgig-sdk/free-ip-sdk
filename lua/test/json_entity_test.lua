@@ -84,6 +84,7 @@ describe("JsonEntity", function()
     assert.is_nil(err)
     json_ref01_data = helpers.to_map(type(json_ref01_data_result) == 'table' and json_ref01_data_result.data_get and json_ref01_data_result:data_get() or json_ref01_data_result)
     assert.is_not_nil(json_ref01_data)
+    assert.is_not_nil(json_ref01_data["id"])
 
     -- LIST
     local json_ref01_match = {}
@@ -92,11 +93,20 @@ describe("JsonEntity", function()
     assert.is_nil(err)
     assert.is_table(json_ref01_list_result)
 
+    local found_item = vs.select(
+      runner.entity_list_to_data(json_ref01_list_result),
+      { id = json_ref01_data["id"] })
+    assert.is_false(vs.isempty(found_item))
+
     -- LOAD
-    local json_ref01_match_dt0 = {}
+    local json_ref01_match_dt0 = {
+      id = json_ref01_data["id"],
+    }
     local json_ref01_data_dt0_loaded, err = json_ref01_ent:load(json_ref01_match_dt0, nil)
     assert.is_nil(err)
-    assert.is_not_nil(json_ref01_data_dt0_loaded)
+    local json_ref01_data_dt0_load_result = helpers.to_map(type(json_ref01_data_dt0_loaded) == 'table' and json_ref01_data_dt0_loaded.data_get and json_ref01_data_dt0_loaded:data_get() or json_ref01_data_dt0_loaded)
+    assert.is_not_nil(json_ref01_data_dt0_load_result)
+    assert.are.equal(json_ref01_data_dt0_load_result["id"], json_ref01_data["id"])
 
   end)
 end)

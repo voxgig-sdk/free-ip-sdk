@@ -37,6 +37,7 @@ class Json
     public ?string $countryName = null;
     public ?array $currencies = null;
     public ?array $currency = null;
+    public ?string $id = null;
     public ?string $ip = null;
     public ?string $ipAddress = null;
     public ?int $ipVersion = null;
@@ -75,6 +76,7 @@ class JsonListMatch
     public ?string $countryName = null;
     public ?array $currencies = null;
     public ?array $currency = null;
+    public ?string $id = null;
     public ?string $ip = null;
     public ?string $ipAddress = null;
     public ?int $ipVersion = null;
@@ -107,6 +109,7 @@ class JsonCreateData
     public ?string $countryName = null;
     public ?array $currencies = null;
     public ?array $currency = null;
+    public ?string $id = null;
     public ?string $ip = null;
     public ?string $ipAddress = null;
     public ?int $ipVersion = null;

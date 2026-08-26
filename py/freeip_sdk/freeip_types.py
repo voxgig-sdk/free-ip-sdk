@@ -36,6 +36,7 @@ class Json(TypedDict, total=False):
     countryName: str
     currencies: list
     currency: dict
+    id: str
     ip: str
     ipAddress: str
     ipVersion: int
@@ -70,6 +71,7 @@ class JsonListMatch(TypedDict, total=False):
     countryName: str
     currencies: list
     currency: dict
+    id: str
     ip: str
     ipAddress: str
     ipVersion: int
@@ -100,6 +102,7 @@ class JsonCreateData(TypedDict, total=False):
     countryName: str
     currencies: list
     currency: dict
+    id: str
     ip: str
     ipAddress: str
     ipVersion: int

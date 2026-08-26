@@ -158,6 +158,7 @@ fmt.Println(json.GetName()) // "json"
 | `countryName` | `string` | No | Full country name |
 | `currencies` | `[]any` | No | List of currencies used in the country |
 | `currency` | `map[string]any` | No | Currency information for the country |
+| `id` | `string` | No |  |
 | `ip` | `string` | No | IPv4 or IPv6 address to lookup |
 | `ipAddress` | `string` | No | The IP address that was looked up |
 | `ipVersion` | `int` | No | IP version (4 for IPv4, 6 for IPv6) |

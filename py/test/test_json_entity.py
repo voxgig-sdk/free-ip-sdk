@@ -80,6 +80,7 @@ class TestJsonEntity:
 
         json_ref01_data = helpers.to_map(runner.entity_data(json_ref01_ent.create(json_ref01_data, None)))
         assert json_ref01_data is not None
+        assert json_ref01_data["id"] is not None
 
         # LIST
         json_ref01_match = {}
@@ -87,10 +88,19 @@ class TestJsonEntity:
         json_ref01_list_result = json_ref01_ent.list(json_ref01_match, None)
         assert isinstance(json_ref01_list_result, list)
 
+        found_item = vs.select(
+            runner.entity_list_to_data(json_ref01_list_result),
+            {"id": json_ref01_data["id"]})
+        assert not vs.isempty(found_item)
+
         # LOAD
-        json_ref01_match_dt0 = {}
+        json_ref01_match_dt0 = {
+            "id": json_ref01_data["id"],
+        }
         json_ref01_data_dt0_loaded = json_ref01_ent.load(json_ref01_match_dt0, None)
-        assert json_ref01_data_dt0_loaded is not None
+        json_ref01_data_dt0_load_result = helpers.to_map(runner.entity_data(json_ref01_data_dt0_loaded))
+        assert json_ref01_data_dt0_load_result is not None
+        assert json_ref01_data_dt0_load_result["id"] == json_ref01_data["id"]
 
 
 

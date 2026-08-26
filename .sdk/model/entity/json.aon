@@ -71,6 +71,11 @@ main: kit: entity: json: {
       type: "`$OBJECT`"
     }
     {
+      name: "id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
       name: "ip"
       req: false
       short: "IPv4 or IPv6 address to lookup"
@@ -166,6 +171,11 @@ main: kit: entity: json: {
       type: "`$STRING`"
     }
   ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
 
   name: "json"
   op: {

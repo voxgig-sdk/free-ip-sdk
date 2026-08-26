@@ -110,6 +110,9 @@ func TestJsonEntity(t *testing.T) {
 		if jsonRef01Data == nil {
 			t.Fatal("expected create result to be a map")
 		}
+		if jsonRef01Data["id"] == nil {
+			t.Fatal("expected created entity to have an id")
+		}
 
 		// LIST
 		jsonRef01Match := map[string]any{}
@@ -118,19 +121,30 @@ func TestJsonEntity(t *testing.T) {
 		if err != nil {
 			t.Fatalf("list failed: %v", err)
 		}
-		_, jsonRef01ListOk := jsonRef01ListResult.([]any)
+		jsonRef01List, jsonRef01ListOk := jsonRef01ListResult.([]any)
 		if !jsonRef01ListOk {
 			t.Fatalf("expected list result to be an array, got %T", jsonRef01ListResult)
 		}
 
+		foundItem := vs.Select(entityListToData(jsonRef01List), map[string]any{"id": jsonRef01Data["id"]})
+		if vs.IsEmpty(foundItem) {
+			t.Fatal("expected to find created entity in list")
+		}
+
 		// LOAD
-		jsonRef01MatchDt0 := map[string]any{}
+		jsonRef01MatchDt0 := map[string]any{
+			"id": jsonRef01Data["id"],
+		}
 		jsonRef01DataDt0Loaded, err := jsonRef01Ent.Load(jsonRef01MatchDt0, nil)
 		if err != nil {
 			t.Fatalf("load failed: %v", err)
 		}
-		if jsonRef01DataDt0Loaded == nil {
-			t.Fatal("expected load result to be non-nil")
+		jsonRef01DataDt0LoadResult := core.ToMapAny(entityData(jsonRef01DataDt0Loaded))
+		if jsonRef01DataDt0LoadResult == nil {
+			t.Fatal("expected load result to be a map")
+		}
+		if jsonRef01DataDt0LoadResult["id"] != jsonRef01Data["id"] {
+			t.Fatal("expected load result id to match")
 		}
 
 	})

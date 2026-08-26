@@ -24,6 +24,7 @@ export interface Json {
   countryName?: string
   currencies?: any[]
   currency?: Record<string, any>
+  id?: string
   ip?: string
   ipAddress?: string
   ipVersion?: number
@@ -58,6 +59,7 @@ export interface JsonListMatch {
   countryName?: string
   currencies?: any[]
   currency?: Record<string, any>
+  id?: string
   ip?: string
   ipAddress?: string
   ipVersion?: number
@@ -88,6 +90,7 @@ export interface JsonCreateData {
   countryName?: string
   currencies?: any[]
   currency?: Record<string, any>
+  id?: string
   ip?: string
   ipAddress?: string
   ipVersion?: number
