@@ -10,6 +10,17 @@ const FEATURE_CLASS: Record<string, typeof BaseFeature> = {
 }
 
 
+// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
+// the model's active plugin groups. A feature that takes a `plugins` option
+// (secrets over sekreto) reads its own entry; a feature with no plugins has
+// none. Named imports above make each definition statically reachable, so
+// an SDK carries exactly the plugin modules its model selects — the same
+// leanness the old side-effect registry imports bought, without a registry.
+const FEATURE_PLUGINS: Record<string, any[]> = {
+  
+}
+
+
 class Config {
 
   makeFeature(this: any, fn: string) {
@@ -91,16 +102,22 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/api/xml/{ipAddress}",
-              "parts": [
-                "api",
-                "xml",
-                "{ip_address}"
-              ],
               "rename": {
                 "param": {
                   "ipAddress": "ip_address"
                 }
               },
+              "segments": [
+                {
+                  "lit": "api"
+                },
+                {
+                  "lit": "xml"
+                },
+                {
+                  "var": "ip_address"
+                }
+              ],
               "select": {
                 "exist": [
                   "ip_address"
@@ -109,22 +126,35 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "api",
+                "xml",
+                "{ip_address}"
+              ]
             },
             {
               "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/api/xml",
-              "parts": [
-                "api",
-                "xml"
+              "segments": [
+                {
+                  "lit": "api"
+                },
+                {
+                  "lit": "xml"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "api",
+                "xml"
+              ]
             }
           ]
         }
@@ -228,11 +258,13 @@ class Config {
           "type": "`$ARRAY`"
         },
         {
+          "format": "double",
           "name": "latitude",
           "short": "Latitude coordinate",
           "type": "`$NUMBER`"
         },
         {
+          "format": "double",
           "name": "longitude",
           "short": "Longitude coordinate",
           "type": "`$NUMBER`"
@@ -277,6 +309,10 @@ class Config {
           "type": "`$STRING`"
         }
       ],
+      "id": {
+        "field": "id",
+        "name": "id"
+      },
       "name": "json",
       "op": {
         "create": {
@@ -288,15 +324,23 @@ class Config {
               "kind": "http",
               "method": "POST",
               "orig": "/api/json",
-              "parts": [
-                "api",
-                "json"
+              "segments": [
+                {
+                  "lit": "api"
+                },
+                {
+                  "lit": "json"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "api",
+                "json"
+              ]
             }
           ]
         },
@@ -309,15 +353,23 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/api/json",
-              "parts": [
-                "api",
-                "json"
+              "segments": [
+                {
+                  "lit": "api"
+                },
+                {
+                  "lit": "json"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "api",
+                "json"
+              ]
             }
           ]
         },
@@ -341,16 +393,22 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/api/json/{ipAddress}",
-              "parts": [
-                "api",
-                "json",
-                "{id}"
-              ],
               "rename": {
                 "param": {
                   "ipAddress": "id"
                 }
               },
+              "segments": [
+                {
+                  "lit": "api"
+                },
+                {
+                  "lit": "json"
+                },
+                {
+                  "var": "id"
+                }
+              ],
               "select": {
                 "exist": [
                   "id"
@@ -359,7 +417,12 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "api",
+                "json",
+                "{id}"
+              ]
             }
           ]
         }
@@ -375,6 +438,7 @@ class Config {
 const config = new Config()
 
 export {
-  config
+  config,
+  FEATURE_PLUGINS,
 }
 

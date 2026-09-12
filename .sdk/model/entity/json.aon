@@ -112,12 +112,14 @@ main: kit: entity: json: {
       type: "`$ARRAY`"
     }
     {
+      format: "double"
       name: "latitude"
       req: false
       short: "Latitude coordinate"
       type: "`$NUMBER`"
     }
     {
+      format: "double"
       name: "longitude"
       req: false
       short: "Longitude coordinate"
@@ -185,9 +187,13 @@ main: kit: entity: json: {
         {
           method: "POST"
           orig: "/api/json"
-          parts: [
-            "api"
-            "json"
+          segments: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "json"
+            }
           ]
           transform: {
             req: "`reqdata`"
@@ -202,9 +208,13 @@ main: kit: entity: json: {
         {
           method: "GET"
           orig: "/api/json"
-          parts: [
-            "api"
-            "json"
+          segments: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "json"
+            }
           ]
           transform: {
             req: "`reqdata`"
@@ -231,16 +241,22 @@ main: kit: entity: json: {
           }
           method: "GET"
           orig: "/api/json/{ipAddress}"
-          parts: [
-            "api"
-            "json"
-            "{id}"
-          ]
           rename: {
             param: {
               ipAddress: "id"
             }
           }
+          segments: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "json"
+            }
+            {
+              var: "id"
+            }
+          ]
           select: {
             exist: [
               "id"

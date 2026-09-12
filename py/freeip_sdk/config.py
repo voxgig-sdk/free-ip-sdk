@@ -1,6 +1,14 @@
 # FreeIp SDK configuration
 
 
+# The sekreto plugin DEFINITIONS the model selected per feature, imported
+# above by name from the modules the catalogue's active `plugin.def`
+# entries declare. Handed to each feature (secrets builds its Sekreto
+# with them): a provider kind not listed here is unknown to that SDK.
+FEATURE_PLUGINS = {
+}
+
+
 _shared_config = None
 
 
@@ -75,16 +83,22 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/api/xml/{ipAddress}",
-                "parts": [
-                  "api",
-                  "xml",
-                  "{ip_address}",
-                ],
                 "rename": {
                   "param": {
                     "ipAddress": "ip_address",
                   },
                 },
+                "segments": [
+                  {
+                    "lit": "api",
+                  },
+                  {
+                    "lit": "xml",
+                  },
+                  {
+                    "var": "ip_address",
+                  },
+                ],
                 "select": {
                   "exist": [
                     "ip_address",
@@ -94,21 +108,34 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "api",
+                  "xml",
+                  "{ip_address}",
+                ],
               },
               {
                 "args": {},
                 "kind": "http",
                 "method": "GET",
                 "orig": "/api/xml",
-                "parts": [
-                  "api",
-                  "xml",
+                "segments": [
+                  {
+                    "lit": "api",
+                  },
+                  {
+                    "lit": "xml",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "api",
+                  "xml",
+                ],
               },
             ],
           },
@@ -212,11 +239,13 @@ def make_config():
             "type": "`$ARRAY`",
           },
           {
+            "format": "double",
             "name": "latitude",
             "short": "Latitude coordinate",
             "type": "`$NUMBER`",
           },
           {
+            "format": "double",
             "name": "longitude",
             "short": "Longitude coordinate",
             "type": "`$NUMBER`",
@@ -261,6 +290,10 @@ def make_config():
             "type": "`$STRING`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "json",
         "op": {
           "create": {
@@ -272,15 +305,23 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/api/json",
-                "parts": [
-                  "api",
-                  "json",
+                "segments": [
+                  {
+                    "lit": "api",
+                  },
+                  {
+                    "lit": "json",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "api",
+                  "json",
+                ],
               },
             ],
           },
@@ -293,15 +334,23 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/api/json",
-                "parts": [
-                  "api",
-                  "json",
+                "segments": [
+                  {
+                    "lit": "api",
+                  },
+                  {
+                    "lit": "json",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "api",
+                  "json",
+                ],
               },
             ],
           },
@@ -325,16 +374,22 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/api/json/{ipAddress}",
-                "parts": [
-                  "api",
-                  "json",
-                  "{id}",
-                ],
                 "rename": {
                   "param": {
                     "ipAddress": "id",
                   },
                 },
+                "segments": [
+                  {
+                    "lit": "api",
+                  },
+                  {
+                    "lit": "json",
+                  },
+                  {
+                    "var": "id",
+                  },
+                ],
                 "select": {
                   "exist": [
                     "id",
@@ -344,6 +399,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "api",
+                  "json",
+                  "{id}",
+                ],
               },
             ],
           },

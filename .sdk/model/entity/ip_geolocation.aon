@@ -24,16 +24,22 @@ main: kit: entity: ip_geolocation: {
           }
           method: "GET"
           orig: "/api/xml/{ipAddress}"
-          parts: [
-            "api"
-            "xml"
-            "{ip_address}"
-          ]
           rename: {
             param: {
               ipAddress: "ip_address"
             }
           }
+          segments: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "xml"
+            }
+            {
+              var: "ip_address"
+            }
+          ]
           select: {
             exist: [
               "ip_address"
@@ -47,9 +53,13 @@ main: kit: entity: ip_geolocation: {
         {
           method: "GET"
           orig: "/api/xml"
-          parts: [
-            "api"
-            "xml"
+          segments: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "xml"
+            }
           ]
           transform: {
             req: "`reqdata`"

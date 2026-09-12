@@ -50,7 +50,7 @@ func TestIpGeolocationEntity(t *testing.T) {
 		client := setup.client
 
 		// Bootstrap entity data from existing test data (no create step in flow).
-		ipGeolocationRef01DataRaw := vs.Items(core.ToMapAny(vs.GetPath("existing.ip_geolocation", setup.data)))
+		ipGeolocationRef01DataRaw := vs.Items(core.ToMapAny(vs.GetPath(setup.data, "existing.ip_geolocation")))
 		var ipGeolocationRef01Data map[string]any
 		if len(ipGeolocationRef01DataRaw) > 0 {
 			ipGeolocationRef01Data = core.ToMapAny(ipGeolocationRef01DataRaw[0][1])
@@ -97,7 +97,7 @@ func ip_geolocationBasicSetup(extra map[string]any) *entityTestSetup {
 	client := sdk.TestSDK(options, extra)
 
 	// Generate idmap via transform, matching TS pattern.
-	idmap := vs.Transform(
+	idmap, _ := vs.Transform(
 		[]any{"ip_geolocation01", "ip_geolocation02", "ip_geolocation03", "xml01", "xml02", "xml03"},
 		map[string]any{
 			"`$PACK`": []any{"", map[string]any{
@@ -125,10 +125,22 @@ func ip_geolocationBasicSetup(extra map[string]any) *entityTestSetup {
 	}
 
 	if env["FREE_IP_TEST_LIVE"] == "TRUE" {
+		// An empty map, not a nil one: Merge returns nil when its last entry
+		// is nil, and BasicSetup is normally called with no extras - so a
+		// bare nil silently discarded the apikey and server values below.
+		extraOpts := extra
+		if extraOpts == nil {
+			extraOpts = map[string]any{}
+		}
+
 		mergedOpts := vs.Merge([]any{
+			// liveClientOptions() FIRST, so the generated fields below win:
+			// sdk-test-control.json's test.client.options adds to the live
+			// client, it does not redirect it.
+			liveClientOptions(),
 			map[string]any{
 			},
-			extra,
+			extraOpts,
 		})
 		client = sdk.NewFreeIpSDK(core.ToMapAny(mergedOpts))
 	}

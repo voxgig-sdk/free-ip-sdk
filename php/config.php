@@ -80,14 +80,20 @@ class FreeIpConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/api/xml/{ipAddress}',
-                  'parts' => [
-                    'api',
-                    'xml',
-                    '{ip_address}',
-                  ],
                   'rename' => [
                     'param' => [
                       'ipAddress' => 'ip_address',
+                    ],
+                  ],
+                  'segments' => [
+                    [
+                      'lit' => 'api',
+                    ],
+                    [
+                      'lit' => 'xml',
+                    ],
+                    [
+                      'var' => 'ip_address',
                     ],
                   ],
                   'select' => [
@@ -99,20 +105,33 @@ class FreeIpConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
+                  'parts' => [
+                    'api',
+                    'xml',
+                    '{ip_address}',
+                  ],
                 ],
                 [
                   'args' => [],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/api/xml',
-                  'parts' => [
-                    'api',
-                    'xml',
+                  'segments' => [
+                    [
+                      'lit' => 'api',
+                    ],
+                    [
+                      'lit' => 'xml',
+                    ],
                   ],
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'api',
+                    'xml',
                   ],
                 ],
               ],
@@ -217,11 +236,13 @@ class FreeIpConfig
               'type' => '`$ARRAY`',
             ],
             [
+              'format' => 'double',
               'name' => 'latitude',
               'short' => 'Latitude coordinate',
               'type' => '`$NUMBER`',
             ],
             [
+              'format' => 'double',
               'name' => 'longitude',
               'short' => 'Longitude coordinate',
               'type' => '`$NUMBER`',
@@ -266,6 +287,10 @@ class FreeIpConfig
               'type' => '`$STRING`',
             ],
           ],
+          'id' => [
+            'field' => 'id',
+            'name' => 'id',
+          ],
           'name' => 'json',
           'op' => [
             'create' => [
@@ -277,14 +302,22 @@ class FreeIpConfig
                   'kind' => 'http',
                   'method' => 'POST',
                   'orig' => '/api/json',
-                  'parts' => [
-                    'api',
-                    'json',
+                  'segments' => [
+                    [
+                      'lit' => 'api',
+                    ],
+                    [
+                      'lit' => 'json',
+                    ],
                   ],
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'api',
+                    'json',
                   ],
                 ],
               ],
@@ -298,14 +331,22 @@ class FreeIpConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/api/json',
-                  'parts' => [
-                    'api',
-                    'json',
+                  'segments' => [
+                    [
+                      'lit' => 'api',
+                    ],
+                    [
+                      'lit' => 'json',
+                    ],
                   ],
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'api',
+                    'json',
                   ],
                 ],
               ],
@@ -330,14 +371,20 @@ class FreeIpConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/api/json/{ipAddress}',
-                  'parts' => [
-                    'api',
-                    'json',
-                    '{id}',
-                  ],
                   'rename' => [
                     'param' => [
                       'ipAddress' => 'id',
+                    ],
+                  ],
+                  'segments' => [
+                    [
+                      'lit' => 'api',
+                    ],
+                    [
+                      'lit' => 'json',
+                    ],
+                    [
+                      'var' => 'id',
                     ],
                   ],
                   'select' => [
@@ -348,6 +395,11 @@ class FreeIpConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'api',
+                    'json',
+                    '{id}',
                   ],
                 ],
               ],
