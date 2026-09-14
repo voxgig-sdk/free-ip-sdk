@@ -105,7 +105,7 @@ local result, err = client:IpGeolocation():load({ ip_address = "example" })
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/free-ip` | publish pending — [install from git tag](https://github.com/voxgig-sdk/free-ip-sdk/releases) |
+| TypeScript | `@voxgig-sdk/free-ip-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/free-ip-sdk/releases) |
 | Python | `voxgig-sdk-free-ip` | publish pending — [install from git tag](https://github.com/voxgig-sdk/free-ip-sdk/releases) |
 | PHP | `voxgig-sdk/free-ip` | publish pending — [install from git tag](https://github.com/voxgig-sdk/free-ip-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/free-ip-sdk/go` | `go get github.com/voxgig-sdk/free-ip-sdk/go@latest` |
@@ -119,7 +119,7 @@ local result, err = client:IpGeolocation():load({ ip_address = "example" })
 ### TypeScript
 
 ```ts
-import { FreeIpSDK } from '@voxgig-sdk/free-ip'
+import { FreeIpSDK } from '@voxgig-sdk/free-ip-sdk'
 
 const client = new FreeIpSDK()
 

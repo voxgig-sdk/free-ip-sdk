@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { FreeIpSDK } from '@voxgig-sdk/free-ip'
+import { FreeIpSDK } from '@voxgig-sdk/free-ip-sdk'
 
 const client = new FreeIpSDK()
 ```
@@ -504,7 +504,7 @@ free-ip/
 Import the SDK from the package root:
 
 ```ts
-import { FreeIpSDK } from '@voxgig-sdk/free-ip'
+import { FreeIpSDK } from '@voxgig-sdk/free-ip-sdk'
 ```
 
 ### Entity state
