@@ -1,12 +1,18 @@
 # FreeIp SDK feature factory
 
 from freeip_sdk.feature.base_feature import FreeIpBaseFeature
+from freeip_sdk.feature.ratelimit_feature import FreeIpRatelimitFeature
+from freeip_sdk.feature.retry_feature import FreeIpRetryFeature
 from freeip_sdk.feature.test_feature import FreeIpTestFeature
+from freeip_sdk.feature.timeout_feature import FreeIpTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: FreeIpBaseFeature(),
+    "ratelimit": lambda: FreeIpRatelimitFeature(),
+    "retry": lambda: FreeIpRetryFeature(),
     "test": lambda: FreeIpTestFeature(),
+    "timeout": lambda: FreeIpTimeoutFeature(),
 }
 
 

@@ -16,7 +16,7 @@
         "id": "JSON00",
         "ip": "s124",
         "ipAddress": "s125",
-        "ipVersion": "s126",
+        "ipVersion": 294,
         "isProxy": false,
         "language": "s128",
         "languages": [],
@@ -46,7 +46,7 @@
         "id": "JSON01",
         "ip": "s23c",
         "ipAddress": "s23d",
-        "ipVersion": "s23e",
+        "ipVersion": 574,
         "isProxy": false,
         "language": "s240",
         "languages": [],
@@ -76,7 +76,7 @@
         "id": "JSON02",
         "ip": "s354",
         "ipAddress": "s355",
-        "ipVersion": "s356",
+        "ipVersion": 854,
         "isProxy": false,
         "language": "s358",
         "languages": [],
@@ -109,7 +109,7 @@
         "currency": {},
         "ip": "s46c",
         "ipAddress": "s46d",
-        "ipVersion": "s46e",
+        "ipVersion": 1134,
         "isProxy": false,
         "language": "s470",
         "languages": [],
@@ -123,6 +123,853 @@
         "timeZones": [],
         "tlds": [],
         "zipCode": "s47b"
+      }
+    }
+  },
+  "requests": {
+    "POST /api/json": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "postIpInfo",
+        "parameters": [],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "ip": {
+                    "description": "IPv4 or IPv6 address to lookup",
+                    "example": "8.8.8.8",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "description": "Optional IP address to lookup",
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Complete IP geolocation information response",
+                  "properties": {
+                    "asn": {
+                      "description": "Autonomous System Number",
+                      "example": "AS15169",
+                      "type": "string"
+                    },
+                    "asnOrganization": {
+                      "description": "Organization associated with the ASN",
+                      "example": "Google LLC",
+                      "type": "string"
+                    },
+                    "capital": {
+                      "description": "Capital city of the country",
+                      "example": "Washington",
+                      "type": "string"
+                    },
+                    "cityName": {
+                      "description": "City name",
+                      "example": "Mountain View",
+                      "type": "string"
+                    },
+                    "continent": {
+                      "description": "Continent name",
+                      "example": "North America",
+                      "type": "string"
+                    },
+                    "continentCode": {
+                      "description": "Two-letter continent code",
+                      "example": "NA",
+                      "type": "string"
+                    },
+                    "countryCode": {
+                      "description": "ISO 3166-1 alpha-2 country code",
+                      "example": "US",
+                      "type": "string"
+                    },
+                    "countryName": {
+                      "description": "Full country name",
+                      "example": "United States",
+                      "type": "string"
+                    },
+                    "currencies": {
+                      "description": "List of currencies used in the country",
+                      "items": {
+                        "properties": {
+                          "code": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "currency": {
+                      "description": "Currency information for the country",
+                      "properties": {
+                        "code": {
+                          "description": "ISO 4217 currency code",
+                          "example": "USD",
+                          "type": "string"
+                        },
+                        "name": {
+                          "description": "Currency name",
+                          "example": "US Dollar",
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "ipAddress": {
+                      "description": "The IP address that was looked up",
+                      "example": "8.8.8.8",
+                      "type": "string"
+                    },
+                    "ipVersion": {
+                      "description": "IP version (4 for IPv4, 6 for IPv6)",
+                      "example": 4,
+                      "type": "integer"
+                    },
+                    "isProxy": {
+                      "description": "Whether the IP is detected as a proxy, VPN, or hosting service",
+                      "example": false,
+                      "type": "boolean"
+                    },
+                    "language": {
+                      "description": "Primary language code",
+                      "example": "en-US",
+                      "type": "string"
+                    },
+                    "languages": {
+                      "description": "List of languages spoken in the country",
+                      "example": [
+                        "en"
+                      ],
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "latitude": {
+                      "description": "Latitude coordinate",
+                      "example": 37.386,
+                      "format": "double",
+                      "type": "number"
+                    },
+                    "longitude": {
+                      "description": "Longitude coordinate",
+                      "example": -122.0838,
+                      "format": "double",
+                      "type": "number"
+                    },
+                    "phoneCodes": {
+                      "description": "International dialing codes for the country",
+                      "example": [
+                        "+1"
+                      ],
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "regionCode": {
+                      "description": "Region or state code",
+                      "example": "CA",
+                      "type": "string"
+                    },
+                    "regionName": {
+                      "description": "Region or state name",
+                      "example": "California",
+                      "type": "string"
+                    },
+                    "timeZone": {
+                      "description": "Timezone offset from UTC",
+                      "example": "-08:00",
+                      "type": "string"
+                    },
+                    "timeZones": {
+                      "description": "List of timezone identifiers for the location",
+                      "example": [
+                        "America/Los_Angeles"
+                      ],
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "tlds": {
+                      "description": "Top-level domains for the country",
+                      "example": [
+                        ".us"
+                      ],
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "zipCode": {
+                      "description": "Postal/ZIP code",
+                      "example": "94043",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response with IP geolocation information"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Error response object",
+                  "properties": {
+                    "code": {
+                      "description": "HTTP status code",
+                      "example": 429,
+                      "type": "integer"
+                    },
+                    "error": {
+                      "description": "Indicates an error occurred",
+                      "example": true,
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "description": "Error message describing what went wrong",
+                      "example": "Rate limit exceeded",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Bad request - invalid IP address format"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Error response object",
+                  "properties": {
+                    "code": {
+                      "description": "HTTP status code",
+                      "example": 429,
+                      "type": "integer"
+                    },
+                    "error": {
+                      "description": "Indicates an error occurred",
+                      "example": true,
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "description": "Error message describing what went wrong",
+                      "example": "Rate limit exceeded",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Rate limit exceeded (60 requests per minute)"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /api/json": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getIpInfoCurrent",
+        "parameters": [],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "cityName": "Melbourne",
+                  "continent": "Oceania",
+                  "continentCode": "OC",
+                  "countryCode": "AU",
+                  "countryName": "Australia",
+                  "currency": {
+                    "code": "AUD",
+                    "name": "Australian Dollar"
+                  },
+                  "ipAddress": "1.1.1.1",
+                  "ipVersion": 4,
+                  "isProxy": false,
+                  "language": "en-AU",
+                  "latitude": -37.7,
+                  "longitude": 145.1833,
+                  "regionCode": "VIC",
+                  "regionName": "Victoria",
+                  "timeZone": "+11:00",
+                  "timeZones": [
+                    "Australia/Melbourne"
+                  ],
+                  "tlds": [
+                    ".au"
+                  ],
+                  "zipCode": "3000"
+                },
+                "schema": {
+                  "description": "Complete IP geolocation information response",
+                  "properties": {
+                    "asn": {
+                      "description": "Autonomous System Number",
+                      "example": "AS15169",
+                      "type": "string"
+                    },
+                    "asnOrganization": {
+                      "description": "Organization associated with the ASN",
+                      "example": "Google LLC",
+                      "type": "string"
+                    },
+                    "capital": {
+                      "description": "Capital city of the country",
+                      "example": "Washington",
+                      "type": "string"
+                    },
+                    "cityName": {
+                      "description": "City name",
+                      "example": "Mountain View",
+                      "type": "string"
+                    },
+                    "continent": {
+                      "description": "Continent name",
+                      "example": "North America",
+                      "type": "string"
+                    },
+                    "continentCode": {
+                      "description": "Two-letter continent code",
+                      "example": "NA",
+                      "type": "string"
+                    },
+                    "countryCode": {
+                      "description": "ISO 3166-1 alpha-2 country code",
+                      "example": "US",
+                      "type": "string"
+                    },
+                    "countryName": {
+                      "description": "Full country name",
+                      "example": "United States",
+                      "type": "string"
+                    },
+                    "currencies": {
+                      "description": "List of currencies used in the country",
+                      "items": {
+                        "properties": {
+                          "code": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "currency": {
+                      "description": "Currency information for the country",
+                      "properties": {
+                        "code": {
+                          "description": "ISO 4217 currency code",
+                          "example": "USD",
+                          "type": "string"
+                        },
+                        "name": {
+                          "description": "Currency name",
+                          "example": "US Dollar",
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "ipAddress": {
+                      "description": "The IP address that was looked up",
+                      "example": "8.8.8.8",
+                      "type": "string"
+                    },
+                    "ipVersion": {
+                      "description": "IP version (4 for IPv4, 6 for IPv6)",
+                      "example": 4,
+                      "type": "integer"
+                    },
+                    "isProxy": {
+                      "description": "Whether the IP is detected as a proxy, VPN, or hosting service",
+                      "example": false,
+                      "type": "boolean"
+                    },
+                    "language": {
+                      "description": "Primary language code",
+                      "example": "en-US",
+                      "type": "string"
+                    },
+                    "languages": {
+                      "description": "List of languages spoken in the country",
+                      "example": [
+                        "en"
+                      ],
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "latitude": {
+                      "description": "Latitude coordinate",
+                      "example": 37.386,
+                      "format": "double",
+                      "type": "number"
+                    },
+                    "longitude": {
+                      "description": "Longitude coordinate",
+                      "example": -122.0838,
+                      "format": "double",
+                      "type": "number"
+                    },
+                    "phoneCodes": {
+                      "description": "International dialing codes for the country",
+                      "example": [
+                        "+1"
+                      ],
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "regionCode": {
+                      "description": "Region or state code",
+                      "example": "CA",
+                      "type": "string"
+                    },
+                    "regionName": {
+                      "description": "Region or state name",
+                      "example": "California",
+                      "type": "string"
+                    },
+                    "timeZone": {
+                      "description": "Timezone offset from UTC",
+                      "example": "-08:00",
+                      "type": "string"
+                    },
+                    "timeZones": {
+                      "description": "List of timezone identifiers for the location",
+                      "example": [
+                        "America/Los_Angeles"
+                      ],
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "tlds": {
+                      "description": "Top-level domains for the country",
+                      "example": [
+                        ".us"
+                      ],
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "zipCode": {
+                      "description": "Postal/ZIP code",
+                      "example": "94043",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response with IP geolocation information"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Error response object",
+                  "properties": {
+                    "code": {
+                      "description": "HTTP status code",
+                      "example": 429,
+                      "type": "integer"
+                    },
+                    "error": {
+                      "description": "Indicates an error occurred",
+                      "example": true,
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "description": "Error message describing what went wrong",
+                      "example": "Rate limit exceeded",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Rate limit exceeded (60 requests per minute)"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Error response object",
+                  "properties": {
+                    "code": {
+                      "description": "HTTP status code",
+                      "example": 429,
+                      "type": "integer"
+                    },
+                    "error": {
+                      "description": "Indicates an error occurred",
+                      "example": true,
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "description": "Error message describing what went wrong",
+                      "example": "Rate limit exceeded",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /api/json/{ipAddress}": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getIpInfoByAddress",
+        "parameters": [
+          {
+            "description": "IPv4 or IPv6 address to lookup",
+            "in": "path",
+            "name": "ipAddress",
+            "required": true,
+            "schema": {
+              "example": "193.247.239.168",
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "asn": "AS12345",
+                  "asnOrganization": "Example ISP",
+                  "capital": "Paris",
+                  "cityName": "Paris",
+                  "continent": "Europe",
+                  "continentCode": "EU",
+                  "countryCode": "FR",
+                  "countryName": "France",
+                  "currency": {
+                    "code": "EUR",
+                    "name": "Euro"
+                  },
+                  "ipAddress": "193.247.239.168",
+                  "ipVersion": 4,
+                  "isProxy": false,
+                  "languages": [
+                    "fr"
+                  ],
+                  "latitude": 48.8566,
+                  "longitude": 2.3522,
+                  "phoneCodes": [
+                    "+33"
+                  ],
+                  "regionCode": "IDF",
+                  "regionName": "Île-de-France",
+                  "timeZone": "+01:00",
+                  "timeZones": [
+                    "Europe/Paris"
+                  ],
+                  "zipCode": "75001"
+                },
+                "schema": {
+                  "description": "Complete IP geolocation information response",
+                  "properties": {
+                    "asn": {
+                      "description": "Autonomous System Number",
+                      "example": "AS15169",
+                      "type": "string"
+                    },
+                    "asnOrganization": {
+                      "description": "Organization associated with the ASN",
+                      "example": "Google LLC",
+                      "type": "string"
+                    },
+                    "capital": {
+                      "description": "Capital city of the country",
+                      "example": "Washington",
+                      "type": "string"
+                    },
+                    "cityName": {
+                      "description": "City name",
+                      "example": "Mountain View",
+                      "type": "string"
+                    },
+                    "continent": {
+                      "description": "Continent name",
+                      "example": "North America",
+                      "type": "string"
+                    },
+                    "continentCode": {
+                      "description": "Two-letter continent code",
+                      "example": "NA",
+                      "type": "string"
+                    },
+                    "countryCode": {
+                      "description": "ISO 3166-1 alpha-2 country code",
+                      "example": "US",
+                      "type": "string"
+                    },
+                    "countryName": {
+                      "description": "Full country name",
+                      "example": "United States",
+                      "type": "string"
+                    },
+                    "currencies": {
+                      "description": "List of currencies used in the country",
+                      "items": {
+                        "properties": {
+                          "code": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "currency": {
+                      "description": "Currency information for the country",
+                      "properties": {
+                        "code": {
+                          "description": "ISO 4217 currency code",
+                          "example": "USD",
+                          "type": "string"
+                        },
+                        "name": {
+                          "description": "Currency name",
+                          "example": "US Dollar",
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "ipAddress": {
+                      "description": "The IP address that was looked up",
+                      "example": "8.8.8.8",
+                      "type": "string"
+                    },
+                    "ipVersion": {
+                      "description": "IP version (4 for IPv4, 6 for IPv6)",
+                      "example": 4,
+                      "type": "integer"
+                    },
+                    "isProxy": {
+                      "description": "Whether the IP is detected as a proxy, VPN, or hosting service",
+                      "example": false,
+                      "type": "boolean"
+                    },
+                    "language": {
+                      "description": "Primary language code",
+                      "example": "en-US",
+                      "type": "string"
+                    },
+                    "languages": {
+                      "description": "List of languages spoken in the country",
+                      "example": [
+                        "en"
+                      ],
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "latitude": {
+                      "description": "Latitude coordinate",
+                      "example": 37.386,
+                      "format": "double",
+                      "type": "number"
+                    },
+                    "longitude": {
+                      "description": "Longitude coordinate",
+                      "example": -122.0838,
+                      "format": "double",
+                      "type": "number"
+                    },
+                    "phoneCodes": {
+                      "description": "International dialing codes for the country",
+                      "example": [
+                        "+1"
+                      ],
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "regionCode": {
+                      "description": "Region or state code",
+                      "example": "CA",
+                      "type": "string"
+                    },
+                    "regionName": {
+                      "description": "Region or state name",
+                      "example": "California",
+                      "type": "string"
+                    },
+                    "timeZone": {
+                      "description": "Timezone offset from UTC",
+                      "example": "-08:00",
+                      "type": "string"
+                    },
+                    "timeZones": {
+                      "description": "List of timezone identifiers for the location",
+                      "example": [
+                        "America/Los_Angeles"
+                      ],
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "tlds": {
+                      "description": "Top-level domains for the country",
+                      "example": [
+                        ".us"
+                      ],
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "zipCode": {
+                      "description": "Postal/ZIP code",
+                      "example": "94043",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response with IP geolocation information"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Error response object",
+                  "properties": {
+                    "code": {
+                      "description": "HTTP status code",
+                      "example": 429,
+                      "type": "integer"
+                    },
+                    "error": {
+                      "description": "Indicates an error occurred",
+                      "example": true,
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "description": "Error message describing what went wrong",
+                      "example": "Rate limit exceeded",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Bad request - invalid IP address format"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Error response object",
+                  "properties": {
+                    "code": {
+                      "description": "HTTP status code",
+                      "example": 429,
+                      "type": "integer"
+                    },
+                    "error": {
+                      "description": "Indicates an error occurred",
+                      "example": true,
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "description": "Error message describing what went wrong",
+                      "example": "Rate limit exceeded",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "IP address not found in database"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Error response object",
+                  "properties": {
+                    "code": {
+                      "description": "HTTP status code",
+                      "example": 429,
+                      "type": "integer"
+                    },
+                    "error": {
+                      "description": "Indicates an error occurred",
+                      "example": true,
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "description": "Error message describing what went wrong",
+                      "example": "Rate limit exceeded",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Rate limit exceeded (60 requests per minute)"
+          }
+        },
+        "securitySource": "unspecified"
       }
     }
   }

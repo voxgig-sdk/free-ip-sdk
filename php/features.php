@@ -4,7 +4,10 @@ declare(strict_types=1);
 // FreeIp SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class FreeIpFeatures
@@ -14,8 +17,14 @@ class FreeIpFeatures
         switch ($name) {
             case "base":
                 return new FreeIpBaseFeature();
+            case "ratelimit":
+                return new FreeIpRatelimitFeature();
+            case "retry":
+                return new FreeIpRetryFeature();
             case "test":
                 return new FreeIpTestFeature();
+            case "timeout":
+                return new FreeIpTimeoutFeature();
             default:
                 return new FreeIpBaseFeature();
         }
@@ -31,7 +40,10 @@ class FreeIpFeatures
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;
