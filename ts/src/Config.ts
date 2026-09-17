@@ -127,12 +127,12 @@ class Config {
 
     entity: {
       
-      ip_geolocation: {
-      },
-
-      json: {
-      },
-
+        ip_geolocation: {
+        },
+  
+        json: {
+        },
+  
     }
   }
 

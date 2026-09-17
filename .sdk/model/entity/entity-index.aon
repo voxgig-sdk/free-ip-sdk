@@ -1,4 +1,4 @@
 # Entity Models
 
-@"ip_geolocation.aon"
-@"json.aon"
+@"./ip_geolocation.aon"
+@"./json.aon"

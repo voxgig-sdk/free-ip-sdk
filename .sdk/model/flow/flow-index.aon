@@ -1,4 +1,4 @@
 # Flows
 
-@"BasicIpGeolocationFlow.aon"
-@"BasicJsonFlow.aon"
+@"./BasicIpGeolocationFlow.aon"
+@"./BasicJsonFlow.aon"
