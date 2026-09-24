@@ -24,13 +24,79 @@
         "repr": "auto"
       },
       "contributor": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "published": false,
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
       "entity": {
         "ip_geolocation": {
           "active": true,
           "alias": {
             "field": {}
           },
-          "fields": [],
+          "fields": {},
           "name": "ip_geolocation",
           "op": {
             "load": {
@@ -38,35 +104,39 @@
               "name": "load",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /api/xml/{ipAddress}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "params": [
                       {
-                        "active": true,
-                        "example": "1.1.1.1",
-                        "kind": "param",
-                        "name": "ip_address",
-                        "orig": "ip_address",
-                        "reqd": true,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "ex": "1.1.1.1",
+                        "k": "param",
+                        "n": "ip_address",
+                        "or": "ip_address",
+                        "r": true,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /api/xml/{ipAddress}",
-                    "json": "{\"operationId\":\"getIpInfoByAddressXml\",\"parameters\":[{\"description\":\"IPv4 or IPv6 address to lookup\",\"in\":\"path\",\"name\":\"ipAddress\",\"required\":true,\"schema\":{\"example\":\"1.1.1.1\",\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/xml\":{\"schema\":{\"description\":\"Complete IP geolocation information response\",\"properties\":{\"asn\":{\"description\":\"Autonomous System Number\",\"example\":\"AS15169\",\"type\":\"string\"},\"asnOrganization\":{\"description\":\"Organization associated with the ASN\",\"example\":\"Google LLC\",\"type\":\"string\"},\"capital\":{\"description\":\"Capital city of the country\",\"example\":\"Washington\",\"type\":\"string\"},\"cityName\":{\"description\":\"City name\",\"example\":\"Mountain View\",\"type\":\"string\"},\"continent\":{\"description\":\"Continent name\",\"example\":\"North America\",\"type\":\"string\"},\"continentCode\":{\"description\":\"Two-letter continent code\",\"example\":\"NA\",\"type\":\"string\"},\"countryCode\":{\"description\":\"ISO 3166-1 alpha-2 country code\",\"example\":\"US\",\"type\":\"string\"},\"countryName\":{\"description\":\"Full country name\",\"example\":\"United States\",\"type\":\"string\"},\"currencies\":{\"description\":\"List of currencies used in the country\",\"items\":{\"properties\":{\"code\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"},\"currency\":{\"description\":\"Currency information for the country\",\"properties\":{\"code\":{\"description\":\"ISO 4217 currency code\",\"example\":\"USD\",\"type\":\"string\"},\"name\":{\"description\":\"Currency name\",\"example\":\"US Dollar\",\"type\":\"string\"}},\"type\":\"object\"},\"ipAddress\":{\"description\":\"The IP address that was looked up\",\"example\":\"8.8.8.8\",\"type\":\"string\"},\"ipVersion\":{\"description\":\"IP version (4 for IPv4, 6 for IPv6)\",\"example\":4,\"type\":\"integer\"},\"isProxy\":{\"description\":\"Whether the IP is detected as a proxy, VPN, or hosting service\",\"example\":false,\"type\":\"boolean\"},\"language\":{\"description\":\"Primary language code\",\"example\":\"en-US\",\"type\":\"string\"},\"languages\":{\"description\":\"List of languages spoken in the country\",\"example\":[\"en\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"latitude\":{\"description\":\"Latitude coordinate\",\"example\":37.386,\"format\":\"double\",\"type\":\"number\"},\"longitude\":{\"description\":\"Longitude coordinate\",\"example\":-122.0838,\"format\":\"double\",\"type\":\"number\"},\"phoneCodes\":{\"description\":\"International dialing codes for the country\",\"example\":[\"+1\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"regionCode\":{\"description\":\"Region or state code\",\"example\":\"CA\",\"type\":\"string\"},\"regionName\":{\"description\":\"Region or state name\",\"example\":\"California\",\"type\":\"string\"},\"timeZone\":{\"description\":\"Timezone offset from UTC\",\"example\":\"-08:00\",\"type\":\"string\"},\"timeZones\":{\"description\":\"List of timezone identifiers for the location\",\"example\":[\"America/Los_Angeles\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"tlds\":{\"description\":\"Top-level domains for the country\",\"example\":[\".us\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"zipCode\":{\"description\":\"Postal/ZIP code\",\"example\":\"94043\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful response with IP geolocation information in XML format\"},\"400\":{\"content\":{\"application/xml\":{\"schema\":{\"description\":\"Error response object\",\"properties\":{\"code\":{\"description\":\"HTTP status code\",\"example\":429,\"type\":\"integer\"},\"error\":{\"description\":\"Indicates an error occurred\",\"example\":true,\"type\":\"boolean\"},\"message\":{\"description\":\"Error message describing what went wrong\",\"example\":\"Rate limit exceeded\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad request - invalid IP address format\"},\"429\":{\"content\":{\"application/xml\":{\"schema\":{\"description\":\"Error response object\",\"properties\":{\"code\":{\"description\":\"HTTP status code\",\"example\":429,\"type\":\"integer\"},\"error\":{\"description\":\"Indicates an error occurred\",\"example\":true,\"type\":\"boolean\"},\"message\":{\"description\":\"Error message describing what went wrong\",\"example\":\"Rate limit exceeded\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Rate limit exceeded (60 requests per minute)\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/api/xml/{ipAddress}",
+                  "q": {
+                    "exist": [
+                      "ip_address"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/api/xml/{ipAddress}",
-                  "rename": {
+                  "r": {
                     "param": {
                       "ipAddress": "ip_address"
                     }
                   },
-                  "segments": [
+                  "s": [
                     {
                       "lit": "api"
                     },
@@ -77,29 +147,25 @@
                       "var": "ip_address"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "ip_address"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
                 },
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /api/xml",
-                    "json": "{\"operationId\":\"getIpInfoCurrentXml\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/xml\":{\"schema\":{\"description\":\"Complete IP geolocation information response\",\"properties\":{\"asn\":{\"description\":\"Autonomous System Number\",\"example\":\"AS15169\",\"type\":\"string\"},\"asnOrganization\":{\"description\":\"Organization associated with the ASN\",\"example\":\"Google LLC\",\"type\":\"string\"},\"capital\":{\"description\":\"Capital city of the country\",\"example\":\"Washington\",\"type\":\"string\"},\"cityName\":{\"description\":\"City name\",\"example\":\"Mountain View\",\"type\":\"string\"},\"continent\":{\"description\":\"Continent name\",\"example\":\"North America\",\"type\":\"string\"},\"continentCode\":{\"description\":\"Two-letter continent code\",\"example\":\"NA\",\"type\":\"string\"},\"countryCode\":{\"description\":\"ISO 3166-1 alpha-2 country code\",\"example\":\"US\",\"type\":\"string\"},\"countryName\":{\"description\":\"Full country name\",\"example\":\"United States\",\"type\":\"string\"},\"currencies\":{\"description\":\"List of currencies used in the country\",\"items\":{\"properties\":{\"code\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"},\"currency\":{\"description\":\"Currency information for the country\",\"properties\":{\"code\":{\"description\":\"ISO 4217 currency code\",\"example\":\"USD\",\"type\":\"string\"},\"name\":{\"description\":\"Currency name\",\"example\":\"US Dollar\",\"type\":\"string\"}},\"type\":\"object\"},\"ipAddress\":{\"description\":\"The IP address that was looked up\",\"example\":\"8.8.8.8\",\"type\":\"string\"},\"ipVersion\":{\"description\":\"IP version (4 for IPv4, 6 for IPv6)\",\"example\":4,\"type\":\"integer\"},\"isProxy\":{\"description\":\"Whether the IP is detected as a proxy, VPN, or hosting service\",\"example\":false,\"type\":\"boolean\"},\"language\":{\"description\":\"Primary language code\",\"example\":\"en-US\",\"type\":\"string\"},\"languages\":{\"description\":\"List of languages spoken in the country\",\"example\":[\"en\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"latitude\":{\"description\":\"Latitude coordinate\",\"example\":37.386,\"format\":\"double\",\"type\":\"number\"},\"longitude\":{\"description\":\"Longitude coordinate\",\"example\":-122.0838,\"format\":\"double\",\"type\":\"number\"},\"phoneCodes\":{\"description\":\"International dialing codes for the country\",\"example\":[\"+1\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"regionCode\":{\"description\":\"Region or state code\",\"example\":\"CA\",\"type\":\"string\"},\"regionName\":{\"description\":\"Region or state name\",\"example\":\"California\",\"type\":\"string\"},\"timeZone\":{\"description\":\"Timezone offset from UTC\",\"example\":\"-08:00\",\"type\":\"string\"},\"timeZones\":{\"description\":\"List of timezone identifiers for the location\",\"example\":[\"America/Los_Angeles\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"tlds\":{\"description\":\"Top-level domains for the country\",\"example\":[\".us\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"zipCode\":{\"description\":\"Postal/ZIP code\",\"example\":\"94043\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful response with IP geolocation information in XML format\"},\"429\":{\"content\":{\"application/xml\":{\"schema\":{\"description\":\"Error response object\",\"properties\":{\"code\":{\"description\":\"HTTP status code\",\"example\":429,\"type\":\"integer\"},\"error\":{\"description\":\"Indicates an error occurred\",\"example\":true,\"type\":\"boolean\"},\"message\":{\"description\":\"Error message describing what went wrong\",\"example\":\"Rate limit exceeded\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Rate limit exceeded (60 requests per minute)\"}},\"securitySource\":\"unspecified\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/api/xml",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/api/xml",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "api"
                     },
@@ -107,8 +173,7 @@
                       "lit": "xml"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -117,11 +182,7 @@
             }
           },
           "relations": {
-            "ancestors": [
-              [
-                "xml"
-              ]
-            ]
+            "ancestors": []
           }
         },
         "json": {
@@ -129,203 +190,231 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "asn",
-              "req": false,
-              "short": "Autonomous System Number",
-              "type": "`$STRING`"
+          "fields": {
+            "asn": {
+              "a": true,
+              "h": "Asn",
+              "n": "asn",
+              "r": false,
+              "sh": "Autonomous System Number",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "asnOrganization",
-              "req": false,
-              "short": "Organization associated with the ASN",
-              "type": "`$STRING`"
+            "asnOrganization": {
+              "a": true,
+              "h": "Asn Organization",
+              "n": "asnOrganization",
+              "r": false,
+              "sh": "Organization associated with the ASN",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "capital",
-              "req": false,
-              "short": "Capital city of the country",
-              "type": "`$STRING`"
+            "capital": {
+              "a": true,
+              "h": "Capital",
+              "n": "capital",
+              "r": false,
+              "sh": "Capital city of the country",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "cityName",
-              "req": false,
-              "short": "City name",
-              "type": "`$STRING`"
+            "cityName": {
+              "a": true,
+              "h": "City Name",
+              "n": "cityName",
+              "r": false,
+              "sh": "City name",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "code",
-              "req": false,
-              "type": "`$STRING`"
+            "code": {
+              "a": true,
+              "h": "Code",
+              "n": "code",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "continent",
-              "req": false,
-              "short": "Continent name",
-              "type": "`$STRING`"
+            "continent": {
+              "a": true,
+              "h": "Continent",
+              "n": "continent",
+              "r": false,
+              "sh": "Continent name",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "continentCode",
-              "req": false,
-              "short": "Two-letter continent code",
-              "type": "`$STRING`"
+            "continentCode": {
+              "a": true,
+              "h": "Continent Code",
+              "n": "continentCode",
+              "r": false,
+              "sh": "Two-letter continent code",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "countryCode",
-              "req": false,
-              "short": "ISO 3166-1 alpha-2 country code",
-              "type": "`$STRING`"
+            "countryCode": {
+              "a": true,
+              "h": "Country Code",
+              "n": "countryCode",
+              "r": false,
+              "sh": "ISO 3166-1 alpha-2 country code",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "countryName",
-              "req": false,
-              "short": "Full country name",
-              "type": "`$STRING`"
+            "countryName": {
+              "a": true,
+              "h": "Country Name",
+              "n": "countryName",
+              "r": false,
+              "sh": "Full country name",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "currencies",
-              "req": false,
-              "short": "List of currencies used in the country",
-              "type": "`$ARRAY`"
+            "currencies": {
+              "a": true,
+              "h": "Currencies",
+              "n": "currencies",
+              "r": false,
+              "sh": "List of currencies used in the country",
+              "t": "`$ARRAY`"
             },
-            {
-              "active": true,
-              "name": "currency",
-              "req": false,
-              "short": "Currency information for the country",
-              "type": "`$OBJECT`"
+            "currency": {
+              "a": true,
+              "h": "Currency",
+              "n": "currency",
+              "r": false,
+              "sh": "Currency information for the country",
+              "t": "`$OBJECT`"
             },
-            {
-              "active": true,
-              "name": "id",
-              "req": false,
-              "type": "`$STRING`"
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "ip",
-              "req": false,
-              "short": "IPv4 or IPv6 address to lookup",
-              "type": "`$STRING`"
+            "ip": {
+              "a": true,
+              "h": "Ip",
+              "n": "ip",
+              "r": false,
+              "sh": "IPv4 or IPv6 address to lookup",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "ipAddress",
-              "req": false,
-              "short": "The IP address that was looked up",
-              "type": "`$STRING`"
+            "ipAddress": {
+              "a": true,
+              "h": "Ip Address",
+              "n": "ipAddress",
+              "r": false,
+              "sh": "The IP address that was looked up",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "ipVersion",
-              "req": false,
-              "short": "IP version (4 for IPv4, 6 for IPv6)",
-              "type": "`$INTEGER`"
+            "ipVersion": {
+              "a": true,
+              "h": "Ip Version",
+              "n": "ipVersion",
+              "r": false,
+              "sh": "IP version (4 for IPv4, 6 for IPv6)",
+              "t": "`$INTEGER`"
             },
-            {
-              "active": true,
-              "name": "isProxy",
-              "req": false,
-              "short": "Whether the IP is detected as a proxy, VPN, or hosting service",
-              "type": "`$BOOLEAN`"
+            "isProxy": {
+              "a": true,
+              "h": "Is Proxy",
+              "n": "isProxy",
+              "r": false,
+              "sh": "Whether the IP is detected as a proxy, VPN, or hosting service",
+              "t": "`$BOOLEAN`"
             },
-            {
-              "active": true,
-              "name": "language",
-              "req": false,
-              "short": "Primary language code",
-              "type": "`$STRING`"
+            "language": {
+              "a": true,
+              "h": "Language",
+              "n": "language",
+              "r": false,
+              "sh": "Primary language code",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "languages",
-              "req": false,
-              "short": "List of languages spoken in the country",
-              "type": "`$ARRAY`"
+            "languages": {
+              "a": true,
+              "h": "Languages",
+              "n": "languages",
+              "r": false,
+              "sh": "List of languages spoken in the country",
+              "t": "`$ARRAY`"
             },
-            {
-              "active": true,
-              "format": "double",
-              "name": "latitude",
-              "req": false,
-              "short": "Latitude coordinate",
-              "type": "`$NUMBER`"
+            "latitude": {
+              "a": true,
+              "fo": "double",
+              "h": "Latitude",
+              "n": "latitude",
+              "r": false,
+              "sh": "Latitude coordinate",
+              "t": "`$NUMBER`"
             },
-            {
-              "active": true,
-              "format": "double",
-              "name": "longitude",
-              "req": false,
-              "short": "Longitude coordinate",
-              "type": "`$NUMBER`"
+            "longitude": {
+              "a": true,
+              "fo": "double",
+              "h": "Longitude",
+              "n": "longitude",
+              "r": false,
+              "sh": "Longitude coordinate",
+              "t": "`$NUMBER`"
             },
-            {
-              "active": true,
-              "name": "name",
-              "req": false,
-              "type": "`$STRING`"
+            "name": {
+              "a": true,
+              "h": "Name",
+              "n": "name",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "phoneCodes",
-              "req": false,
-              "short": "International dialing codes for the country",
-              "type": "`$ARRAY`"
+            "phoneCodes": {
+              "a": true,
+              "h": "Phone Codes",
+              "n": "phoneCodes",
+              "r": false,
+              "sh": "International dialing codes for the country",
+              "t": "`$ARRAY`"
             },
-            {
-              "active": true,
-              "name": "regionCode",
-              "req": false,
-              "short": "Region or state code",
-              "type": "`$STRING`"
+            "regionCode": {
+              "a": true,
+              "h": "Region Code",
+              "n": "regionCode",
+              "r": false,
+              "sh": "Region or state code",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "regionName",
-              "req": false,
-              "short": "Region or state name",
-              "type": "`$STRING`"
+            "regionName": {
+              "a": true,
+              "h": "Region Name",
+              "n": "regionName",
+              "r": false,
+              "sh": "Region or state name",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "timeZone",
-              "req": false,
-              "short": "Timezone offset from UTC",
-              "type": "`$STRING`"
+            "timeZone": {
+              "a": true,
+              "h": "Time Zone",
+              "n": "timeZone",
+              "r": false,
+              "sh": "Timezone offset from UTC",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "timeZones",
-              "req": false,
-              "short": "List of timezone identifiers for the location",
-              "type": "`$ARRAY`"
+            "timeZones": {
+              "a": true,
+              "h": "Time Zones",
+              "n": "timeZones",
+              "r": false,
+              "sh": "List of timezone identifiers for the location",
+              "t": "`$ARRAY`"
             },
-            {
-              "active": true,
-              "name": "tlds",
-              "req": false,
-              "short": "Top-level domains for the country",
-              "type": "`$ARRAY`"
+            "tlds": {
+              "a": true,
+              "h": "Tlds",
+              "n": "tlds",
+              "r": false,
+              "sh": "Top-level domains for the country",
+              "t": "`$ARRAY`"
             },
-            {
-              "active": true,
-              "name": "zipCode",
-              "req": false,
-              "short": "Postal/ZIP code",
-              "type": "`$STRING`"
+            "zipCode": {
+              "a": true,
+              "h": "Zip Code",
+              "n": "zipCode",
+              "r": false,
+              "sh": "Postal/ZIP code",
+              "t": "`$STRING`"
             }
-          ],
+          },
           "id": {
             "field": "id",
             "name": "id"
@@ -337,18 +426,19 @@
               "name": "create",
               "points": [
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "POST /api/json",
-                    "json": "{\"operationId\":\"postIpInfo\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"ip\":{\"description\":\"IPv4 or IPv6 address to lookup\",\"example\":\"8.8.8.8\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Optional IP address to lookup\",\"required\":false},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"description\":\"Complete IP geolocation information response\",\"properties\":{\"asn\":{\"description\":\"Autonomous System Number\",\"example\":\"AS15169\",\"type\":\"string\"},\"asnOrganization\":{\"description\":\"Organization associated with the ASN\",\"example\":\"Google LLC\",\"type\":\"string\"},\"capital\":{\"description\":\"Capital city of the country\",\"example\":\"Washington\",\"type\":\"string\"},\"cityName\":{\"description\":\"City name\",\"example\":\"Mountain View\",\"type\":\"string\"},\"continent\":{\"description\":\"Continent name\",\"example\":\"North America\",\"type\":\"string\"},\"continentCode\":{\"description\":\"Two-letter continent code\",\"example\":\"NA\",\"type\":\"string\"},\"countryCode\":{\"description\":\"ISO 3166-1 alpha-2 country code\",\"example\":\"US\",\"type\":\"string\"},\"countryName\":{\"description\":\"Full country name\",\"example\":\"United States\",\"type\":\"string\"},\"currencies\":{\"description\":\"List of currencies used in the country\",\"items\":{\"properties\":{\"code\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"},\"currency\":{\"description\":\"Currency information for the country\",\"properties\":{\"code\":{\"description\":\"ISO 4217 currency code\",\"example\":\"USD\",\"type\":\"string\"},\"name\":{\"description\":\"Currency name\",\"example\":\"US Dollar\",\"type\":\"string\"}},\"type\":\"object\"},\"ipAddress\":{\"description\":\"The IP address that was looked up\",\"example\":\"8.8.8.8\",\"type\":\"string\"},\"ipVersion\":{\"description\":\"IP version (4 for IPv4, 6 for IPv6)\",\"example\":4,\"type\":\"integer\"},\"isProxy\":{\"description\":\"Whether the IP is detected as a proxy, VPN, or hosting service\",\"example\":false,\"type\":\"boolean\"},\"language\":{\"description\":\"Primary language code\",\"example\":\"en-US\",\"type\":\"string\"},\"languages\":{\"description\":\"List of languages spoken in the country\",\"example\":[\"en\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"latitude\":{\"description\":\"Latitude coordinate\",\"example\":37.386,\"format\":\"double\",\"type\":\"number\"},\"longitude\":{\"description\":\"Longitude coordinate\",\"example\":-122.0838,\"format\":\"double\",\"type\":\"number\"},\"phoneCodes\":{\"description\":\"International dialing codes for the country\",\"example\":[\"+1\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"regionCode\":{\"description\":\"Region or state code\",\"example\":\"CA\",\"type\":\"string\"},\"regionName\":{\"description\":\"Region or state name\",\"example\":\"California\",\"type\":\"string\"},\"timeZone\":{\"description\":\"Timezone offset from UTC\",\"example\":\"-08:00\",\"type\":\"string\"},\"timeZones\":{\"description\":\"List of timezone identifiers for the location\",\"example\":[\"America/Los_Angeles\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"tlds\":{\"description\":\"Top-level domains for the country\",\"example\":[\".us\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"zipCode\":{\"description\":\"Postal/ZIP code\",\"example\":\"94043\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful response with IP geolocation information\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"description\":\"Error response object\",\"properties\":{\"code\":{\"description\":\"HTTP status code\",\"example\":429,\"type\":\"integer\"},\"error\":{\"description\":\"Indicates an error occurred\",\"example\":true,\"type\":\"boolean\"},\"message\":{\"description\":\"Error message describing what went wrong\",\"example\":\"Rate limit exceeded\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad request - invalid IP address format\"},\"429\":{\"content\":{\"application/json\":{\"schema\":{\"description\":\"Error response object\",\"properties\":{\"code\":{\"description\":\"HTTP status code\",\"example\":429,\"type\":\"integer\"},\"error\":{\"description\":\"Indicates an error occurred\",\"example\":true,\"type\":\"boolean\"},\"message\":{\"description\":\"Error message describing what went wrong\",\"example\":\"Rate limit exceeded\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Rate limit exceeded (60 requests per minute)\"}},\"securitySource\":\"unspecified\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "POST",
-                  "orig": "/api/json",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/api/json",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "api"
                     },
@@ -356,8 +446,7 @@
                       "lit": "json"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -369,18 +458,19 @@
               "name": "list",
               "points": [
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /api/json",
-                    "json": "{\"operationId\":\"getIpInfoCurrent\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"example\":{\"cityName\":\"Melbourne\",\"continent\":\"Oceania\",\"continentCode\":\"OC\",\"countryCode\":\"AU\",\"countryName\":\"Australia\",\"currency\":{\"code\":\"AUD\",\"name\":\"Australian Dollar\"},\"ipAddress\":\"1.1.1.1\",\"ipVersion\":4,\"isProxy\":false,\"language\":\"en-AU\",\"latitude\":-37.7,\"longitude\":145.1833,\"regionCode\":\"VIC\",\"regionName\":\"Victoria\",\"timeZone\":\"+11:00\",\"timeZones\":[\"Australia/Melbourne\"],\"tlds\":[\".au\"],\"zipCode\":\"3000\"},\"schema\":{\"description\":\"Complete IP geolocation information response\",\"properties\":{\"asn\":{\"description\":\"Autonomous System Number\",\"example\":\"AS15169\",\"type\":\"string\"},\"asnOrganization\":{\"description\":\"Organization associated with the ASN\",\"example\":\"Google LLC\",\"type\":\"string\"},\"capital\":{\"description\":\"Capital city of the country\",\"example\":\"Washington\",\"type\":\"string\"},\"cityName\":{\"description\":\"City name\",\"example\":\"Mountain View\",\"type\":\"string\"},\"continent\":{\"description\":\"Continent name\",\"example\":\"North America\",\"type\":\"string\"},\"continentCode\":{\"description\":\"Two-letter continent code\",\"example\":\"NA\",\"type\":\"string\"},\"countryCode\":{\"description\":\"ISO 3166-1 alpha-2 country code\",\"example\":\"US\",\"type\":\"string\"},\"countryName\":{\"description\":\"Full country name\",\"example\":\"United States\",\"type\":\"string\"},\"currencies\":{\"description\":\"List of currencies used in the country\",\"items\":{\"properties\":{\"code\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"},\"currency\":{\"description\":\"Currency information for the country\",\"properties\":{\"code\":{\"description\":\"ISO 4217 currency code\",\"example\":\"USD\",\"type\":\"string\"},\"name\":{\"description\":\"Currency name\",\"example\":\"US Dollar\",\"type\":\"string\"}},\"type\":\"object\"},\"ipAddress\":{\"description\":\"The IP address that was looked up\",\"example\":\"8.8.8.8\",\"type\":\"string\"},\"ipVersion\":{\"description\":\"IP version (4 for IPv4, 6 for IPv6)\",\"example\":4,\"type\":\"integer\"},\"isProxy\":{\"description\":\"Whether the IP is detected as a proxy, VPN, or hosting service\",\"example\":false,\"type\":\"boolean\"},\"language\":{\"description\":\"Primary language code\",\"example\":\"en-US\",\"type\":\"string\"},\"languages\":{\"description\":\"List of languages spoken in the country\",\"example\":[\"en\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"latitude\":{\"description\":\"Latitude coordinate\",\"example\":37.386,\"format\":\"double\",\"type\":\"number\"},\"longitude\":{\"description\":\"Longitude coordinate\",\"example\":-122.0838,\"format\":\"double\",\"type\":\"number\"},\"phoneCodes\":{\"description\":\"International dialing codes for the country\",\"example\":[\"+1\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"regionCode\":{\"description\":\"Region or state code\",\"example\":\"CA\",\"type\":\"string\"},\"regionName\":{\"description\":\"Region or state name\",\"example\":\"California\",\"type\":\"string\"},\"timeZone\":{\"description\":\"Timezone offset from UTC\",\"example\":\"-08:00\",\"type\":\"string\"},\"timeZones\":{\"description\":\"List of timezone identifiers for the location\",\"example\":[\"America/Los_Angeles\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"tlds\":{\"description\":\"Top-level domains for the country\",\"example\":[\".us\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"zipCode\":{\"description\":\"Postal/ZIP code\",\"example\":\"94043\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful response with IP geolocation information\"},\"429\":{\"content\":{\"application/json\":{\"schema\":{\"description\":\"Error response object\",\"properties\":{\"code\":{\"description\":\"HTTP status code\",\"example\":429,\"type\":\"integer\"},\"error\":{\"description\":\"Indicates an error occurred\",\"example\":true,\"type\":\"boolean\"},\"message\":{\"description\":\"Error message describing what went wrong\",\"example\":\"Rate limit exceeded\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Rate limit exceeded (60 requests per minute)\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"description\":\"Error response object\",\"properties\":{\"code\":{\"description\":\"HTTP status code\",\"example\":429,\"type\":\"integer\"},\"error\":{\"description\":\"Indicates an error occurred\",\"example\":true,\"type\":\"boolean\"},\"message\":{\"description\":\"Error message describing what went wrong\",\"example\":\"Rate limit exceeded\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/api/json",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/api/json",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "api"
                     },
@@ -388,8 +478,7 @@
                       "lit": "json"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -401,35 +490,39 @@
               "name": "load",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /api/json/{ipAddress}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "params": [
                       {
-                        "active": true,
-                        "example": "193.247.239.168",
-                        "kind": "param",
-                        "name": "id",
-                        "orig": "ip_address",
-                        "reqd": true,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "ex": "193.247.239.168",
+                        "k": "param",
+                        "n": "id",
+                        "or": "ip_address",
+                        "r": true,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /api/json/{ipAddress}",
-                    "json": "{\"operationId\":\"getIpInfoByAddress\",\"parameters\":[{\"description\":\"IPv4 or IPv6 address to lookup\",\"in\":\"path\",\"name\":\"ipAddress\",\"required\":true,\"schema\":{\"example\":\"193.247.239.168\",\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"example\":{\"asn\":\"AS12345\",\"asnOrganization\":\"Example ISP\",\"capital\":\"Paris\",\"cityName\":\"Paris\",\"continent\":\"Europe\",\"continentCode\":\"EU\",\"countryCode\":\"FR\",\"countryName\":\"France\",\"currency\":{\"code\":\"EUR\",\"name\":\"Euro\"},\"ipAddress\":\"193.247.239.168\",\"ipVersion\":4,\"isProxy\":false,\"languages\":[\"fr\"],\"latitude\":48.8566,\"longitude\":2.3522,\"phoneCodes\":[\"+33\"],\"regionCode\":\"IDF\",\"regionName\":\"Île-de-France\",\"timeZone\":\"+01:00\",\"timeZones\":[\"Europe/Paris\"],\"zipCode\":\"75001\"},\"schema\":{\"description\":\"Complete IP geolocation information response\",\"properties\":{\"asn\":{\"description\":\"Autonomous System Number\",\"example\":\"AS15169\",\"type\":\"string\"},\"asnOrganization\":{\"description\":\"Organization associated with the ASN\",\"example\":\"Google LLC\",\"type\":\"string\"},\"capital\":{\"description\":\"Capital city of the country\",\"example\":\"Washington\",\"type\":\"string\"},\"cityName\":{\"description\":\"City name\",\"example\":\"Mountain View\",\"type\":\"string\"},\"continent\":{\"description\":\"Continent name\",\"example\":\"North America\",\"type\":\"string\"},\"continentCode\":{\"description\":\"Two-letter continent code\",\"example\":\"NA\",\"type\":\"string\"},\"countryCode\":{\"description\":\"ISO 3166-1 alpha-2 country code\",\"example\":\"US\",\"type\":\"string\"},\"countryName\":{\"description\":\"Full country name\",\"example\":\"United States\",\"type\":\"string\"},\"currencies\":{\"description\":\"List of currencies used in the country\",\"items\":{\"properties\":{\"code\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"},\"currency\":{\"description\":\"Currency information for the country\",\"properties\":{\"code\":{\"description\":\"ISO 4217 currency code\",\"example\":\"USD\",\"type\":\"string\"},\"name\":{\"description\":\"Currency name\",\"example\":\"US Dollar\",\"type\":\"string\"}},\"type\":\"object\"},\"ipAddress\":{\"description\":\"The IP address that was looked up\",\"example\":\"8.8.8.8\",\"type\":\"string\"},\"ipVersion\":{\"description\":\"IP version (4 for IPv4, 6 for IPv6)\",\"example\":4,\"type\":\"integer\"},\"isProxy\":{\"description\":\"Whether the IP is detected as a proxy, VPN, or hosting service\",\"example\":false,\"type\":\"boolean\"},\"language\":{\"description\":\"Primary language code\",\"example\":\"en-US\",\"type\":\"string\"},\"languages\":{\"description\":\"List of languages spoken in the country\",\"example\":[\"en\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"latitude\":{\"description\":\"Latitude coordinate\",\"example\":37.386,\"format\":\"double\",\"type\":\"number\"},\"longitude\":{\"description\":\"Longitude coordinate\",\"example\":-122.0838,\"format\":\"double\",\"type\":\"number\"},\"phoneCodes\":{\"description\":\"International dialing codes for the country\",\"example\":[\"+1\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"regionCode\":{\"description\":\"Region or state code\",\"example\":\"CA\",\"type\":\"string\"},\"regionName\":{\"description\":\"Region or state name\",\"example\":\"California\",\"type\":\"string\"},\"timeZone\":{\"description\":\"Timezone offset from UTC\",\"example\":\"-08:00\",\"type\":\"string\"},\"timeZones\":{\"description\":\"List of timezone identifiers for the location\",\"example\":[\"America/Los_Angeles\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"tlds\":{\"description\":\"Top-level domains for the country\",\"example\":[\".us\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"zipCode\":{\"description\":\"Postal/ZIP code\",\"example\":\"94043\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful response with IP geolocation information\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"description\":\"Error response object\",\"properties\":{\"code\":{\"description\":\"HTTP status code\",\"example\":429,\"type\":\"integer\"},\"error\":{\"description\":\"Indicates an error occurred\",\"example\":true,\"type\":\"boolean\"},\"message\":{\"description\":\"Error message describing what went wrong\",\"example\":\"Rate limit exceeded\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad request - invalid IP address format\"},\"404\":{\"content\":{\"application/json\":{\"schema\":{\"description\":\"Error response object\",\"properties\":{\"code\":{\"description\":\"HTTP status code\",\"example\":429,\"type\":\"integer\"},\"error\":{\"description\":\"Indicates an error occurred\",\"example\":true,\"type\":\"boolean\"},\"message\":{\"description\":\"Error message describing what went wrong\",\"example\":\"Rate limit exceeded\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"IP address not found in database\"},\"429\":{\"content\":{\"application/json\":{\"schema\":{\"description\":\"Error response object\",\"properties\":{\"code\":{\"description\":\"HTTP status code\",\"example\":429,\"type\":\"integer\"},\"error\":{\"description\":\"Indicates an error occurred\",\"example\":true,\"type\":\"boolean\"},\"message\":{\"description\":\"Error message describing what went wrong\",\"example\":\"Rate limit exceeded\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Rate limit exceeded (60 requests per minute)\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/api/json/{ipAddress}",
+                  "q": {
+                    "exist": [
+                      "id"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/api/json/{ipAddress}",
-                  "rename": {
+                  "r": {
                     "param": {
                       "ipAddress": "id"
                     }
                   },
-                  "segments": [
+                  "s": [
                     {
                       "lit": "api"
                     },
@@ -440,12 +533,7 @@
                       "var": "id"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "id"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -874,17 +962,17 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {
+              "a": true,
+              "d": {},
+              "i": {
                 "ref": "ip_geolocation_ref01",
                 "srcdatavar": "ip_geolocation_ref01_data",
                 "suffix": "_dt0"
               },
-              "match": {},
-              "op": "load",
-              "spec": [],
-              "valid": [
+              "m": {},
+              "o": "load",
+              "s": [],
+              "v": [
                 {
                   "apply": "TextFieldMark",
                   "def": {
@@ -904,24 +992,24 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {
+              "a": true,
+              "d": {},
+              "i": {
                 "ref": "json_ref01"
               },
-              "match": {},
-              "op": "create",
-              "spec": [],
-              "valid": []
+              "m": {},
+              "o": "create",
+              "s": [],
+              "v": []
             },
             {
-              "active": true,
-              "data": {},
-              "input": {},
-              "match": {},
-              "op": "list",
-              "spec": [],
-              "valid": [
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
                 {
                   "apply": "ItemExists",
                   "def": {
@@ -931,19 +1019,19 @@
               ]
             },
             {
-              "active": true,
-              "data": {},
-              "input": {
+              "a": true,
+              "d": {},
+              "i": {
                 "ref": "json_ref01",
                 "srcdatavar": "json_ref01_data",
                 "suffix": "_dt0"
               },
-              "match": {
+              "m": {
                 "id": "json01"
               },
-              "op": "load",
-              "spec": [],
-              "valid": [
+              "o": "load",
+              "s": [],
+              "v": [
                 {
                   "apply": "TextFieldMark",
                   "def": {

@@ -35,14 +35,11 @@ const client = new FreeIpSDK()
 
 ### 3. Load an ipgeolocation
 
-IpGeolocation is nested under ip_address, so provide the `ip_address`.
 `load()` returns the entity directly and throws on failure:
 
 ```ts
 try {
-  const ipgeolocation = await client.IpGeolocation().load({
-    ip_address: 'example_ip_address',
-  })
+  const ipgeolocation = await client.IpGeolocation().load({ ip_address: 'example_ip_address' })
   console.log(ipgeolocation)
 } catch (err) {
   console.error('load failed:', err)

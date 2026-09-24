@@ -105,26 +105,9 @@ module FreeIpConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {
-                    "params" => [
-                      {
-                        "example" => "1.1.1.1",
-                        "kind" => "param",
-                        "name" => "ip_address",
-                        "orig" => "ip_address",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/xml/{ipAddress}",
-                  "rename" => {
-                    "param" => {
-                      "ipAddress" => "ip_address",
-                    },
-                  },
                   "segments" => [
                     {
                       "lit" => "api",
@@ -136,23 +119,39 @@ module FreeIpConfig
                       "var" => "ip_address",
                     },
                   ],
-                  "select" => {
-                    "exist" => [
-                      "ip_address",
-                    ],
-                  },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
                   "parts" => [
                     "api",
                     "xml",
                     "{ip_address}",
                   ],
+                  "rename" => {
+                    "param" => {
+                      "ipAddress" => "ip_address",
+                    },
+                  },
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "params" => [
+                      {
+                        "name" => "ip_address",
+                        "orig" => "ip_address",
+                        "type" => "`$STRING`",
+                        "kind" => "param",
+                        "reqd" => true,
+                        "example" => "1.1.1.1",
+                      },
+                    ],
+                  },
+                  "select" => {
+                    "exist" => [
+                      "ip_address",
+                    ],
+                  },
                 },
                 {
-                  "args" => {},
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/xml",
@@ -164,167 +163,193 @@ module FreeIpConfig
                       "lit" => "xml",
                     },
                   ],
-                  "select" => {},
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
                   "parts" => [
                     "api",
                     "xml",
                   ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {},
+                  "select" => {},
                 },
               ],
             },
           },
           "relations" => {
-            "ancestors" => [
-              [
-                "xml",
-              ],
-            ],
+            "ancestors" => [],
           },
         },
         "json" => {
           "fields" => [
             {
               "name" => "asn",
-              "short" => "Autonomous System Number",
+              "title" => "Asn",
               "type" => "`$STRING`",
+              "short" => "Autonomous System Number",
             },
             {
               "name" => "asnOrganization",
-              "short" => "Organization associated with the ASN",
+              "title" => "Asn Organization",
               "type" => "`$STRING`",
+              "short" => "Organization associated with the ASN",
             },
             {
               "name" => "capital",
-              "short" => "Capital city of the country",
+              "title" => "Capital",
               "type" => "`$STRING`",
+              "short" => "Capital city of the country",
             },
             {
               "name" => "cityName",
-              "short" => "City name",
+              "title" => "City Name",
               "type" => "`$STRING`",
+              "short" => "City name",
             },
             {
               "name" => "code",
+              "title" => "Code",
               "type" => "`$STRING`",
             },
             {
               "name" => "continent",
-              "short" => "Continent name",
+              "title" => "Continent",
               "type" => "`$STRING`",
+              "short" => "Continent name",
             },
             {
               "name" => "continentCode",
-              "short" => "Two-letter continent code",
+              "title" => "Continent Code",
               "type" => "`$STRING`",
+              "short" => "Two-letter continent code",
             },
             {
               "name" => "countryCode",
-              "short" => "ISO 3166-1 alpha-2 country code",
+              "title" => "Country Code",
               "type" => "`$STRING`",
+              "short" => "ISO 3166-1 alpha-2 country code",
             },
             {
               "name" => "countryName",
-              "short" => "Full country name",
+              "title" => "Country Name",
               "type" => "`$STRING`",
+              "short" => "Full country name",
             },
             {
               "name" => "currencies",
-              "short" => "List of currencies used in the country",
+              "title" => "Currencies",
               "type" => "`$ARRAY`",
+              "short" => "List of currencies used in the country",
             },
             {
               "name" => "currency",
-              "short" => "Currency information for the country",
+              "title" => "Currency",
               "type" => "`$OBJECT`",
+              "short" => "Currency information for the country",
             },
             {
               "name" => "id",
+              "title" => "Id",
               "type" => "`$STRING`",
             },
             {
               "name" => "ip",
-              "short" => "IPv4 or IPv6 address to lookup",
+              "title" => "Ip",
               "type" => "`$STRING`",
+              "short" => "IPv4 or IPv6 address to lookup",
             },
             {
               "name" => "ipAddress",
-              "short" => "The IP address that was looked up",
+              "title" => "Ip Address",
               "type" => "`$STRING`",
+              "short" => "The IP address that was looked up",
             },
             {
               "name" => "ipVersion",
-              "short" => "IP version (4 for IPv4, 6 for IPv6)",
+              "title" => "Ip Version",
               "type" => "`$INTEGER`",
+              "short" => "IP version (4 for IPv4, 6 for IPv6)",
             },
             {
               "name" => "isProxy",
-              "short" => "Whether the IP is detected as a proxy, VPN, or hosting service",
+              "title" => "Is Proxy",
               "type" => "`$BOOLEAN`",
+              "short" => "Whether the IP is detected as a proxy, VPN, or hosting service",
             },
             {
               "name" => "language",
-              "short" => "Primary language code",
+              "title" => "Language",
               "type" => "`$STRING`",
+              "short" => "Primary language code",
             },
             {
               "name" => "languages",
-              "short" => "List of languages spoken in the country",
+              "title" => "Languages",
               "type" => "`$ARRAY`",
+              "short" => "List of languages spoken in the country",
             },
             {
-              "format" => "double",
               "name" => "latitude",
-              "short" => "Latitude coordinate",
+              "title" => "Latitude",
               "type" => "`$NUMBER`",
+              "short" => "Latitude coordinate",
+              "format" => "double",
             },
             {
-              "format" => "double",
               "name" => "longitude",
-              "short" => "Longitude coordinate",
+              "title" => "Longitude",
               "type" => "`$NUMBER`",
+              "short" => "Longitude coordinate",
+              "format" => "double",
             },
             {
               "name" => "name",
+              "title" => "Name",
               "type" => "`$STRING`",
             },
             {
               "name" => "phoneCodes",
-              "short" => "International dialing codes for the country",
+              "title" => "Phone Codes",
               "type" => "`$ARRAY`",
+              "short" => "International dialing codes for the country",
             },
             {
               "name" => "regionCode",
-              "short" => "Region or state code",
+              "title" => "Region Code",
               "type" => "`$STRING`",
+              "short" => "Region or state code",
             },
             {
               "name" => "regionName",
-              "short" => "Region or state name",
+              "title" => "Region Name",
               "type" => "`$STRING`",
+              "short" => "Region or state name",
             },
             {
               "name" => "timeZone",
-              "short" => "Timezone offset from UTC",
+              "title" => "Time Zone",
               "type" => "`$STRING`",
+              "short" => "Timezone offset from UTC",
             },
             {
               "name" => "timeZones",
-              "short" => "List of timezone identifiers for the location",
+              "title" => "Time Zones",
               "type" => "`$ARRAY`",
+              "short" => "List of timezone identifiers for the location",
             },
             {
               "name" => "tlds",
-              "short" => "Top-level domains for the country",
+              "title" => "Tlds",
               "type" => "`$ARRAY`",
+              "short" => "Top-level domains for the country",
             },
             {
               "name" => "zipCode",
-              "short" => "Postal/ZIP code",
+              "title" => "Zip Code",
               "type" => "`$STRING`",
+              "short" => "Postal/ZIP code",
             },
           ],
           "id" => {
@@ -338,7 +363,6 @@ module FreeIpConfig
               "name" => "create",
               "points" => [
                 {
-                  "args" => {},
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/api/json",
@@ -350,15 +374,17 @@ module FreeIpConfig
                       "lit" => "json",
                     },
                   ],
-                  "select" => {},
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
                   "parts" => [
                     "api",
                     "json",
                   ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {},
+                  "select" => {},
                 },
               ],
             },
@@ -367,7 +393,6 @@ module FreeIpConfig
               "name" => "list",
               "points" => [
                 {
-                  "args" => {},
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/json",
@@ -379,15 +404,17 @@ module FreeIpConfig
                       "lit" => "json",
                     },
                   ],
-                  "select" => {},
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
                   "parts" => [
                     "api",
                     "json",
                   ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {},
+                  "select" => {},
                 },
               ],
             },
@@ -396,26 +423,9 @@ module FreeIpConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {
-                    "params" => [
-                      {
-                        "example" => "193.247.239.168",
-                        "kind" => "param",
-                        "name" => "id",
-                        "orig" => "ip_address",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/json/{ipAddress}",
-                  "rename" => {
-                    "param" => {
-                      "ipAddress" => "id",
-                    },
-                  },
                   "segments" => [
                     {
                       "lit" => "api",
@@ -427,20 +437,37 @@ module FreeIpConfig
                       "var" => "id",
                     },
                   ],
-                  "select" => {
-                    "exist" => [
-                      "id",
-                    ],
-                  },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
                   "parts" => [
                     "api",
                     "json",
                     "{id}",
                   ],
+                  "rename" => {
+                    "param" => {
+                      "ipAddress" => "id",
+                    },
+                  },
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "params" => [
+                      {
+                        "name" => "id",
+                        "orig" => "ip_address",
+                        "type" => "`$STRING`",
+                        "kind" => "param",
+                        "reqd" => true,
+                        "example" => "193.247.239.168",
+                      },
+                    ],
+                  },
+                  "select" => {
+                    "exist" => [
+                      "id",
+                    ],
+                  },
                 },
               ],
             },

@@ -38,7 +38,6 @@ client = FreeIpSDK()
 
 ### 3. Load an ipgeolocation
 
-IpGeolocation is nested under ip_address, so provide the `ip_address`.
 `load()` returns the ENTITY — call data_get() for the record — and raises on error.
 
 ```python

@@ -1,0 +1,88 @@
+# Entity: ip_geolocation
+
+main: kit: entity: ip_geolocation: {
+
+  alias: field: {}
+
+  name: "ip_geolocation"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /api/xml/{ipAddress}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "1.1.1.1"
+                k: "param"
+                n: "ip_address"
+                or: "ip_address"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/xml/{ipAddress}"
+          q: {
+            exist: [
+              "ip_address"
+            ]
+          }
+          r: {
+            param: {
+              ipAddress: "ip_address"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "xml"
+            }
+            {
+              var: "ip_address"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /api/xml"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/api/xml"
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "xml"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+  fields: {
+  }
+
+
+
+}

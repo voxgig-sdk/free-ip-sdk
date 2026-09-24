@@ -97,26 +97,9 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"params": []any{
-										map[string]any{
-											"example": "1.1.1.1",
-											"kind": "param",
-											"name": "ip_address",
-											"orig": "ip_address",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/api/xml/{ipAddress}",
-								"rename": map[string]any{
-									"param": map[string]any{
-										"ipAddress": "ip_address",
-									},
-								},
 								"segments": []any{
 									map[string]any{
 										"lit": "api",
@@ -128,23 +111,39 @@ func MakeConfig() map[string]any {
 										"var": "ip_address",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"ip_address",
+								"parts": []any{
+									"api",
+									"xml",
+									"{ip_address}",
+								},
+								"rename": map[string]any{
+									"param": map[string]any{
+										"ipAddress": "ip_address",
 									},
 								},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"api",
-									"xml",
-									"{ip_address}",
+								"args": map[string]any{
+									"params": []any{
+										map[string]any{
+											"name": "ip_address",
+											"orig": "ip_address",
+											"type": "`$STRING`",
+											"kind": "param",
+											"reqd": true,
+											"example": "1.1.1.1",
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"ip_address",
+									},
 								},
 							},
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/api/xml",
@@ -156,167 +155,193 @@ func MakeConfig() map[string]any {
 										"lit": "xml",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"api",
 									"xml",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
 				},
 				"relations": map[string]any{
-					"ancestors": []any{
-						[]any{
-							"xml",
-						},
-					},
+					"ancestors": []any{},
 				},
 			},
 			"json": map[string]any{
 				"fields": []any{
 					map[string]any{
 						"name": "asn",
-						"short": "Autonomous System Number",
+						"title": "Asn",
 						"type": "`$STRING`",
+						"short": "Autonomous System Number",
 					},
 					map[string]any{
 						"name": "asnOrganization",
-						"short": "Organization associated with the ASN",
+						"title": "Asn Organization",
 						"type": "`$STRING`",
+						"short": "Organization associated with the ASN",
 					},
 					map[string]any{
 						"name": "capital",
-						"short": "Capital city of the country",
+						"title": "Capital",
 						"type": "`$STRING`",
+						"short": "Capital city of the country",
 					},
 					map[string]any{
 						"name": "cityName",
-						"short": "City name",
+						"title": "City Name",
 						"type": "`$STRING`",
+						"short": "City name",
 					},
 					map[string]any{
 						"name": "code",
+						"title": "Code",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "continent",
-						"short": "Continent name",
+						"title": "Continent",
 						"type": "`$STRING`",
+						"short": "Continent name",
 					},
 					map[string]any{
 						"name": "continentCode",
-						"short": "Two-letter continent code",
+						"title": "Continent Code",
 						"type": "`$STRING`",
+						"short": "Two-letter continent code",
 					},
 					map[string]any{
 						"name": "countryCode",
-						"short": "ISO 3166-1 alpha-2 country code",
+						"title": "Country Code",
 						"type": "`$STRING`",
+						"short": "ISO 3166-1 alpha-2 country code",
 					},
 					map[string]any{
 						"name": "countryName",
-						"short": "Full country name",
+						"title": "Country Name",
 						"type": "`$STRING`",
+						"short": "Full country name",
 					},
 					map[string]any{
 						"name": "currencies",
-						"short": "List of currencies used in the country",
+						"title": "Currencies",
 						"type": "`$ARRAY`",
+						"short": "List of currencies used in the country",
 					},
 					map[string]any{
 						"name": "currency",
-						"short": "Currency information for the country",
+						"title": "Currency",
 						"type": "`$OBJECT`",
+						"short": "Currency information for the country",
 					},
 					map[string]any{
 						"name": "id",
+						"title": "Id",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "ip",
-						"short": "IPv4 or IPv6 address to lookup",
+						"title": "Ip",
 						"type": "`$STRING`",
+						"short": "IPv4 or IPv6 address to lookup",
 					},
 					map[string]any{
 						"name": "ipAddress",
-						"short": "The IP address that was looked up",
+						"title": "Ip Address",
 						"type": "`$STRING`",
+						"short": "The IP address that was looked up",
 					},
 					map[string]any{
 						"name": "ipVersion",
-						"short": "IP version (4 for IPv4, 6 for IPv6)",
+						"title": "Ip Version",
 						"type": "`$INTEGER`",
+						"short": "IP version (4 for IPv4, 6 for IPv6)",
 					},
 					map[string]any{
 						"name": "isProxy",
-						"short": "Whether the IP is detected as a proxy, VPN, or hosting service",
+						"title": "Is Proxy",
 						"type": "`$BOOLEAN`",
+						"short": "Whether the IP is detected as a proxy, VPN, or hosting service",
 					},
 					map[string]any{
 						"name": "language",
-						"short": "Primary language code",
+						"title": "Language",
 						"type": "`$STRING`",
+						"short": "Primary language code",
 					},
 					map[string]any{
 						"name": "languages",
-						"short": "List of languages spoken in the country",
+						"title": "Languages",
 						"type": "`$ARRAY`",
+						"short": "List of languages spoken in the country",
 					},
 					map[string]any{
-						"format": "double",
 						"name": "latitude",
-						"short": "Latitude coordinate",
+						"title": "Latitude",
 						"type": "`$NUMBER`",
+						"short": "Latitude coordinate",
+						"format": "double",
 					},
 					map[string]any{
-						"format": "double",
 						"name": "longitude",
-						"short": "Longitude coordinate",
+						"title": "Longitude",
 						"type": "`$NUMBER`",
+						"short": "Longitude coordinate",
+						"format": "double",
 					},
 					map[string]any{
 						"name": "name",
+						"title": "Name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "phoneCodes",
-						"short": "International dialing codes for the country",
+						"title": "Phone Codes",
 						"type": "`$ARRAY`",
+						"short": "International dialing codes for the country",
 					},
 					map[string]any{
 						"name": "regionCode",
-						"short": "Region or state code",
+						"title": "Region Code",
 						"type": "`$STRING`",
+						"short": "Region or state code",
 					},
 					map[string]any{
 						"name": "regionName",
-						"short": "Region or state name",
+						"title": "Region Name",
 						"type": "`$STRING`",
+						"short": "Region or state name",
 					},
 					map[string]any{
 						"name": "timeZone",
-						"short": "Timezone offset from UTC",
+						"title": "Time Zone",
 						"type": "`$STRING`",
+						"short": "Timezone offset from UTC",
 					},
 					map[string]any{
 						"name": "timeZones",
-						"short": "List of timezone identifiers for the location",
+						"title": "Time Zones",
 						"type": "`$ARRAY`",
+						"short": "List of timezone identifiers for the location",
 					},
 					map[string]any{
 						"name": "tlds",
-						"short": "Top-level domains for the country",
+						"title": "Tlds",
 						"type": "`$ARRAY`",
+						"short": "Top-level domains for the country",
 					},
 					map[string]any{
 						"name": "zipCode",
-						"short": "Postal/ZIP code",
+						"title": "Zip Code",
 						"type": "`$STRING`",
+						"short": "Postal/ZIP code",
 					},
 				},
 				"id": map[string]any{
@@ -330,7 +355,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/api/json",
@@ -342,15 +366,17 @@ func MakeConfig() map[string]any {
 										"lit": "json",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"api",
 									"json",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -359,7 +385,6 @@ func MakeConfig() map[string]any {
 						"name": "list",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/api/json",
@@ -371,15 +396,17 @@ func MakeConfig() map[string]any {
 										"lit": "json",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"api",
 									"json",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -388,26 +415,9 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"params": []any{
-										map[string]any{
-											"example": "193.247.239.168",
-											"kind": "param",
-											"name": "id",
-											"orig": "ip_address",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/api/json/{ipAddress}",
-								"rename": map[string]any{
-									"param": map[string]any{
-										"ipAddress": "id",
-									},
-								},
 								"segments": []any{
 									map[string]any{
 										"lit": "api",
@@ -419,19 +429,36 @@ func MakeConfig() map[string]any {
 										"var": "id",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"id",
+								"parts": []any{
+									"api",
+									"json",
+									"{id}",
+								},
+								"rename": map[string]any{
+									"param": map[string]any{
+										"ipAddress": "id",
 									},
 								},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"api",
-									"json",
-									"{id}",
+								"args": map[string]any{
+									"params": []any{
+										map[string]any{
+											"name": "id",
+											"orig": "ip_address",
+											"type": "`$STRING`",
+											"kind": "param",
+											"reqd": true,
+											"example": "193.247.239.168",
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"id",
+									},
 								},
 							},
 						},

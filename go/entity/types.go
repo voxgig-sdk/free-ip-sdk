@@ -1,7 +1,7 @@
 // Typed models for the FreeIp SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -23,34 +23,6 @@ type IpGeolocationLoadMatch struct {
 
 // Json is the typed data model for the json entity.
 type Json struct {
-	Asn *string `json:"asn,omitempty"`
-	AsnOrganization *string `json:"asnOrganization,omitempty"`
-	Capital *string `json:"capital,omitempty"`
-	CityName *string `json:"cityName,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Continent *string `json:"continent,omitempty"`
-	ContinentCode *string `json:"continentCode,omitempty"`
-	CountryCode *string `json:"countryCode,omitempty"`
-	CountryName *string `json:"countryName,omitempty"`
-	Currencies *[]any `json:"currencies,omitempty"`
-	Currency *map[string]any `json:"currency,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Ip *string `json:"ip,omitempty"`
-	IpAddress *string `json:"ipAddress,omitempty"`
-	IpVersion *int `json:"ipVersion,omitempty"`
-	IsProxy *bool `json:"isProxy,omitempty"`
-	Language *string `json:"language,omitempty"`
-	Languages *[]any `json:"languages,omitempty"`
-	Latitude *float64 `json:"latitude,omitempty"`
-	Longitude *float64 `json:"longitude,omitempty"`
-	Name *string `json:"name,omitempty"`
-	PhoneCodes *[]any `json:"phoneCodes,omitempty"`
-	RegionCode *string `json:"regionCode,omitempty"`
-	RegionName *string `json:"regionName,omitempty"`
-	TimeZone *string `json:"timeZone,omitempty"`
-	TimeZones *[]any `json:"timeZones,omitempty"`
-	Tlds *[]any `json:"tlds,omitempty"`
-	ZipCode *string `json:"zipCode,omitempty"`
 }
 
 // JsonLoadMatch is the typed request payload for Json.LoadTyped.

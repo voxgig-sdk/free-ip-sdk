@@ -70,7 +70,7 @@ function ip_geolocation_basic_setup($extra)
 
     // Generate idmap.
     $idmap = [];
-    foreach (["ip_geolocation01", "ip_geolocation02", "ip_geolocation03", "xml01", "xml02", "xml03"] as $k) {
+    foreach (["ip_geolocation01", "ip_geolocation02", "ip_geolocation03"] as $k) {
         $idmap[$k] = strtoupper($k);
     }
 

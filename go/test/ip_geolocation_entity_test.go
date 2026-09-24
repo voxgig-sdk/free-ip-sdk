@@ -98,7 +98,7 @@ func ip_geolocationBasicSetup(extra map[string]any) *entityTestSetup {
 
 	// Generate idmap via transform, matching TS pattern.
 	idmap, _ := vs.Transform(
-		[]any{"ip_geolocation01", "ip_geolocation02", "ip_geolocation03", "xml01", "xml02", "xml03"},
+		[]any{"ip_geolocation01", "ip_geolocation02", "ip_geolocation03"},
 		map[string]any{
 			"`$PACK`": []any{"", map[string]any{
 				"`$KEY`": "`$COPY`",

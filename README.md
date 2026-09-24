@@ -14,7 +14,7 @@ Metadata kindly supplied by [www.freepublicapis.com](https://www.freepublicapis.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI with an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
 
-> **Features:** `ratelimit`, `retry`, `test`, `timeout` — opt-in,
+> **Features:** `undefined`, `undefined`, `undefined`, `undefined` — opt-in,
 > inactive until switched on, and configured per client. See the Features
 > section of any SDK README below for what each one does.
 
@@ -123,11 +123,8 @@ import { FreeIpSDK } from '@voxgig-sdk/free-ip-sdk'
 
 const client = new FreeIpSDK()
 
-
-// Load a specific ipgeolocation (returns a IpGeolocation)
-const ipgeolocation = await client.IpGeolocation().load({
-  ip_address: 'example_ip_address',
-})
+// Load ipgeolocation data (returns a IpGeolocation)
+const ipgeolocation = await client.IpGeolocation().load()
 console.log(ipgeolocation)
 ```
 
@@ -211,11 +208,8 @@ import sdk "github.com/voxgig-sdk/free-ip-sdk/go"
 
 client := sdk.New()
 
-
-// Load a specific ipgeolocation
-ipGeolocation, err := client.IpGeolocation(nil).Load(
-    map[string]any{"ip_address": "example_ip_address"}, nil,
-)
+// Load ipgeolocation data
+ipGeolocation, err := client.IpGeolocation(nil).Load(map[string]any{"ip_address": "example_ip_address"}, nil)
 if err != nil {
     panic(err)
 }

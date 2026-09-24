@@ -33,8 +33,6 @@ $client = new FreeIpSDK();
 
 ### 3. Load an ipgeolocation
 
-IpGeolocation is nested under ip_address, so provide the `ip_address`.
-
 ```php
 try {
     // load() returns the ENTITY — call data_get() for the IpGeolocation record (throws on error).

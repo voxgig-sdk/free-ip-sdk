@@ -1,0 +1,319 @@
+# Entity: json
+
+main: kit: entity: json: {
+
+  alias: field: {}
+
+  fields: {
+    asn: {
+      h: "Asn"
+      n: "asn"
+      r: false
+      sh: "Autonomous System Number"
+      t: "`$STRING`"
+    }
+    asnOrganization: {
+      h: "Asn Organization"
+      n: "asnOrganization"
+      r: false
+      sh: "Organization associated with the ASN"
+      t: "`$STRING`"
+    }
+    capital: {
+      h: "Capital"
+      n: "capital"
+      r: false
+      sh: "Capital city of the country"
+      t: "`$STRING`"
+    }
+    cityName: {
+      h: "City Name"
+      n: "cityName"
+      r: false
+      sh: "City name"
+      t: "`$STRING`"
+    }
+    code: {
+      h: "Code"
+      n: "code"
+      r: false
+      t: "`$STRING`"
+    }
+    continent: {
+      h: "Continent"
+      n: "continent"
+      r: false
+      sh: "Continent name"
+      t: "`$STRING`"
+    }
+    continentCode: {
+      h: "Continent Code"
+      n: "continentCode"
+      r: false
+      sh: "Two-letter continent code"
+      t: "`$STRING`"
+    }
+    countryCode: {
+      h: "Country Code"
+      n: "countryCode"
+      r: false
+      sh: "ISO 3166-1 alpha-2 country code"
+      t: "`$STRING`"
+    }
+    countryName: {
+      h: "Country Name"
+      n: "countryName"
+      r: false
+      sh: "Full country name"
+      t: "`$STRING`"
+    }
+    currencies: {
+      h: "Currencies"
+      n: "currencies"
+      r: false
+      sh: "List of currencies used in the country"
+      t: "`$ARRAY`"
+    }
+    currency: {
+      h: "Currency"
+      n: "currency"
+      r: false
+      sh: "Currency information for the country"
+      t: "`$OBJECT`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    ip: {
+      h: "Ip"
+      n: "ip"
+      r: false
+      sh: "IPv4 or IPv6 address to lookup"
+      t: "`$STRING`"
+    }
+    ipAddress: {
+      h: "Ip Address"
+      n: "ipAddress"
+      r: false
+      sh: "The IP address that was looked up"
+      t: "`$STRING`"
+    }
+    ipVersion: {
+      h: "Ip Version"
+      n: "ipVersion"
+      r: false
+      sh: "IP version (4 for IPv4, 6 for IPv6)"
+      t: "`$INTEGER`"
+    }
+    isProxy: {
+      h: "Is Proxy"
+      n: "isProxy"
+      r: false
+      sh: "Whether the IP is detected as a proxy, VPN, or hosting service"
+      t: "`$BOOLEAN`"
+    }
+    language: {
+      h: "Language"
+      n: "language"
+      r: false
+      sh: "Primary language code"
+      t: "`$STRING`"
+    }
+    languages: {
+      h: "Languages"
+      n: "languages"
+      r: false
+      sh: "List of languages spoken in the country"
+      t: "`$ARRAY`"
+    }
+    latitude: {
+      fo: "double"
+      h: "Latitude"
+      n: "latitude"
+      r: false
+      sh: "Latitude coordinate"
+      t: "`$NUMBER`"
+    }
+    longitude: {
+      fo: "double"
+      h: "Longitude"
+      n: "longitude"
+      r: false
+      sh: "Longitude coordinate"
+      t: "`$NUMBER`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: false
+      t: "`$STRING`"
+    }
+    phoneCodes: {
+      h: "Phone Codes"
+      n: "phoneCodes"
+      r: false
+      sh: "International dialing codes for the country"
+      t: "`$ARRAY`"
+    }
+    regionCode: {
+      h: "Region Code"
+      n: "regionCode"
+      r: false
+      sh: "Region or state code"
+      t: "`$STRING`"
+    }
+    regionName: {
+      h: "Region Name"
+      n: "regionName"
+      r: false
+      sh: "Region or state name"
+      t: "`$STRING`"
+    }
+    timeZone: {
+      h: "Time Zone"
+      n: "timeZone"
+      r: false
+      sh: "Timezone offset from UTC"
+      t: "`$STRING`"
+    }
+    timeZones: {
+      h: "Time Zones"
+      n: "timeZones"
+      r: false
+      sh: "List of timezone identifiers for the location"
+      t: "`$ARRAY`"
+    }
+    tlds: {
+      h: "Tlds"
+      n: "tlds"
+      r: false
+      sh: "Top-level domains for the country"
+      t: "`$ARRAY`"
+    }
+    zipCode: {
+      h: "Zip Code"
+      n: "zipCode"
+      r: false
+      sh: "Postal/ZIP code"
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "json"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /api/json"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/api/json"
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "json"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /api/json"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/api/json"
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "json"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /api/json/{ipAddress}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "193.247.239.168"
+                k: "param"
+                n: "id"
+                or: "ip_address"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/json/{ipAddress}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              ipAddress: "id"
+            }
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "json"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

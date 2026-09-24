@@ -35,8 +35,6 @@ local client = sdk.new()
 
 ### 3. Load an ipgeolocation
 
-IpGeolocation is nested under ip_address, so provide the `ip_address`.
-
 ```lua
 local ipgeolocation, err = client:IpGeolocation():load({ ip_address = "example_ip_address" })
 if err then error(err) end
