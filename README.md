@@ -106,11 +106,11 @@ local result, err = client:IpGeolocation():load({ ip_address = "example" })
 | Language | Package | Install |
 | --- | --- | --- |
 | TypeScript | `@voxgig-sdk/free-ip-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/free-ip-sdk/tags) |
-| Python | `voxgig-sdk-free-ip` | publish pending — [install from git tag](https://github.com/voxgig-sdk/free-ip-sdk/tags) |
-| PHP | `voxgig-sdk/free-ip` | publish pending — [install from git tag](https://github.com/voxgig-sdk/free-ip-sdk/tags) |
+| Python | `voxgig-sdk-free-ip-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/free-ip-sdk/tags) |
+| PHP | `voxgig-sdk/free-ip-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/free-ip-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/free-ip-sdk/go` | `go get github.com/voxgig-sdk/free-ip-sdk/go@latest` |
-| Ruby | `voxgig-sdk-free-ip` | publish pending — [install from git tag](https://github.com/voxgig-sdk/free-ip-sdk/tags) |
-| Lua | `voxgig-sdk-free-ip` | publish pending — [install from git tag](https://github.com/voxgig-sdk/free-ip-sdk/tags) |
+| Ruby | `voxgig-sdk-free-ip-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/free-ip-sdk/tags) |
+| Lua | `voxgig-sdk-free-ip-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/free-ip-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/free-ip-sdk/go-cli` | `go install github.com/voxgig-sdk/free-ip-sdk/go-cli/cmd/free-ip@latest` |
 | Go MCP server | `github.com/voxgig-sdk/free-ip-sdk/go-mcp` | `go get github.com/voxgig-sdk/free-ip-sdk/go-mcp@latest` |
 
@@ -341,10 +341,10 @@ forking the SDK.
 
 | Feature | Purpose |
 | --- | --- |
-| **RatelimitFeature** | Client-side rate limiting via a token bucket |
-| **RetryFeature** | Automatic retry of transient failures with exponential backoff |
-| **TestFeature** | In-memory mock transport for testing without a live server |
-| **TimeoutFeature** | Per-request timeout with transport abort |
+| **RatelimitFeature** | Rate limiting |
+| **RetryFeature** | Retry |
+| **TestFeature** | Test transport |
+| **TimeoutFeature** | Timeout |
 
 Pass custom features via the `extend` option at construction time.
 
