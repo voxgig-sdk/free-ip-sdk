@@ -154,7 +154,7 @@ def make_config():
                   "params": [
                     {
                       "name": "ip_address",
-                      "orig": "ip_address",
+                      "orig": "ipAddress",
                       "type": "`$STRING`",
                       "kind": "param",
                       "reqd": True,
@@ -472,7 +472,7 @@ def make_config():
                   "params": [
                     {
                       "name": "id",
-                      "orig": "ip_address",
+                      "orig": "ipAddress",
                       "type": "`$STRING`",
                       "kind": "param",
                       "reqd": True,

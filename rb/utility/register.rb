@@ -33,6 +33,8 @@ require_relative 'transform_response'
 
 FreeIpUtility.registrar = ->(u) {
   u.clean = FreeIpUtilities::Clean
+  u.clean_add = FreeIpUtilities::CleanAdd
+  u.clean_explain = FreeIpUtilities::CleanExplain
   u.done = FreeIpUtilities::Done
   u.make_error = FreeIpUtilities::MakeError
   u.feature_add = FreeIpUtilities::FeatureAdd

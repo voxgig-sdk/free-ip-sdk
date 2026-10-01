@@ -145,7 +145,7 @@ class Config {
                                 "params": [
                                     {
                                         "name": "ip_address",
-                                        "orig": "ip_address",
+                                        "orig": "ipAddress",
                                         "type": "`$STRING`",
                                         "kind": "param",
                                         "reqd": true,
@@ -463,7 +463,7 @@ class Config {
                                 "params": [
                                     {
                                         "name": "id",
-                                        "orig": "ip_address",
+                                        "orig": "ipAddress",
                                         "type": "`$STRING`",
                                         "kind": "param",
                                         "reqd": true,

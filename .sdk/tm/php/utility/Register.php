@@ -37,6 +37,8 @@ require_once __DIR__ . '/TransformResponse.php';
 
 FreeIpUtility::setRegistrar(function (FreeIpUtility $u): void {
     $u->clean = [FreeIpClean::class, 'call'];
+    $u->clean_add = [FreeIpClean::class, 'add'];
+    $u->clean_explain = [FreeIpDone::class, 'clean_explain'];
     $u->done = [FreeIpDone::class, 'call'];
     $u->make_error = [FreeIpMakeError::class, 'call'];
     $u->feature_add = [FreeIpFeatureAdd::class, 'call'];

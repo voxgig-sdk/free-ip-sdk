@@ -276,7 +276,7 @@ main: kit: entity: json: {
                 ex: "193.247.239.168"
                 k: "param"
                 n: "id"
-                or: "ip_address"
+                or: "ipAddress"
                 r: true
                 t: "`$STRING`"
               }

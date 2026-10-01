@@ -129,7 +129,7 @@ func MakeConfig() map[string]any {
 									"params": []any{
 										map[string]any{
 											"name": "ip_address",
-											"orig": "ip_address",
+											"orig": "ipAddress",
 											"type": "`$STRING`",
 											"kind": "param",
 											"reqd": true,
@@ -447,7 +447,7 @@ func MakeConfig() map[string]any {
 									"params": []any{
 										map[string]any{
 											"name": "id",
-											"orig": "ip_address",
+											"orig": "ipAddress",
 											"type": "`$STRING`",
 											"kind": "param",
 											"reqd": true,

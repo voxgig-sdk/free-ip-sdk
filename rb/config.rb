@@ -137,7 +137,7 @@ module FreeIpConfig
                     "params" => [
                       {
                         "name" => "ip_address",
-                        "orig" => "ip_address",
+                        "orig" => "ipAddress",
                         "type" => "`$STRING`",
                         "kind" => "param",
                         "reqd" => true,
@@ -455,7 +455,7 @@ module FreeIpConfig
                     "params" => [
                       {
                         "name" => "id",
-                        "orig" => "ip_address",
+                        "orig" => "ipAddress",
                         "type" => "`$STRING`",
                         "kind" => "param",
                         "reqd" => true,

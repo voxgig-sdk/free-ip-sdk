@@ -117,7 +117,7 @@
                         "ex": "1.1.1.1",
                         "k": "param",
                         "n": "ip_address",
-                        "or": "ip_address",
+                        "or": "ipAddress",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -503,7 +503,7 @@
                         "ex": "193.247.239.168",
                         "k": "param",
                         "n": "id",
-                        "or": "ip_address",
+                        "or": "ipAddress",
                         "r": true,
                         "t": "`$STRING`"
                       }
@@ -1084,7 +1084,12 @@
         },
         "base": "http://localhost:8000",
         "clean": {
-          "keys": "key,token,id"
+          "active": true,
+          "hint": "0",
+          "keys": "key,secret,token,password,passwd,authorization,cookie,credential,signature",
+          "mask": "[redacted]",
+          "min": "4",
+          "values": ""
         },
         "entity": {
           "`$CHILD`": {

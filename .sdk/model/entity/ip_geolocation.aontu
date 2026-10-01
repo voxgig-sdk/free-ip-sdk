@@ -21,7 +21,7 @@ main: kit: entity: ip_geolocation: {
                 ex: "1.1.1.1"
                 k: "param"
                 n: "ip_address"
-                or: "ip_address"
+                or: "ipAddress"
                 r: true
                 t: "`$STRING`"
               }
