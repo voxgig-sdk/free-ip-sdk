@@ -213,6 +213,9 @@ main: kit: entity: json: {
       name: "create"
       points: [
         {
+          bf: [
+            "ip"
+          ]
           co: {
             id: "POST /api/json"
             source: "openapi3"
@@ -220,6 +223,10 @@ main: kit: entity: json: {
           }
           m: "POST"
           o: "/api/json"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
           s: [
             {
               lit: "api"
@@ -246,6 +253,10 @@ main: kit: entity: json: {
           }
           m: "GET"
           o: "/api/json"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
           s: [
             {
               lit: "api"
@@ -293,6 +304,10 @@ main: kit: entity: json: {
             param: {
               ipAddress: "id"
             }
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {

@@ -91,31 +91,4 @@ class JsonListMatch(TypedDict, total=False):
 
 
 class JsonCreateData(TypedDict, total=False):
-    asn: str
-    asnOrganization: str
-    capital: str
-    cityName: str
-    code: str
-    continent: str
-    continentCode: str
-    countryCode: str
-    countryName: str
-    currencies: list
-    currency: dict
-    id: str
     ip: str
-    ipAddress: str
-    ipVersion: int
-    isProxy: bool
-    language: str
-    languages: list
-    latitude: float
-    longitude: float
-    name: str
-    phoneCodes: list
-    regionCode: str
-    regionName: str
-    timeZone: str
-    timeZones: list
-    tlds: list
-    zipCode: str

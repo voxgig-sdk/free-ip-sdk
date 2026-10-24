@@ -75,34 +75,7 @@
 ---@field zipCode? string
 
 ---@class JsonCreateData
----@field asn? string
----@field asnOrganization? string
----@field capital? string
----@field cityName? string
----@field code? string
----@field continent? string
----@field continentCode? string
----@field countryCode? string
----@field countryName? string
----@field currencies? table
----@field currency? table
----@field id? string
 ---@field ip? string
----@field ipAddress? string
----@field ipVersion? number
----@field isProxy? boolean
----@field language? string
----@field languages? table
----@field latitude? number
----@field longitude? number
----@field name? string
----@field phoneCodes? table
----@field regionCode? string
----@field regionName? string
----@field timeZone? string
----@field timeZones? table
----@field tlds? table
----@field zipCode? string
 
 local M = {}
 

@@ -54,6 +54,14 @@ const utility_1 = require("../../utility");
         const ent = testsdk.IpGeolocation();
         (0, node_assert_1.default)(null != ent);
     });
+    (0, node_test_1.test)('validate', async (t) => {
+        if (null == __1.config.feature?.validate) {
+            t.skip('feature not present in this SDK: validate');
+            return;
+        }
+        const client = __1.FreeIpSDK.test(undefined, { feature: { validate: { active: true } } });
+        await node_assert_1.default.rejects(client.IpGeolocation().load({ "ip_address": 1 }), (err) => 'validate_failed' === err.code);
+    });
     (0, node_test_1.test)('basic', async (t) => {
         const live = 'TRUE' === process.env.FREE_IP_TEST_LIVE;
         for (const op of ['load']) {
@@ -62,7 +70,7 @@ const utility_1 = require("../../utility");
         }
         const setup = basicSetup();
         if (setup.live) {
-            return (0, live_entity_1.runLiveEntity)(setup, { "active": true, "alias": { "field": {} }, "fields": {}, "name": "ip_geolocation", "op": { "load": { "input": "data", "name": "load", "points": [{ "a": true, "co": { "id": "GET /api/xml/{ipAddress}", "source": "openapi3", "version": 2 }, "g": { "params": [{ "a": true, "ex": "1.1.1.1", "k": "param", "n": "ip_address", "or": "ipAddress", "r": true, "t": "`$STRING`", "index$": 0 }] }, "k": "http", "m": "GET", "o": "/api/xml/{ipAddress}", "q": { "exist": ["ip_address"] }, "r": { "param": { "ipAddress": "ip_address" } }, "s": [{ "lit": "api" }, { "lit": "xml" }, { "var": "ip_address" }], "t": { "req": "`reqdata`", "res": "`body`" }, "index$": 0 }, { "a": true, "co": { "id": "GET /api/xml", "source": "openapi3", "version": 2 }, "g": {}, "k": "http", "m": "GET", "o": "/api/xml", "q": {}, "r": {}, "s": [{ "lit": "api" }, { "lit": "xml" }], "t": { "req": "`reqdata`", "res": "`body`" }, "index$": 1 }], "key$": "load" } }, "relations": { "ancestors": [] }, "key$": "ip_geolocation", "name__orig": "ip_geolocation", "Name": "IpGeolocation", "name_": "ip_geolocation", "name-": "ip-geolocation", "NAME": "IP_GEOLOCATION", "index$": 0 }, { "active": true, "entity": "ip_geolocation", "key$": "BasicIpGeolocationFlow", "kind": "basic", "name": "BasicIpGeolocationFlow", "param": {}, "step": [{ "a": true, "d": {}, "i": { "ref": "ip_geolocation_ref01", "srcdatavar": "ip_geolocation_ref01_data", "suffix": "_dt0" }, "m": {}, "o": "load", "s": [], "v": [{ "apply": "TextFieldMark", "def": { "mark": "Mark01-ip_geolocation_ref01" } }], "index$": 0 }] }, 'IpGeolocation', { "GET /api/xml/{ipAddress}": { "protocol": "http", "parameters": [{ "name": "ipAddress", "in": "path", "required": true, "description": "IPv4 or IPv6 address to lookup", "schema": { "type": "string", "example": "1.1.1.1" }, "index$": 0 }] }, "GET /api/xml": { "protocol": "http", "parameters": [] } });
+            return (0, live_entity_1.runLiveEntity)(setup, { "active": true, "alias": { "field": {} }, "fields": {}, "name": "ip_geolocation", "op": { "load": { "input": "data", "name": "load", "points": [{ "a": true, "co": { "id": "GET /api/xml/{ipAddress}", "source": "openapi3", "version": 2 }, "g": { "params": [{ "a": true, "ex": "1.1.1.1", "k": "param", "n": "ip_address", "or": "ipAddress", "r": true, "t": "`$STRING`", "index$": 0 }] }, "k": "http", "m": "GET", "o": "/api/xml/{ipAddress}", "q": { "exist": ["ip_address"] }, "r": { "param": { "ipAddress": "ip_address" } }, "rs": { "kind": "raw", "media": "application/xml" }, "s": [{ "lit": "api" }, { "lit": "xml" }, { "var": "ip_address" }], "t": { "req": "`reqdata`", "res": "`body`" }, "index$": 0 }, { "a": true, "co": { "id": "GET /api/xml", "source": "openapi3", "version": 2 }, "g": {}, "k": "http", "m": "GET", "o": "/api/xml", "q": {}, "r": {}, "rs": { "kind": "raw", "media": "application/xml" }, "s": [{ "lit": "api" }, { "lit": "xml" }], "t": { "req": "`reqdata`", "res": "`body`" }, "index$": 1 }], "key$": "load" } }, "relations": { "ancestors": [] }, "key$": "ip_geolocation", "name__orig": "ip_geolocation", "Name": "IpGeolocation", "name_": "ip_geolocation", "name-": "ip-geolocation", "NAME": "IP_GEOLOCATION", "index$": 0 }, { "active": true, "entity": "ip_geolocation", "key$": "BasicIpGeolocationFlow", "kind": "basic", "name": "BasicIpGeolocationFlow", "param": {}, "step": [{ "a": true, "d": {}, "i": { "ref": "ip_geolocation_ref01", "srcdatavar": "ip_geolocation_ref01_data", "suffix": "_dt0" }, "m": {}, "o": "load", "s": [], "v": [{ "apply": "TextFieldMark", "def": { "mark": "Mark01-ip_geolocation_ref01" } }], "index$": 0 }] }, 'IpGeolocation', { "GET /api/xml/{ipAddress}": { "protocol": "http", "parameters": [{ "name": "ipAddress", "in": "path", "required": true, "description": "IPv4 or IPv6 address to lookup", "schema": { "type": "string", "example": "1.1.1.1" }, "index$": 0 }] }, "GET /api/xml": { "protocol": "http", "parameters": [] } }, { strict: LIVE_STRICT, t });
         }
         const client = setup.client;
         const struct = setup.struct;
@@ -74,6 +82,11 @@ const utility_1 = require("../../utility");
         const ip_geolocation_ref01_ent = client.IpGeolocation();
     });
 });
+// main.kit.test.live.strict is true (the default is true): a live
+// request that fails, or a live test missing an input it needs,
+// fails the test.
+// An account with no record for a test to read skips it either way.
+const LIVE_STRICT = true;
 function basicSetup(extra) {
     // TODO: fix test def options
     const options = {}; // null

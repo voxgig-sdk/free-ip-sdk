@@ -39,6 +39,10 @@ main: kit: entity: ip_geolocation: {
               ipAddress: "ip_address"
             }
           }
+          rs: {
+            kind: "raw"
+            media: "application/xml"
+          }
           s: [
             {
               lit: "api"
@@ -63,6 +67,10 @@ main: kit: entity: ip_geolocation: {
           }
           m: "GET"
           o: "/api/xml"
+          rs: {
+            kind: "raw"
+            media: "application/xml"
+          }
           s: [
             {
               lit: "api"

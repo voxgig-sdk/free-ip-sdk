@@ -79,6 +79,7 @@ module FreeIpConfig
           },
           "optspec" => {
             "clearTimer" => "`$FUNCTION`",
+            "now" => "`$FUNCTION`",
             "setTimer" => "`$FUNCTION`",
           },
           "strict" => false,
@@ -150,6 +151,10 @@ module FreeIpConfig
                       "ip_address",
                     ],
                   },
+                  "response" => {
+                    "kind" => "raw",
+                    "media" => "application/xml",
+                  },
                 },
                 {
                   "kind" => "http",
@@ -174,6 +179,10 @@ module FreeIpConfig
                   },
                   "args" => {},
                   "select" => {},
+                  "response" => {
+                    "kind" => "raw",
+                    "media" => "application/xml",
+                  },
                 },
               ],
             },
@@ -385,6 +394,10 @@ module FreeIpConfig
                   },
                   "args" => {},
                   "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
+                  },
                 },
               ],
             },
@@ -415,6 +428,10 @@ module FreeIpConfig
                   },
                   "args" => {},
                   "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
+                  },
                 },
               ],
             },
@@ -467,6 +484,10 @@ module FreeIpConfig
                     "exist" => [
                       "id",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],

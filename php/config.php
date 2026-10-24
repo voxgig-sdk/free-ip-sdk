@@ -93,6 +93,7 @@ class FreeIpConfig
           ],
           'optspec' => [
             'clearTimer' => '`$FUNCTION`',
+            'now' => '`$FUNCTION`',
             'setTimer' => '`$FUNCTION`',
           ],
           'strict' => false,
@@ -164,6 +165,10 @@ class FreeIpConfig
                       'ip_address',
                     ],
                   ],
+                  'response' => [
+                    'kind' => 'raw',
+                    'media' => 'application/xml',
+                  ],
                 ],
                 [
                   'kind' => 'http',
@@ -188,6 +193,10 @@ class FreeIpConfig
                   ],
                   'args' => [],
                   'select' => [],
+                  'response' => [
+                    'kind' => 'raw',
+                    'media' => 'application/xml',
+                  ],
                 ],
               ],
             ],
@@ -399,6 +408,10 @@ class FreeIpConfig
                   ],
                   'args' => [],
                   'select' => [],
+                  'response' => [
+                    'kind' => 'json',
+                    'media' => 'application/json',
+                  ],
                 ],
               ],
             ],
@@ -429,6 +442,10 @@ class FreeIpConfig
                   ],
                   'args' => [],
                   'select' => [],
+                  'response' => [
+                    'kind' => 'json',
+                    'media' => 'application/json',
+                  ],
                 ],
               ],
             ],
@@ -481,6 +498,10 @@ class FreeIpConfig
                     'exist' => [
                       'id',
                     ],
+                  ],
+                  'response' => [
+                    'kind' => 'json',
+                    'media' => 'application/json',
                   ],
                 ],
               ],

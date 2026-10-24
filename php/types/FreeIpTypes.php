@@ -98,33 +98,6 @@ class JsonListMatch
 /** Request payload for Json#create. */
 class JsonCreateData
 {
-    public ?string $asn = null;
-    public ?string $asnOrganization = null;
-    public ?string $capital = null;
-    public ?string $cityName = null;
-    public ?string $code = null;
-    public ?string $continent = null;
-    public ?string $continentCode = null;
-    public ?string $countryCode = null;
-    public ?string $countryName = null;
-    public ?array $currencies = null;
-    public ?array $currency = null;
-    public ?string $id = null;
     public ?string $ip = null;
-    public ?string $ipAddress = null;
-    public ?int $ipVersion = null;
-    public ?bool $isProxy = null;
-    public ?string $language = null;
-    public ?array $languages = null;
-    public ?float $latitude = null;
-    public ?float $longitude = null;
-    public ?string $name = null;
-    public ?array $phoneCodes = null;
-    public ?string $regionCode = null;
-    public ?string $regionName = null;
-    public ?string $timeZone = null;
-    public ?array $timeZones = null;
-    public ?array $tlds = null;
-    public ?string $zipCode = null;
 }
 

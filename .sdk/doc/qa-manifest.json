@@ -3,5 +3,18 @@
     "SUMMARY.md"
   ],
   "config": ".sdk/doc/qa/vale.ini",
-  "routes": {}
+  "routes": {},
+  "quoted": {
+    "SUMMARY.md": [
+      "Autonomous System Number",
+      "Capital city of the country",
+      "City name",
+      "Free IP API Server",
+      "ISO 4217 currency code",
+      "Organization associated with the ASN",
+      "Successful response with IP geolocation information",
+      "Successful response with IP geolocation information in XML format",
+      "The Free IP API provides fast and reliable geolocation information for IP addresses, including details like country, city, region, and more. It is available for both commercial and non-commercial usage and supports multiple formats such as JSON and XML."
+    ]
+  }
 }

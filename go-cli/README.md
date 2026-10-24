@@ -21,6 +21,7 @@ export FREE_IP_APIKEY=sk_live_xxx
 # 4. Each command line is ONE boru expression, run against the API:
 ./free-ip-cli load 1 ip_geolocation            # {id:1} shorthand
 ./free-ip-cli load '{id:1}' ip_geolocation       # explicit match map
+./free-ip-cli list json
 
 # 5. Override the API base URL for a single call
 FREE_IP_BASE=https://api.example.com ./free-ip-cli load 1 ip_geolocation

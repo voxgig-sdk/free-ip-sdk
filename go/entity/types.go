@@ -64,34 +64,7 @@ type JsonListMatch struct {
 
 // JsonCreateData is the typed request payload for Json.CreateTyped.
 type JsonCreateData struct {
-	Asn *string `json:"asn,omitempty"`
-	AsnOrganization *string `json:"asnOrganization,omitempty"`
-	Capital *string `json:"capital,omitempty"`
-	CityName *string `json:"cityName,omitempty"`
-	Code *string `json:"code,omitempty"`
-	Continent *string `json:"continent,omitempty"`
-	ContinentCode *string `json:"continentCode,omitempty"`
-	CountryCode *string `json:"countryCode,omitempty"`
-	CountryName *string `json:"countryName,omitempty"`
-	Currencies *[]any `json:"currencies,omitempty"`
-	Currency *map[string]any `json:"currency,omitempty"`
-	Id *string `json:"id,omitempty"`
 	Ip *string `json:"ip,omitempty"`
-	IpAddress *string `json:"ipAddress,omitempty"`
-	IpVersion *int `json:"ipVersion,omitempty"`
-	IsProxy *bool `json:"isProxy,omitempty"`
-	Language *string `json:"language,omitempty"`
-	Languages *[]any `json:"languages,omitempty"`
-	Latitude *float64 `json:"latitude,omitempty"`
-	Longitude *float64 `json:"longitude,omitempty"`
-	Name *string `json:"name,omitempty"`
-	PhoneCodes *[]any `json:"phoneCodes,omitempty"`
-	RegionCode *string `json:"regionCode,omitempty"`
-	RegionName *string `json:"regionName,omitempty"`
-	TimeZone *string `json:"timeZone,omitempty"`
-	TimeZones *[]any `json:"timeZones,omitempty"`
-	Tlds *[]any `json:"tlds,omitempty"`
-	ZipCode *string `json:"zipCode,omitempty"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the

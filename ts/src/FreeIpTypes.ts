@@ -79,33 +79,6 @@ export interface JsonListMatch {
 }
 
 export interface JsonCreateData {
-  asn?: string
-  asnOrganization?: string
-  capital?: string
-  cityName?: string
-  code?: string
-  continent?: string
-  continentCode?: string
-  countryCode?: string
-  countryName?: string
-  currencies?: any[]
-  currency?: Record<string, any>
-  id?: string
   ip?: string
-  ipAddress?: string
-  ipVersion?: number
-  isProxy?: boolean
-  language?: string
-  languages?: any[]
-  latitude?: number
-  longitude?: number
-  name?: string
-  phoneCodes?: any[]
-  regionCode?: string
-  regionName?: string
-  timeZone?: string
-  timeZones?: any[]
-  tlds?: any[]
-  zipCode?: string
 }
 
